@@ -1,6 +1,6 @@
 /// Global CSS reset.
 ///
-/// Removes browser default margins, paddings, list styles, and normalizes common elements for consistent rendering across browsers.
+/// Removes browser default margins, paddings, list styles, and text decorations while normalizing box sizing, media elements, form controls, links, and tables for consistent rendering across browsers.
 
 *,
 *::before,
@@ -32,12 +32,6 @@ input,
 textarea,
 select {
     font: inherit;
-}
-
-button,
-input,
-textarea,
-select {
     margin: 0;
 }
 

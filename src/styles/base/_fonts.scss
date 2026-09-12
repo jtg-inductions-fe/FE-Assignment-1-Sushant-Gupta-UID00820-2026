@@ -1,5 +1,6 @@
 @use '../abstracts' as *;
 
+// Circular Std font family with regular, medium, and bold weights.
 @font-face {
     font-family: $default-font;
     src: url('../assets/fonts/CircularStd-Book.woff2') format('woff2');
@@ -24,6 +25,7 @@
     font-display: swap;
 }
 
+// Inter variable font supporting a range of font weights.
 @font-face {
     font-family: $secondary-font;
     src: url('../assets/fonts/Inter-VariableFont_opsz,wght.ttf')

@@ -1,13 +1,16 @@
+// Creates a flex container with vertically centered items and configurable horizontal alignment.
 @mixin flex-mixin($justify: center) {
     display: flex;
     align-items: center;
     justify-content: $justify;
 }
 
+// Hides the element from the layout.
 @mixin hide {
     display: none;
 }
 
+// Displays the element as a block-level element.
 @mixin show {
     display: block;
 }

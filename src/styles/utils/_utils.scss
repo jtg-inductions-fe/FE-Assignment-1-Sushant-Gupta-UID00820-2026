@@ -1,5 +1,6 @@
 @use '../abstracts' as *;
 
+// Flexbox utilities.
 .flex {
     display: flex;
 }
@@ -17,6 +18,7 @@
     flex-direction: column;
 }
 
+// Display utilities.
 .display--none {
     @include hide;
 }
@@ -25,6 +27,7 @@
     @include show;
 }
 
+// Position utilities.
 .absolute {
     position: absolute;
 }
@@ -33,18 +36,22 @@
     position: relative;
 }
 
+// Text utilities.
 .text-center {
     text-align: center;
 }
 
+// Interaction utilities.
 .cursor-pointer {
     cursor: pointer;
 }
 
+// Spacing utilities.
 .default-padding {
     padding: 1rem;
 }
 
+// Responsive container with breakpoint-based width adjustments.
 .container {
     width: 92.475%;
     margin-inline: auto;
