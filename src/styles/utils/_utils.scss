@@ -1,0 +1,59 @@
+@use '../abstracts' as *;
+
+.flex {
+    display: flex;
+}
+
+.flex--center {
+    @include flex-mixin(center);
+}
+
+.flex--space-between {
+    @include flex-mixin(space-between);
+}
+
+.flex--column {
+    display: flex;
+    flex-direction: column;
+}
+
+.display--none {
+    @include hide;
+}
+
+.display--block {
+    @include show;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.default-padding {
+    padding: 1rem;
+}
+
+.container {
+    width: 92.475%;
+    margin-inline: auto;
+
+    @media (min-width: $mobile-breakpoint) {
+        width: 87.5695%;
+    }
+
+    @media (min-width: $tablet-breakpoint) {
+        width: 82.823%;
+    }
+}

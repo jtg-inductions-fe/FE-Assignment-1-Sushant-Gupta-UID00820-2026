@@ -1,0 +1,13 @@
+@mixin flex-mixin($justify: center) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+
+@mixin hide {
+    display: none;
+}
+
+@mixin show {
+    display: block;
+}
