@@ -1,13 +1,44 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>Travlog</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="shortcut icon"
+            href="/assets/images/logo.png"
+            type="image/x-icon"
+        />
         <link rel="stylesheet" href="src/styles/main.scss" />
     </head>
     <body>
-        <div>Hello World</div>
+        <header class="navbar container">
+            <nav class="nav">
+                <div class="reverse">
+                    <a href="#"
+                        ><img
+                            src="/assets/images/logo.png"
+                            alt="logo-img"
+                            class="nav__logo"
+                    /></a>
+                    <div class="nav__hamburger">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+                <div class="nav__links">
+                    <ul>
+                        <li><a class="active" href="#">home</a></li>
+                        <li><a href="#">discover</a></li>
+                        <li><a href="#">special deals</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav__buttons">
+                    <div class="btn btn--secondary">log in</div>
+                    <div class="btn btn--primary">sign up</div>
+                </div>
+            </nav>
+        </header>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
