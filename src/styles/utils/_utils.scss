@@ -48,7 +48,7 @@
 
 // Spacing utilities.
 .default-padding {
-    padding: 1rem;
+    padding: rem(16);
 }
 
 // Responsive container with breakpoint-based width adjustments.
@@ -62,17 +62,18 @@
 
     @media (min-width: $tablet-breakpoint) {
         width: 82.823%;
+        margin-inline: rem(130) rem(117);
     }
 }
 
 // Button utilities
 .btn {
-    padding: 1rem 2rem;
-    font-size: 0.875rem;
-    border-radius: 30px;
+    padding: rem(16) rem(32);
+    font-size: rem(14);
+    border-radius: rem(30);
     white-space: nowrap;
-    margin-top: 1px;
-    margin-right: 1px;
+    margin-top: rem(1);
+    margin-right: rem(1);
     font-weight: $font-bold;
 }
 
