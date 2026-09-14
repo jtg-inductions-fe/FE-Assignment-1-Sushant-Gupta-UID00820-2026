@@ -11,6 +11,7 @@
         />
         <link rel="stylesheet" href="src/styles/main.scss" />
     </head>
+
     <body>
         <header class="navbar container">
             <nav class="nav">
@@ -21,21 +22,45 @@
                             alt="logo-img"
                             class="nav__logo"
                     /></a>
-                    <div class="nav__hamburger">
+                    <button
+                        class="nav__hamburger"
+                        type="button"
+                        aria-label="Open menu"
+                    >
                         <i class="fa-solid fa-bars"></i>
-                    </div>
+                    </button>
                 </div>
                 <div class="nav__links">
                     <ul>
-                        <li><a class="active" href="#">home</a></li>
-                        <li><a href="#">discover</a></li>
-                        <li><a href="#">special deals</a></li>
-                        <li><a href="#">contact</a></li>
+                        <li><a class="active nav-links" href="#">home</a></li>
+                        <li><a class="nav-links" href="#">discover</a></li>
+                        <li><a class="nav-links" href="#">special deals</a></li>
+                        <li><a class="nav-links" href="#">contact</a></li>
                     </ul>
                 </div>
                 <div class="nav__buttons">
                     <div class="btn btn--secondary">log in</div>
                     <div class="btn btn--primary">sign up</div>
+                </div>
+
+                <div class="nav__drawer">
+                    <div class="nav__drawer-links">
+                        <ul>
+                            <li>
+                                <a class="active nav-links" href="#">home</a>
+                            </li>
+                            <li><a class="nav-links" href="#">discover</a></li>
+                            <li>
+                                <a class="nav-links" href="#">special deals</a>
+                            </li>
+                            <li><a class="nav-links" href="#">contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav__drawer-buttons">
+                        <div class="btn btn--secondary login">log in</div>
+                        <div class="btn btn--primary signup">sign up</div>
+                    </div>
                 </div>
             </nav>
         </header>

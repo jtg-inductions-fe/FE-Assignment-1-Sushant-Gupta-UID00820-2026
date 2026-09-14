@@ -6,6 +6,9 @@
     width: 100%;
     margin-top: rem(35);
 
+    position: relative;
+    z-index: 10;
+
     .reverse {
         width: 100%;
         @include flex-mixin(space-between);
@@ -16,12 +19,81 @@
         width: rem(40);
     }
 
+    &__drawer {
+        position: absolute;
+        top: calc(100% + rem(16));
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 130px);
+        padding: rem(24);
+        border-radius: rem(16);
+        box-shadow: 0 rem(10) rem(30) rgba(0, 0, 0, 0.1);
+        background-color: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+        &-links {
+            overflow-y: scroll;
+            ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: rem(24);
+                text-transform: capitalize;
+
+                li {
+                    a {
+                        font-size: rem(16);
+                        font-weight: $font-bold;
+                        color: #19182580;
+
+                        &.active {
+                            color: $text-primary-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-buttons {
+            text-transform: capitalize;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            gap: rem(12);
+            margin-top: rem(24);
+
+            .login {
+                border: 0.3px solid gray;
+            }
+        }
+
+        &.is-open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+
     &__hamburger {
         height: rem(48);
         width: rem(48);
         padding: rem(4);
         align-self: center;
         padding: rem(4);
+        border: 0;
+        background: transparent;
+        cursor: pointer;
 
         svg {
             height: rem(32);
@@ -60,6 +132,25 @@
             text-transform: capitalize;
             display: flex;
             height: rem(49);
+
+            .login {
+                border: none;
+            }
+        }
+
+        &__drawer {
+            &-links {
+                ul {
+                    gap: 4rem;
+                    overflow-y: scroll;
+                    li a {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            &-buttons {
+                display: none;
+            }
         }
     }
 
@@ -86,6 +177,11 @@
                 }
             }
         }
+
+        &__drawer {
+            display: none;
+        }
+
         .reverse {
             width: auto;
             flex-direction: row;
