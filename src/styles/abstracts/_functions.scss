@@ -2,5 +2,9 @@
 
 // Converts a pixel value to rem units based on a 16px root font size.
 @function rem($px) {
+<<<<<<< HEAD
     @return math.div($px, 10) * 1rem;
+=======
+    @return math.div($px, 16) * 1rem;
+>>>>>>> fffb5f4 ([SG_A1_01]: Added a function that coverts pixels to rem)
 }

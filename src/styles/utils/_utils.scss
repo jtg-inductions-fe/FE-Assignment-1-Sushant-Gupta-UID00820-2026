@@ -1,0 +1,88 @@
+@use '../abstracts' as *;
+
+// Flexbox utilities.
+.flex {
+    display: flex;
+}
+
+.flex--center {
+    @include flex-mixin(center);
+}
+
+.flex--space-between {
+    @include flex-mixin(space-between);
+}
+
+.flex--column {
+    display: flex;
+    flex-direction: column;
+}
+
+// Display utilities.
+.display--none {
+    @include hide;
+}
+
+.display--block {
+    @include show;
+}
+
+// Position utilities.
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+// Text utilities.
+.text-center {
+    text-align: center;
+}
+
+// Interaction utilities.
+.cursor-pointer {
+    cursor: pointer;
+}
+
+// Spacing utilities.
+.default-padding {
+    padding: rem(16);
+}
+
+// Responsive container with breakpoint-based width adjustments.
+.container {
+    width: 92.475%;
+    margin-inline: auto;
+
+    @media (min-width: $mobile-breakpoint) {
+        width: 87.5695%;
+    }
+
+    @media (min-width: $tablet-breakpoint) {
+        width: 82.823%;
+        margin-inline: rem(130) rem(117);
+    }
+}
+
+// Button utilities
+.btn {
+    padding: rem(16) rem(32);
+    font-size: rem(14);
+    border-radius: rem(30);
+    white-space: nowrap;
+    margin-top: rem(1);
+    margin-right: rem(1);
+    font-weight: $font-bold;
+}
+
+.btn--primary {
+    background-color: $btn-primary-color;
+    color: $text-light-color;
+}
+
+.btn--secondary {
+    background-color: $btn-secondary-color;
+    color: $text-primary-color;
+}
