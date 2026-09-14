@@ -7,6 +7,7 @@ body {
     font-family: map.get(abs.$font, default);
     color: theme.$text-primary-color;
     background-color: #ffffff;
+    padding-top: 0.1px;
 }
 
 // Maintains the image's aspect ratio when its width is resized.

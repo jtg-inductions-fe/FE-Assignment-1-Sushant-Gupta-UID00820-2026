@@ -1,0 +1,97 @@
+@use '../abstracts' as *;
+
+.nav {
+    @include flex-mixin(space-between);
+    height: 48px;
+    width: 100%;
+    margin-top: 2.1875rem;
+
+    .reverse {
+        width: 100%;
+        @include flex-mixin(space-between);
+    }
+
+    &__logo {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    &__hamburger {
+        height: 3rem;
+        width: 3rem;
+        padding: 0.25rem;
+        align-self: center;
+        padding: 0.25rem;
+
+        svg {
+            height: 2rem;
+            width: 2rem;
+            padding: 0.25rem;
+            align-self: center;
+            background-color: $icon-color;
+            border-radius: 0.5rem;
+            color: white;
+
+            path {
+                width: 1.75rem;
+            }
+        }
+    }
+
+    &__links {
+        text-transform: capitalize;
+        display: none;
+    }
+
+    &__buttons {
+        display: none;
+    }
+
+    @media (min-width: $mobile-breakpoint) {
+        margin-top: 0;
+        height: 7.0625rem;
+        width: 99.922%;
+        .reverse {
+            width: 52.4%;
+            flex-direction: row-reverse;
+        }
+        &__buttons {
+            display: block;
+            text-transform: capitalize;
+            display: flex;
+            height: 49px;
+        }
+    }
+
+    @media (min-width: $tablet-breakpoint) {
+        width: 100%;
+        margin-top: 34px;
+        justify-content: space-between;
+        height: 7rem;
+
+        &__links {
+            display: block;
+            ul {
+                @include flex-mixin(space-between);
+                width: 26.75rem;
+                height: 1.0625rem;
+                gap: 4rem;
+                font-size: 0.875rem;
+                white-space: nowrap;
+                font-weight: 700;
+                color: #19182580;
+
+                .active {
+                    color: $text-primary-color;
+                }
+            }
+        }
+        .reverse {
+            width: auto;
+            flex-direction: row;
+            .nav__hamburger {
+                display: none;
+            }
+        }
+    }
+}
