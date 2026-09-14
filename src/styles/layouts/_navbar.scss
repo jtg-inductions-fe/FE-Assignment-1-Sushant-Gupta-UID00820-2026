@@ -2,9 +2,9 @@
 
 .nav {
     @include flex-mixin(space-between);
-    height: 48px;
+    height: rem(48);
     width: 100%;
-    margin-top: 2.1875rem;
+    margin-top: rem(35);
 
     .reverse {
         width: 100%;
@@ -12,28 +12,28 @@
     }
 
     &__logo {
-        height: 2.5rem;
-        width: 2.5rem;
+        height: rem(40);
+        width: rem(40);
     }
 
     &__hamburger {
-        height: 3rem;
-        width: 3rem;
-        padding: 0.25rem;
+        height: rem(48);
+        width: rem(48);
+        padding: rem(4);
         align-self: center;
-        padding: 0.25rem;
+        padding: rem(4);
 
         svg {
-            height: 2rem;
-            width: 2rem;
-            padding: 0.25rem;
+            height: rem(32);
+            width: rem(32);
+            padding: rem(4);
             align-self: center;
             background-color: $icon-color;
-            border-radius: 0.5rem;
+            border-radius: rem(8);
             color: white;
 
             path {
-                width: 1.75rem;
+                width: rem(28);
             }
         }
     }
@@ -49,7 +49,7 @@
 
     @media (min-width: $mobile-breakpoint) {
         margin-top: 0;
-        height: 7.0625rem;
+        height: rem(113);
         width: 99.922%;
         .reverse {
             width: 52.4%;
@@ -59,24 +59,24 @@
             display: block;
             text-transform: capitalize;
             display: flex;
-            height: 49px;
+            height: rem(49);
         }
     }
 
     @media (min-width: $tablet-breakpoint) {
         width: 100%;
-        margin-top: 34px;
+        margin-top: rem(34);
         justify-content: space-between;
-        height: 7rem;
+        height: rem(112);
 
         &__links {
             display: block;
             ul {
                 @include flex-mixin(space-between);
-                width: 26.75rem;
-                height: 1.0625rem;
-                gap: 4rem;
-                font-size: 0.875rem;
+                width: rem(428);
+                height: rem(17);
+                gap: rem(64);
+                font-size: rem(14);
                 white-space: nowrap;
                 font-weight: 700;
                 color: #19182580;
