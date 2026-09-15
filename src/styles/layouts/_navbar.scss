@@ -24,7 +24,7 @@
         top: calc(100% + rem(16));
         left: 0;
         width: 100%;
-        height: calc(100vh - 130px);
+        height: calc(100vh - 140px);
         padding: rem(24);
         border-radius: rem(16);
         box-shadow: 0 rem(10) rem(30) rgba(0, 0, 0, 0.1);
@@ -35,7 +35,7 @@
 
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-20px);
+        transform: translateY(rem(-20));
         transition:
             opacity 0.3s ease,
             transform 0.3s ease,
@@ -127,24 +127,27 @@
             width: 52.4%;
             flex-direction: row-reverse;
         }
+
         &__buttons {
-            display: block;
-            text-transform: capitalize;
             display: flex;
             height: rem(49);
 
             .login {
-                border: none;
+                @include text-ellipsis(120.25px);
+            }
+
+            .signup {
+                @include text-ellipsis(130.25px);
             }
         }
 
         &__drawer {
             &-links {
+                overflow-y: scroll;
                 ul {
-                    gap: 4rem;
-                    overflow-y: scroll;
+                    gap: rem(40);
                     li a {
-                        font-size: 1.5rem;
+                        font-size: rem(24);
                     }
                 }
             }
@@ -165,12 +168,20 @@
             ul {
                 @include flex-mixin(space-between);
                 width: rem(428);
+                overflow-x: scroll;
                 height: rem(17);
                 gap: rem(64);
                 font-size: rem(14);
                 white-space: nowrap;
                 font-weight: 700;
                 color: #19182580;
+
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
 
                 .active {
                     color: $text-primary-color;
