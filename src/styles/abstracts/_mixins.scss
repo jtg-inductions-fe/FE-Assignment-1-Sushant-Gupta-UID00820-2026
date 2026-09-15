@@ -8,12 +8,23 @@
     justify-content: $justify;
 }
 
+<<<<<<< HEAD
 // Truncates the text if it exceeds the width
+=======
+>>>>>>> ecbabc3 ([SG_A1_01]: Implemented the clipping of text in buttons and the overflow of nav links.)
 @mixin text-ellipsis($max-width: 100%) {
     max-width: $max-width;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+<<<<<<< HEAD
+=======
+}
+
+// Hides the element from the layout.
+@mixin hide {
+    display: none;
+>>>>>>> ecbabc3 ([SG_A1_01]: Implemented the clipping of text in buttons and the overflow of nav links.)
 }
 
 // Sets the font family and styles ($size is now first!)
