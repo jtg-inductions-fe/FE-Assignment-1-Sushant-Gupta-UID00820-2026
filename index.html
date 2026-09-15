@@ -15,13 +15,14 @@
     <body>
         <header class="navbar container">
             <nav class="nav">
-                <div class="reverse">
-                    <a href="#"
-                        ><img
+                <div class="nav__brand">
+                    <a href="#" class="nav__logo-link">
+                        <img
                             src="/assets/images/logo.png"
                             alt="logo-img"
                             class="nav__logo"
-                    /></a>
+                        />
+                    </a>
                     <button
                         class="nav__hamburger"
                         type="button"
@@ -30,14 +31,16 @@
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
+
                 <div class="nav__links">
                     <ul>
-                        <li><a class="active nav-links" href="#">home</a></li>
-                        <li><a class="nav-links" href="#">discover</a></li>
-                        <li><a class="nav-links" href="#">special deals</a></li>
-                        <li><a class="nav-links" href="#">contact</a></li>
+                        <li><a class="nav__link active" href="#">home</a></li>
+                        <li><a class="nav__link" href="#">discover</a></li>
+                        <li><a class="nav__link" href="#">special deals</a></li>
+                        <li><a class="nav__link" href="#">contact</a></li>
                     </ul>
                 </div>
+
                 <div class="nav__buttons">
                     <button
                         class="btn btn--secondary login"
@@ -54,20 +57,20 @@
                 </div>
 
                 <div class="nav__drawer">
-                    <div class="nav__drawer-links">
+                    <div class="nav__drawer__links">
                         <ul>
                             <li>
-                                <a class="active nav-links" href="#">home</a>
+                                <a class="nav__link active" href="#">home</a>
                             </li>
-                            <li><a class="nav-links" href="#">discover</a></li>
+                            <li><a class="nav__link" href="#">discover</a></li>
                             <li>
-                                <a class="nav-links" href="#">special deals</a>
+                                <a class="nav__link" href="#">special deals</a>
                             </li>
-                            <li><a class="nav-links" href="#">contact</a></li>
+                            <li><a class="nav__link" href="#">contact</a></li>
                         </ul>
                     </div>
 
-                    <div class="nav__drawer-buttons">
+                    <div class="nav__drawer__buttons">
                         <button class="btn btn--secondary login">log in</button>
                         <button class="btn btn--primary signup">sign up</button>
                     </div>

@@ -1,6 +1,6 @@
 const hamburger = document.querySelector('.nav__hamburger');
 const drawer = document.querySelector('.nav__drawer');
-const navLinks = document.querySelectorAll('.nav-links');
+const navLinks = document.querySelectorAll('.nav__link');
 const body = document.body;
 
 hamburger.addEventListener('click', (event) => {
