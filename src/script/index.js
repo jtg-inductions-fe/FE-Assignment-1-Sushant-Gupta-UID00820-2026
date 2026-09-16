@@ -13,6 +13,7 @@ hamburger.addEventListener('click', (event) => {
     const isOpen = drawer.classList.toggle('is-open');
 
     hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    body.classList.toggle('no-scroll', isOpen);
 });
 
 drawer.addEventListener('click', (event) => {
