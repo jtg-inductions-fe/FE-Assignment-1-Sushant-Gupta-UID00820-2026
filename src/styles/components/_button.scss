@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use '../abstracts' as abs;
+
+.btn {
+    padding: abs.rem(16) abs.rem(32);
+    font-size: abs.rem(14);
+    border-radius: abs.rem(30);
+    white-space: nowrap;
+    margin-top: abs.rem(1);
+    margin-right: abs.rem(1);
+    font-weight: map.get(abs.$font-weight, bold);
+    text-transform: capitalize;
+    @include abs.text-ellipsis;
+
+    &--primary {
+        background-color: abs.$btn-primary-color;
+        color: abs.$text-light-color;
+    }
+
+    &--secondary {
+        background-color: abs.$btn-secondary-color;
+        color: abs.$text-primary-color;
+    }
+}
