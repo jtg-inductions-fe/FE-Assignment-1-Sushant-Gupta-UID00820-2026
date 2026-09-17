@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '../abstracts' as abs;
+
+.nav__link {
+    @include abs.font-style(
+        $size: abs.rem(16),
+        $color: #19182580,
+        $weight: map.get(abs.$font-weight, bold)
+    );
+    text-transform: capitalize;
+
+    &.active {
+        color: abs.$text-primary-color;
+    }
+}

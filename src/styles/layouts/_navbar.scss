@@ -1,203 +1,107 @@
-@use '../abstracts' as *;
+@use '../abstracts' as abs;
 
 .nav {
-    @include flex-mixin(space-between);
-    height: rem(48);
-    width: 100%;
-    margin-top: rem(35);
-
+    @include abs.flex-mixin(space-between);
     position: relative;
     z-index: 10;
+    width: 100%;
+    height: abs.rem(48);
+    margin-top: abs.rem(35);
 
-    .nav__brand {
+    &__brand {
+        @include abs.flex-mixin(space-between);
         width: 100%;
-        @include flex-mixin(space-between);
     }
 
     &__logo {
-        height: rem(40);
-        width: rem(40);
+        width: abs.rem(40);
+        height: abs.rem(40);
     }
 
-    &__drawer {
-        position: absolute;
-        top: calc(100% + rem(16));
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 100px);
-        padding: rem(24);
-        border-radius: rem(16);
-        box-shadow: 0 rem(10) rem(30) rgba(0, 0, 0, 0.1);
-        background-color: inherit;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(rem(-20));
-        transition:
-            opacity 0.3s ease,
-            transform 0.3s ease,
-            visibility 0.3s ease;
-
-        &__links {
-            overflow-y: scroll;
-            ul {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: rem(24);
-                text-transform: capitalize;
-
-                li {
-                    a {
-                        font-size: rem(16);
-                        font-weight: $font-bold;
-                        color: #19182580;
-
-                        &.active {
-                            color: $text-primary-color;
-                        }
-                    }
-                }
-            }
-        }
-
-        &__buttons {
-            text-transform: capitalize;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            gap: rem(12);
-            margin-top: rem(24);
-
-            .login {
-                border: 0.3px solid gray;
-            }
-        }
-
-        &.is-open {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-    }
-
-    &__hamburger {
-        height: rem(48);
-        width: rem(48);
-        padding: rem(4);
-        align-self: center;
-        border: 0;
-        background: transparent;
-        cursor: pointer;
-
-        svg {
-            height: rem(32);
-            width: rem(32);
-            padding: rem(4);
-            align-self: center;
-            background-color: $icon-color;
-            border-radius: rem(8);
-            color: white;
-
-            path {
-                width: rem(28);
-            }
-        }
-    }
-
-    &__links {
-        text-transform: capitalize;
-        display: none;
-    }
-
+    &__links,
     &__buttons {
         display: none;
     }
 
-    @media (min-width: $mobile-breakpoint) {
+    @include abs.tablet-screen {
+        width: 100%;
+        height: abs.rem(113);
         margin-top: 0;
-        height: rem(113);
-        width: 99.922%;
 
-        .nav__brand {
-            width: 52.4%;
+        &__brand {
             flex-direction: row-reverse;
+            width: 52.4%;
         }
 
         &__buttons {
             display: flex;
-            height: rem(49);
+            height: abs.rem(49);
 
             .login {
-                @include text-ellipsis(120.25px);
+                @include abs.text-ellipsis(120.25px);
             }
 
             .signup {
-                @include text-ellipsis(130.25px);
+                @include abs.text-ellipsis(130.25px);
             }
         }
 
         &__drawer {
             height: calc(100vh - 130px);
-            &__links {
+
+            &-links {
                 overflow-y: scroll;
-                ul {
-                    gap: rem(40);
-                    li a {
-                        font-size: rem(24);
-                    }
-                }
             }
-            &__buttons {
+
+            &-ul {
+                gap: abs.rem(42);
+            }
+
+            &-buttons {
                 display: none;
             }
         }
+
+        &__link {
+            font-size: abs.rem(24);
+        }
     }
 
-    @media (min-width: $tablet-breakpoint) {
-        width: 100%;
-        margin-top: rem(34);
+    @include abs.desktop-screen {
         justify-content: space-between;
-        height: rem(112);
+        width: 100%;
+        height: abs.rem(112);
+        margin-top: abs.rem(34);
 
-        &__links {
-            display: block;
-            ul {
-                @include flex-mixin(space-between);
-                width: rem(428);
-                overflow-x: scroll;
-                height: rem(17);
-                gap: rem(64);
-                font-size: rem(14);
-                white-space: nowrap;
-                font-weight: 700;
-                color: #19182580;
-
-                scrollbar-width: none;
-                -ms-overflow-style: none;
-
-                &::-webkit-scrollbar {
-                    display: none;
-                }
-
-                .active {
-                    color: $text-primary-color;
-                }
-            }
+        &__brand {
+            flex-direction: inherit;
+            width: auto;
         }
 
-        &__drawer {
+        .nav__hamburger,
+        .nav__drawer {
             display: none;
         }
 
-        .nav__brand {
-            width: auto;
-            flex-direction: row;
-            .nav__hamburger {
+        &__links {
+            display: block;
+        }
+
+        &__link {
+            font-size: abs.rem(14);
+        }
+
+        &__ul {
+            @include abs.flex-mixin(space-between);
+            gap: abs.rem(64);
+            width: abs.rem(428);
+            height: abs.rem(17);
+            overflow-x: scroll;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
                 display: none;
             }
         }
