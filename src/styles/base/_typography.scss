@@ -105,3 +105,30 @@
         $weight: map.get(abs.$font-weight, bold)
     );
 }
+
+.testimonial__description {
+    @include abs.font-style(
+        $size: abs.rem(18),
+        $line-height: 1.6,
+        $align: center,
+        $color: abs.$text-card-color
+    );
+    opacity: 0.75;
+
+    @include abs.tablet-screen {
+        font-size: abs.rem(23);
+    }
+}
+
+.footer__paragraph {
+    @include abs.font-style(
+        $size: abs.rem(16),
+        $line-height: 1.6,
+        $color: abs.$text-card-color
+    );
+    opacity: 0.5;
+
+    @include abs.tablet-screen {
+        font-size: abs.rem(23);
+    }
+}
