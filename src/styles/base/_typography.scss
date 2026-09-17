@@ -1,0 +1,107 @@
+@use 'sass:map';
+@use '../abstracts' as abs;
+
+.heading {
+    margin-top: abs.rem(16);
+    @include abs.font-style(
+        $size: abs.rem(40),
+        $weight: map.get(abs.$font-weight, bold),
+        $line-height: 1.2,
+        $align: center
+    );
+
+    &--secondary {
+        color: abs.$text-secondary-color;
+    }
+
+    @include abs.tablet-screen {
+        font-size: abs.rem(56);
+        width: 70%;
+        margin-top: abs.rem(43);
+        margin-inline: auto;
+    }
+
+    @include abs.desktop-screen {
+        font-size: abs.rem(69);
+        width: 100%;
+        text-align: start;
+    }
+}
+
+.paragraph {
+    margin-top: abs.rem(24);
+    opacity: 0.5;
+    @include abs.font-style(
+        $font: map.get(abs.$font, secondary),
+        $size: abs.rem(16),
+        $weight: map.get(abs.$font-weight, regular),
+        $line-height: 1.6,
+        $align: center
+    );
+
+    @include abs.tablet-screen {
+        font-size: abs.rem(18);
+        margin-top: abs.rem(43);
+    }
+
+    @include abs.desktop-screen {
+        text-align: start;
+    }
+}
+
+.travel__heading {
+    @include abs.font-style(
+        $size: abs.rem(32),
+        $align: center,
+        $weight: map.get(abs.$font-weight, bold)
+    );
+    margin-top: abs.rem(16);
+
+    @include abs.tablet-screen {
+        font-size: abs.rem(40);
+    }
+
+    @include abs.desktop-screen {
+        font-size: abs.rem(44);
+        text-align: start;
+    }
+}
+
+.travel__sub-heading {
+    @include abs.font-style(
+        $size: abs.rem(16),
+        $align: center,
+        $weight: map.get(abs.$font-weight, bold),
+        $color: abs.$text-secondary-color
+    );
+    text-transform: uppercase;
+    letter-spacing: 1.2;
+
+    @include abs.tablet-screen {
+        font-size: abs.rem(23);
+    }
+
+    @include abs.desktop-screen {
+        text-align: start;
+    }
+}
+
+.card__text {
+    @include abs.font-style(
+        $size: abs.rem(18),
+        $align: center,
+        $color: abs.$text-card-color,
+        $line-height: 1.6,
+        $font: map.get(abs.$font, secondary)
+    );
+    margin-top: abs.rem(16);
+}
+
+.card__stats {
+    @include abs.font-style(
+        $size: abs.rem(35),
+        $align: center,
+        $color: abs.$stats-card-color,
+        $weight: map.get(abs.$font-weight, bold)
+    );
+}

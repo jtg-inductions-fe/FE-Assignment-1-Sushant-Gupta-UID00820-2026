@@ -1,31 +1,18 @@
-// Gradient colors used for backgrounds and visual accents.
-$back-gradient-orange: #ff5722;
-$back-gradient-yellow: #facd49;
-
-// Button colors for primary and secondary actions.
-$btn-primary-color: #5d50c6;
-$btn-secondary-color: #ffffff;
-
 // Responsive breakpoints for mobile, tablet, and desktop layouts.
-$mobile-breakpoint: 431px;
-$tablet-breakpoint: 1025px;
-$desktop-breakpoint: 1441px;
+$breakpoints: (
+    mobile: 431px,
+    tablet: 1025px,
+    desktop: 1441px,
+);
 
-// Text colors used across different content types and components.
-$text-primary-color: #000000;
-$text-secondary-color: #f85e9f;
-$text-light-color: #eeeeee;
-$text-card-color: #ff5722;
-
-// Default color used for icons.
-$icon-color: #5d50c6;
-
-// Font families used throughout the application.
-$default-font: 'Circular Std';
-$secondary-font: 'Inter';
+$font: (
+    default: 'Circular Std',
+    secondary: 'Inter',
+);
 
 // Font weights used to maintain consistent typography.
-$font-bold: 700;
-$font-medium: 500;
-$font-regular: 400;
-$font-thin: 100;
+$font-weight: (
+    bold: 700,
+    medium: 500,
+    regular: 400,
+);
