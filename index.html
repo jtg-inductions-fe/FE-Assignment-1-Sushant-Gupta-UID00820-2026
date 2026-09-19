@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
             rel="shortcut icon"
-            href="/assets/images/logo.png"
+            href="/assets/images/logo.webp"
             type="image/x-icon"
         />
         <link rel="stylesheet" href="src/styles/main.scss" />
@@ -75,8 +75,98 @@
                         <button class="btn btn--primary signup">sign up</button>
                     </div>
                 </div>
+
+                <div class="nav__drawer">
+                    <div class="nav__drawer-links">
+                        <ul>
+                            <li>
+                                <a class="active nav-links" href="#">home</a>
+                            </li>
+                            <li><a class="nav-links" href="#">discover</a></li>
+                            <li>
+                                <a class="nav-links" href="#">special deals</a>
+                            </li>
+                            <li><a class="nav-links" href="#">contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav__drawer-buttons">
+                        <button class="btn btn--secondary login">log in</button>
+                        <button class="btn btn--primary signup">sign up</button>
+                    </div>
+                </div>
             </nav>
         </header>
+        <div class="bg-orange"></div>
+        <main class="container hero">
+            <section class="hero__visuals">
+                <i class="icon icon-telegram"></i>
+                <i class="icon icon-add_user"></i>
+                <img
+                    class="icon top-places"
+                    src="/assets/images/top-places.webp"
+                    alt="Top places"
+                />
+                <div class="hero__visuals-images">
+                    <div class="hero__visuals-images--column">
+                        <img
+                            src="/assets/images/layout-1.webp"
+                            alt="Layout 1"
+                        />
+                        <img
+                            src="/assets/images/layout-2.webp"
+                            alt="Layout 2"
+                        />
+                    </div>
+                    <div class="hero__visuals-images--single">
+                        <img
+                            src="/assets/images/layout-3.webp"
+                            alt="Layout 3"
+                        />
+                    </div>
+                </div>
+            </section>
+            <section class="hero__content">
+                <div class="hero__content-explore">
+                    Explore the world!
+                    <i class="icon-bag"></i>
+                </div>
+
+                <div class="hero__content-texts">
+                    <h1 class="heading h1">
+                        Travel
+                        <span class="hero__content-texts--secondary"
+                            >top destination</span
+                        >
+                        of the world
+                    </h1>
+                    <p class="paragraph p">
+                        We always make our customer happy by providing
+                        <span class="break">as many choices as possible</span>
+                    </p>
+                </div>
+
+                <div class="hero__content-btns">
+                    <button
+                        class="btn btn--primary content__btn content__btn--first"
+                    >
+                        Get Started
+                    </button>
+                    <button
+                        class="btn btn--secondary content__btn content__btn--second"
+                    >
+                        <i class="icon icon-play_circle"></i>
+                        Watch Demo
+                    </button>
+                </div>
+            </section>
+
+            <img
+                class="traingles"
+                src="/assets/images/traingles.webp"
+                alt="Traingles"
+            />
+        </main>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
