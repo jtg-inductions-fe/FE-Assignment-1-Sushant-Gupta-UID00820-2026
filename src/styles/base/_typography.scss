@@ -2,133 +2,99 @@
 @use '../abstracts' as abs;
 
 .heading {
-    margin-top: abs.rem(16);
     @include abs.font-style(
-        $size: abs.rem(40),
+        $size: abs.rem(24),
         $weight: map.get(abs.$font-weight, bold),
-        $line-height: 1.2,
-        $align: center
+        $line-height: 1.2
     );
 
-    &--secondary {
-        color: abs.$text-secondary-color;
+    &--sm {
+        font-size: abs.rem(24);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(28);
+        }
     }
 
-    @include abs.tablet-screen {
-        font-size: abs.rem(56);
-        width: 70%;
-        margin-top: abs.rem(43);
-        margin-inline: auto;
+    &--md {
+        font-size: abs.rem(32);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(40);
+        }
+
+        @include abs.desktop-screen {
+            font-size: abs.rem(44);
+        }
     }
 
-    @include abs.desktop-screen {
-        font-size: abs.rem(69);
-        width: 100%;
-        text-align: start;
-    }
-}
+    &--lg {
+        font-size: abs.rem(32);
 
-.paragraph {
-    margin-top: abs.rem(24);
-    opacity: 0.5;
-    @include abs.font-style(
-        $font: map.get(abs.$font, secondary),
-        $size: abs.rem(16),
-        $weight: map.get(abs.$font-weight, regular),
-        $line-height: 1.6,
-        $align: center
-    );
+        @include abs.tablet-screen {
+            font-size: abs.rem(40);
+        }
 
-    @include abs.tablet-screen {
-        font-size: abs.rem(18);
-        margin-top: abs.rem(43);
+        @include abs.desktop-screen {
+            font-size: abs.rem(44);
+        }
     }
 
-    @include abs.desktop-screen {
-        text-align: start;
-    }
-}
-
-.travel__heading {
-    @include abs.font-style(
-        $size: abs.rem(32),
-        $align: center,
-        $weight: map.get(abs.$font-weight, bold)
-    );
-    margin-top: abs.rem(16);
-
-    @include abs.tablet-screen {
+    &--xl {
         font-size: abs.rem(40);
-    }
 
-    @include abs.desktop-screen {
-        font-size: abs.rem(44);
-        text-align: start;
+        @include abs.tablet-screen {
+            font-size: abs.rem(56);
+        }
+
+        @include abs.desktop-screen {
+            font-size: abs.rem(69);
+        }
     }
 }
 
-.travel__sub-heading {
+.subtitle {
     @include abs.font-style(
         $size: abs.rem(16),
-        $align: center,
-        $weight: map.get(abs.$font-weight, bold),
-        $color: abs.$text-secondary-color
+        $weight: map.get(abs.$font-weight, bold)
     );
     text-transform: uppercase;
     letter-spacing: 1.2;
 
-    @include abs.tablet-screen {
-        font-size: abs.rem(23);
-    }
+    &--sm {
+        font-size: abs.rem(16);
 
-    @include abs.desktop-screen {
-        text-align: start;
-    }
-}
-
-.card__text {
-    @include abs.font-style(
-        $size: abs.rem(18),
-        $align: center,
-        $color: abs.$text-card-color,
-        $line-height: 1.6,
-        $font: map.get(abs.$font, secondary)
-    );
-    margin-top: abs.rem(16);
-}
-
-.card__stats {
-    @include abs.font-style(
-        $size: abs.rem(35),
-        $align: center,
-        $color: abs.$stats-card-color,
-        $weight: map.get(abs.$font-weight, bold)
-    );
-}
-
-.testimonial__description {
-    @include abs.font-style(
-        $size: abs.rem(18),
-        $line-height: 1.6,
-        $align: center,
-        $color: abs.$text-card-color
-    );
-    opacity: 0.75;
-
-    @include abs.tablet-screen {
-        font-size: abs.rem(23);
+        @include abs.tablet-screen {
+            font-size: abs.rem(23);
+        }
     }
 }
 
-.footer__paragraph {
+.paragraph {
     @include abs.font-style(
         $size: abs.rem(16),
-        $line-height: 1.6,
-        $color: abs.$text-card-color
+        $font: map.get(abs.$font, secondary),
+        $weight: map.get(abs.$font-weight, regular),
+        $line-height: 1.6
     );
-    opacity: 0.5;
 
-    @include abs.tablet-screen {
-        font-size: abs.rem(23);
+    &--sm {
+        font-size: abs.rem(14);
+    }
+
+    &--md {
+        font-size: abs.rem(16);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(18);
+        }
+    }
+
+    &--lg {
+        font-size: abs.rem(18);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(23);
+        }
     }
 }
