@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '../abstracts' as abs;
+@use '../themes' as theme;
 
 .nav__link {
     @include abs.font-style(
@@ -10,6 +11,6 @@
     text-transform: capitalize;
 
     &.active {
-        color: abs.$text-primary-color;
+        color: theme.$text-primary-color;
     }
 }
