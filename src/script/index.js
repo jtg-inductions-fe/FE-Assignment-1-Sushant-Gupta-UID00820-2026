@@ -1,10 +1,6 @@
 const hamburger = document.querySelector('.nav__hamburger');
 const drawer = document.querySelector('.nav__drawer');
-<<<<<<< HEAD
-const navLinks = document.querySelectorAll('.nav__link');
-=======
 const navLinks = document.querySelectorAll('.nav-links');
->>>>>>> 55ded75 ([SG_A1_01]: Implemented the nav menu drawer)
 const body = document.body;
 
 hamburger.addEventListener('click', (event) => {
