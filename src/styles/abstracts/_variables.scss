@@ -5,25 +5,10 @@ $breakpoints: (
     desktop: 1441px,
 );
 
-<<<<<<< HEAD
 $font: (
     default: 'Circular Std',
     secondary: 'Inter',
 );
-=======
-// Text colors used across different content types and components.
-$text-primary-color: #222831;
-$text-secondary-color: #f85e9f;
-$text-light-color: #eeeeee;
-$text-card-color: #ff5722;
-
-// Default color used for icons.
-$icon-color: #5d50c6;
-
-// Font families used throughout the application.
-$default-font: 'Circular Std';
-$secondary-font: 'Inter';
->>>>>>> cbfeb1f ([SG_A1_01]: Implemented the Navbar section with responsive design.)
 
 // Font weights used to maintain consistent typography.
 $font-weight: (
