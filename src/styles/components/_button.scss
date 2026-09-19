@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '../abstracts' as abs;
+@use '../themes' as theme;
 
 .btn {
     padding: abs.rem(16) abs.rem(32);
@@ -13,12 +14,12 @@
     @include abs.text-ellipsis;
 
     &--primary {
-        background-color: abs.$btn-primary-color;
-        color: abs.$text-light-color;
+        background-color: theme.$btn-primary-color;
+        color: theme.$text-light-color;
     }
 
     &--secondary {
-        background-color: abs.$btn-secondary-color;
-        color: abs.$text-primary-color;
+        background-color: theme.$btn-secondary-color;
+        color: theme.$text-primary-color;
     }
 }
