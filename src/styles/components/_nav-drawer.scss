@@ -1,0 +1,55 @@
+@use '../abstracts' as abs;
+
+.nav__drawer {
+    position: absolute;
+    top: calc(100% + abs.rem(16));
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: calc(100vh - 100px);
+    padding: abs.rem(24);
+    border-radius: abs.rem(16);
+    background-color: #ffffff;
+    box-shadow: 0 abs.rem(10) abs.rem(30) rgba(0, 0, 0, 0.1);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(abs.rem(-20));
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &-links {
+        overflow-y: scroll;
+    }
+
+    &-ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: abs.rem(24);
+    }
+
+    &-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: abs.rem(12);
+        margin-top: abs.rem(24);
+        text-align: center;
+        text-transform: capitalize;
+
+        .login {
+            border: 0.3px solid gray;
+        }
+    }
+}

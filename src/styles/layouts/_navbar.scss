@@ -1,0 +1,109 @@
+@use '../abstracts' as abs;
+
+.nav {
+    @include abs.flex-mixin(space-between);
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: abs.rem(48);
+    margin-top: abs.rem(35);
+
+    &__brand {
+        @include abs.flex-mixin(space-between);
+        width: 100%;
+    }
+
+    &__logo {
+        width: abs.rem(40);
+        height: abs.rem(40);
+    }
+
+    &__links,
+    &__buttons {
+        display: none;
+    }
+
+    @include abs.tablet-screen {
+        width: 100%;
+        height: abs.rem(113);
+        margin-top: 0;
+
+        &__brand {
+            flex-direction: row-reverse;
+            width: 52.4%;
+        }
+
+        &__buttons {
+            display: flex;
+            height: abs.rem(49);
+
+            .login {
+                @include abs.text-ellipsis(120.25px);
+            }
+
+            .signup {
+                @include abs.text-ellipsis(130.25px);
+            }
+        }
+
+        &__drawer {
+            height: calc(100vh - 130px);
+
+            &-links {
+                overflow-y: scroll;
+            }
+
+            &-ul {
+                gap: abs.rem(42);
+            }
+
+            &-buttons {
+                display: none;
+            }
+        }
+
+        &__link {
+            font-size: abs.rem(24);
+        }
+    }
+
+    @include abs.desktop-screen {
+        justify-content: space-between;
+        width: 100%;
+        height: abs.rem(112);
+        margin-top: abs.rem(34);
+
+        &__brand {
+            flex-direction: inherit;
+            width: auto;
+        }
+
+        .nav__hamburger,
+        .nav__drawer {
+            display: none;
+        }
+
+        &__links {
+            display: block;
+        }
+
+        &__link {
+            font-size: abs.rem(14);
+        }
+
+        &__ul {
+            @include abs.flex-mixin(space-between);
+            gap: abs.rem(64);
+            width: abs.rem(428);
+            height: abs.rem(17);
+            overflow-x: scroll;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+}
