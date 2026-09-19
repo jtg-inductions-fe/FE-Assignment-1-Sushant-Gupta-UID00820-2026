@@ -1,0 +1,15 @@
+@use '../abstracts' as abs;
+
+// Responsive container with breakpoint-based width adjustments.
+.container {
+    width: 100%;
+    padding-inline: abs.rem(16);
+
+    @include abs.tablet-screen {
+        padding-inline: abs.rem(64);
+    }
+
+    @include abs.desktop-screen {
+        padding-inline: abs.rem(130) abs.rem(117);
+    }
+}

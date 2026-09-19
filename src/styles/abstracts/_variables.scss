@@ -1,0 +1,18 @@
+// Responsive breakpoints for mobile, tablet, and desktop layouts.
+$breakpoints: (
+    mobile: 431px,
+    tablet: 1025px,
+    desktop: 1441px,
+);
+
+$font: (
+    default: 'Circular Std',
+    secondary: 'Inter',
+);
+
+// Font weights used to maintain consistent typography.
+$font-weight: (
+    bold: 700,
+    medium: 500,
+    regular: 400,
+);

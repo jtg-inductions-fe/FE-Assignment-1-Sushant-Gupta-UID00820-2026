@@ -1,0 +1,48 @@
+@use 'sass:map';
+@use './variables' as var;
+@use '../themes' as pal;
+
+@mixin flex-mixin($justify: center) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+
+// Truncates the text if it exceeds the width
+@mixin text-ellipsis($max-width: 100%) {
+    max-width: $max-width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Sets the font family and styles ($size is now first!)
+@mixin font-style(
+    $size,
+    $font: map.get(var.$font, default),
+    $align: start,
+    $color: pal.$text-primary-color,
+    $line-height: 1.2,
+    $weight: map.get(var.$font-weight, regular)
+) {
+    font-family: $font;
+    font-size: $size;
+    text-align: $align;
+    color: $color;
+    line-height: $line-height;
+    font-weight: $weight;
+}
+
+// Media query for tablet screen (Fixed to use local $breakpoints map)
+@mixin tablet-screen {
+    @media (min-width: map.get(var.$breakpoints, mobile)) {
+        @content;
+    }
+}
+
+// Media query for desktop screen (Fixed to use local $breakpoints map)
+@mixin desktop-screen {
+    @media (min-width: map.get(var.$breakpoints, tablet)) {
+        @content;
+    }
+}

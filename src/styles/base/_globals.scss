@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+// Global body styles including the default font, text color, and page background color.
+body {
+    font-family: map.get(abs.$font, default);
+    color: theme.$text-primary-color;
+    background-color: #ffffff;
+}
+
+// Maintains the image's aspect ratio when its width is resized.
+img {
+    height: auto;
+}
