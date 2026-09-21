@@ -1,4 +1,5 @@
 @use '../abstracts' as abs;
+@use '../themes' as theme;
 
 .brands {
     height: abs.rem(72);
@@ -22,7 +23,7 @@
 
         &__imgs {
             height: abs.rem(96);
-            width: abs.rem(575);
+            width: abs.rem(570);
             margin-top: abs.rem(32);
         }
 
