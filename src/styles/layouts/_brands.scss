@@ -1,0 +1,43 @@
+@use '../abstracts' as abs;
+
+.brands {
+    height: abs.rem(72);
+
+    &__imgs {
+        width: 100%;
+        height: 100%;
+        @include abs.flex-mixin;
+        flex-wrap: wrap;
+        gap: abs.rem(27);
+    }
+
+    &__img {
+        height: abs.rem(20);
+    }
+
+    @include abs.tablet-screen {
+        height: abs.rem(224);
+        margin-top: 0;
+        @include abs.flex-mixin;
+
+        &__imgs {
+            height: abs.rem(96);
+            width: abs.rem(575);
+            margin-top: abs.rem(32);
+        }
+
+        &__img {
+            height: abs.rem(32);
+        }
+    }
+
+    @include abs.desktop-screen {
+        height: abs.rem(158.38);
+        &__imgs {
+            width: 100%;
+            height: abs.rem(32);
+            gap: abs.rem(100);
+            margin-top: 0;
+        }
+    }
+}
