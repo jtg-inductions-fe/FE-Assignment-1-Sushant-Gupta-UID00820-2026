@@ -196,7 +196,7 @@
                 margin-top: abs.rem(32);
 
                 .h1 {
-                    width: 70%;
+                    width: 75%;
                     margin-inline: auto;
                     font-size: abs.rem(56);
                     margin-top: abs.rem(45);
@@ -208,6 +208,10 @@
                     font-size: abs.rem(18);
                     line-height: 1.6;
                     margin-top: abs.rem(40);
+                }
+
+                &--secondary {
+                    padding-right: abs.rem(15);
                 }
             }
 
