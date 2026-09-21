@@ -151,6 +151,7 @@
             gap: abs.rem(24);
             margin-top: abs.rem(32);
             border-radius: abs.rem(40);
+            margin-bottom: abs.rem(64);
         }
     }
 
@@ -371,7 +372,7 @@
         display: block;
         position: absolute;
         scale: 0.5;
-        bottom: -12%;
+        bottom: -6.5%;
         left: -2.17%;
     }
 
