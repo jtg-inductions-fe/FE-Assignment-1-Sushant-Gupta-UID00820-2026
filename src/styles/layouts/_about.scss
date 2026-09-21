@@ -62,9 +62,7 @@
 
     @include abs.tablet-screen {
         width: 100%;
-        margin-top: 0;
-        padding-top: 0;
-
+        margin-top: abs.rem(16);
         &__img {
             height: abs.rem(819.4351196289062);
         }
