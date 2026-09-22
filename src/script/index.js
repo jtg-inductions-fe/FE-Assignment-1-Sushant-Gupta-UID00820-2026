@@ -1,35 +1,33 @@
 const hamburger = document.querySelector('.nav__hamburger');
-const drawer = document.querySelector('.nav__drawer');
-const navLinks = document.querySelectorAll('.nav__link');
+const linksContainer = document.querySelector('.nav__links');
 const body = document.body;
 
+// Toggle Mobile Drawer
 hamburger.addEventListener('click', (event) => {
     event.stopPropagation();
-
-    const isOpen = drawer.classList.toggle('is-open');
-
+    const isOpen = linksContainer.classList.toggle('is-open');
     hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
 });
 
-drawer.addEventListener('click', (event) => {
-    event.stopPropagation();
-});
-
+// Close drawer when clicking outside
 body.addEventListener('click', () => {
-    drawer.classList.remove('is-open');
+    linksContainer.classList.remove('is-open');
     hamburger.setAttribute('aria-label', 'Open menu');
 });
 
-navLinks.forEach((nl) => {
-    nl.addEventListener('click', () => {
-        let activated;
-        for (let key in navLinks) {
-            if (navLinks[key].classList?.value.includes('active') == true) {
-                activated = navLinks[key];
-            }
-        }
+// Prevent clicks inside drawer from closing it, and handle active link state
+linksContainer.addEventListener('click', (event) => {
+    event.stopPropagation();
 
-        activated.classList.remove('active');
-        nl.classList.add('active');
-    });
+    const link = event.target.closest('.nav__link');
+    if (!link) return;
+
+    const container = link.closest('ul');
+    if (container) {
+        const currentActive = container.querySelector('.nav__link.active');
+        if (currentActive) {
+            currentActive.classList.remove('active');
+        }
+        link.classList.add('active');
+    }
 });

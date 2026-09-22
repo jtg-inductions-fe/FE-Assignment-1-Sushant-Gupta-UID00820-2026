@@ -6,8 +6,16 @@
 body {
     font-family: map.get(abs.$font, default);
     color: theme.$text-primary-color;
-    background-color: #ffffff;
-    padding-top: 0.1px;
+    background-color: theme.$body-background-color;
+    padding-top: abs.rem(35);
+
+    @include abs.tablet-screen {
+        padding-top: 0;
+    }
+
+    @include abs.desktop-screen {
+        padding-top: abs.rem(34);
+    }
 }
 
 // Maintains the image's aspect ratio when its width is resized.

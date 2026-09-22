@@ -1,4 +1,3 @@
-@use 'sass:map';
 @use '../abstracts' as abs;
 @use '../themes' as theme;
 
@@ -6,11 +5,19 @@
     @include abs.font-style(
         $size: abs.rem(16),
         $color: #19182580,
-        $weight: map.get(abs.$font-weight, bold)
+        $weight: abs.get(abs.$font-weight, bold)
     );
     text-transform: capitalize;
 
     &.active {
         color: theme.$text-primary-color;
+    }
+
+    @include abs.tablet-screen {
+        font-size: abs.rem(24);
+    }
+
+    @include abs.desktop-screen {
+        font-size: abs.rem(14);
     }
 }
