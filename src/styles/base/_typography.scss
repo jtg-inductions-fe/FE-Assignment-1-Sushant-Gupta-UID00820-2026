@@ -1,0 +1,100 @@
+@use 'sass:map';
+@use '../abstracts' as abs;
+
+.heading {
+    @include abs.font-style(
+        $size: abs.rem(24),
+        $weight: map.get(abs.$font-weight, bold),
+        $line-height: 1.2
+    );
+
+    &--sm {
+        font-size: abs.rem(24);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(28);
+        }
+    }
+
+    &--md {
+        font-size: abs.rem(32);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(40);
+        }
+
+        @include abs.desktop-screen {
+            font-size: abs.rem(44);
+        }
+    }
+
+    &--lg {
+        font-size: abs.rem(32);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(40);
+        }
+
+        @include abs.desktop-screen {
+            font-size: abs.rem(44);
+        }
+    }
+
+    &--xl {
+        font-size: abs.rem(40);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(56);
+        }
+
+        @include abs.desktop-screen {
+            font-size: abs.rem(69);
+        }
+    }
+}
+
+.subtitle {
+    @include abs.font-style(
+        $size: abs.rem(16),
+        $weight: map.get(abs.$font-weight, bold)
+    );
+    text-transform: uppercase;
+    letter-spacing: 1.2;
+
+    &--sm {
+        font-size: abs.rem(16);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(23);
+        }
+    }
+}
+
+.paragraph {
+    @include abs.font-style(
+        $size: abs.rem(16),
+        $font: map.get(abs.$font, secondary),
+        $weight: map.get(abs.$font-weight, regular),
+        $line-height: 1.6
+    );
+
+    &--sm {
+        font-size: abs.rem(14);
+    }
+
+    &--md {
+        font-size: abs.rem(16);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(18);
+        }
+    }
+
+    &--lg {
+        font-size: abs.rem(18);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(23);
+        }
+    }
+}

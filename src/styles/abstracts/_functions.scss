@@ -1,0 +1,6 @@
+@use 'sass:math';
+
+// Converts a pixel value to rem units based on a 16px root font size.
+@function rem($px) {
+    @return math.div($px, 10) * 1rem;
+}
