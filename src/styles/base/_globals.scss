@@ -1,10 +1,9 @@
-@use 'sass:map';
 @use '../abstracts' as abs;
 @use '../themes' as theme;
 
 // Global body styles including the default font, text color, and page background color.
 body {
-    font-family: map.get(abs.$font, default);
+    font-family: abs.get(abs.$font, default);
     color: theme.$text-primary-color;
     background-color: theme.$body-background-color;
     padding-top: abs.rem(35);
