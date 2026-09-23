@@ -1,4 +1,3 @@
-@use 'sass:map';
 @use '../abstracts' as abs;
 @use '../themes' as theme;
 
@@ -25,7 +24,7 @@
             @include abs.font-style(
                 $size: abs.rem(16),
                 $color: theme.$text-secondary-color,
-                $weight: map.get(abs.$font-weight, bold),
+                $weight: abs.get(abs.$font-weight, bold),
                 $align: center
             );
             text-transform: uppercase;
@@ -36,7 +35,7 @@
             @include abs.font-style(
                 $size: abs.rem(32),
                 $align: center,
-                $weight: map.get(abs.$font-weight, bold)
+                $weight: abs.get(abs.$font-weight, bold)
             );
             margin-top: abs.rem(16);
         }

@@ -1,4 +1,3 @@
-@use 'sass:map';
 @use '../abstracts' as abs;
 @use '../themes' as theme;
 
@@ -15,14 +14,14 @@
         @include abs.font-style(
             $size: abs.rem(35),
             $color: theme.$stats-card-color,
-            $weight: map.get(abs.$font-weight, bold)
+            $weight: abs.get(abs.$font-weight, bold)
         );
     }
 
     &__desc {
         @include abs.font-style(
             $size: abs.rem(18),
-            $font: map.get(abs.$font, secondary)
+            $font: abs.get(abs.$font, secondary)
         );
     }
 
