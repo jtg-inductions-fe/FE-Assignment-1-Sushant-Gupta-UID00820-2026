@@ -1,4 +1,3 @@
-@use 'sass:map';
 @use '../abstracts' as abs;
 @use '../themes' as theme;
 
@@ -137,7 +136,7 @@
                 width: 98%;
                 margin-top: abs.rem(23);
                 font-size: abs.rem(16);
-                font-family: map.get(abs.$font, secondary);
+                font-family: abs.get(abs.$font, secondary);
                 opacity: 0.6;
                 text-align: center;
                 opacity: 0.5;
