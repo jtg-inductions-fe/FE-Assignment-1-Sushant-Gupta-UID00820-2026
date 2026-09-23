@@ -14,12 +14,12 @@
 
         @include abs.tablet-screen {
             flex-direction: row-reverse;
-            width: 52.4%;
+            flex: 0.691;
         }
 
         @include abs.desktop-screen {
-            flex-direction: inherit;
-            width: auto;
+            flex-direction: row;
+            flex: 0.075;
         }
     }
 
@@ -116,22 +116,19 @@
     &__buttons {
         display: none;
 
-        @include abs.tablet-screen {
-            display: flex;
-            transform: translate(abs.rem(0), abs.rem(2));
-            height: abs.rem(49);
-
-            .login {
-                @include abs.text-ellipsis(abs.rem(120.25));
-            }
-
-            .signup {
-                @include abs.text-ellipsis(abs.rem(130.25));
-            }
+        .login {
+            @include abs.text-ellipsis(abs.rem(120.25));
+            border: none;
         }
 
-        @include abs.desktop-screen {
+        .signup {
+            @include abs.text-ellipsis(abs.rem(130.25));
+        }
+
+        @include abs.tablet-screen {
             display: flex;
+            transform: translate(abs.rem(0), abs.rem(1));
+            height: abs.rem(49);
         }
     }
 
