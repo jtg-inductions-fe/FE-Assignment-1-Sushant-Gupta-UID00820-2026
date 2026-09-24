@@ -1,13 +1,73 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>Travlog</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="shortcut icon"
+            href="/assets/images/logo.png"
+            type="image/x-icon"
+        />
         <link rel="stylesheet" href="src/styles/main.scss" />
     </head>
+
     <body>
-        <div>Hello World</div>
+        <header class="navbar container">
+            <nav class="nav">
+                <div class="nav__brand">
+                    <a href="#" class="nav__logo-link">
+                        <img
+                            src="/assets/images/logo.webp"
+                            alt="logo-img"
+                            class="nav__logo"
+                        />
+                    </a>
+                    <button
+                        class="nav__hamburger"
+                        type="button"
+                        aria-label="Open menu"
+                    >
+                        <i class="icon icon-menubar"></i>
+                    </button>
+                </div>
+
+                <div class="nav__links nav__drawer">
+                    <div class="nav__drawer-links">
+                        <ul class="nav__ul">
+                            <li>
+                                <a class="nav__link active" href="#">home</a>
+                            </li>
+                            <li><a class="nav__link" href="#">discover</a></li>
+                            <li>
+                                <a class="nav__link" href="#">special deals</a>
+                            </li>
+                            <li><a class="nav__link" href="#">contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav__drawer-buttons">
+                        <button class="btn btn--secondary login">log in</button>
+                        <button class="btn btn--primary signup">sign up</button>
+                    </div>
+                </div>
+
+                <div class="nav__buttons">
+                    <button
+                        class="btn btn--secondary login"
+                        aria-label="Login Button"
+                    >
+                        log in
+                    </button>
+                    <button
+                        class="btn btn--primary signup"
+                        aria-label="Signup Button"
+                    >
+                        sign up
+                    </button>
+                </div>
+            </nav>
+        </header>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

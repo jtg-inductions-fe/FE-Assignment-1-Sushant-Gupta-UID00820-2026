@@ -1,6 +1,6 @@
-@use 'sass:map';
 @use './variables' as var;
 @use '../themes' as pal;
+@use './functions' as func;
 
 @mixin flex-mixin($justify: center) {
     display: flex;
@@ -19,11 +19,11 @@
 // Sets the font family and styles ($size is now first!)
 @mixin font-style(
     $size,
-    $font: map.get(var.$font, default),
+    $font: func.get(var.$font, default),
     $align: start,
     $color: pal.$text-primary-color,
     $line-height: 1.2,
-    $weight: map.get(var.$font-weight, regular)
+    $weight: func.get(var.$font-weight, regular)
 ) {
     font-family: $font;
     font-size: $size;
@@ -35,14 +35,14 @@
 
 // Media query for tablet screen (Fixed to use local $breakpoints map)
 @mixin tablet-screen {
-    @media (min-width: map.get(var.$breakpoints, mobile)) {
+    @media (min-width: func.get(var.$breakpoints, mobile)) {
         @content;
     }
 }
 
 // Media query for desktop screen (Fixed to use local $breakpoints map)
 @mixin desktop-screen {
-    @media (min-width: map.get(var.$breakpoints, tablet)) {
+    @media (min-width: func.get(var.$breakpoints, tablet)) {
         @content;
     }
 }

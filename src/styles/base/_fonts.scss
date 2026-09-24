@@ -1,9 +1,8 @@
-@use 'sass:map';
 @use '../abstracts' as abs;
 
 // Circular Std font family with regular, medium, and bold weights.
 @font-face {
-    font-family: map.get(abs.$font, default);
+    font-family: abs.get(abs.$font, default);
     src: url('/assets/fonts/CircularStd-Book.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
@@ -11,7 +10,7 @@
 }
 
 @font-face {
-    font-family: map.get(abs.$font, default);
+    font-family: abs.get(abs.$font, default);
     src: url('/assets/fonts/CircularStd-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
@@ -19,7 +18,7 @@
 }
 
 @font-face {
-    font-family: map.get(abs.$font, default);
+    font-family: abs.get(abs.$font, default);
     src: url('/assets/fonts/CircularStd-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
@@ -28,7 +27,7 @@
 
 // Inter variable font supporting a range of font weights.
 @font-face {
-    font-family: map.get(abs.$font, secondary);
+    font-family: abs.get(abs.$font, secondary);
     src: url('/assets/fonts/inter-latin-400-normal.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
@@ -36,7 +35,7 @@
 }
 
 @font-face {
-    font-family: map.get(abs.$font, secondary);
+    font-family: abs.get(abs.$font, secondary);
     src: url('/assets/fonts/inter-latin-500-normal.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
@@ -44,7 +43,7 @@
 }
 
 @font-face {
-    font-family: map.get(abs.$font, secondary);
+    font-family: abs.get(abs.$font, secondary);
     src: url('/assets/fonts/inter-latin-700-normal.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;

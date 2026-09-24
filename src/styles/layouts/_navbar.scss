@@ -1,0 +1,205 @@
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+.nav {
+    @include abs.flex-mixin(space-between);
+    position: relative;
+    z-index: abs.get(abs.$z-index, nav);
+    width: 100%;
+    height: abs.rem(48);
+
+    &__brand {
+        @include abs.flex-mixin(space-between);
+        width: 100%;
+
+        @include abs.tablet-screen {
+            flex-direction: row-reverse;
+            flex: 0.691;
+        }
+
+        @include abs.desktop-screen {
+            flex-direction: row;
+            flex: 0.075;
+        }
+    }
+
+    &__logo {
+        width: abs.rem(40);
+        height: abs.rem(40);
+    }
+
+    &__drawer {
+        &-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: abs.rem(16);
+
+            @include abs.tablet-screen {
+                display: none;
+            }
+        }
+    }
+
+    &__links {
+        position: absolute;
+        top: calc(100% + abs.rem(16));
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: calc(100vh - abs.get(abs.$nav-height, mobile));
+        padding: abs.rem(24);
+        border-radius: abs.rem(16);
+        background-color: theme.$body-background-color;
+        box-shadow: 0 abs.rem(10) abs.rem(30) rgba(0, 0, 0, 0.1);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(abs.rem(-20));
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+        &.is-open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        &-links {
+            overflow-y: scroll;
+        }
+
+        &-buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: abs.rem(12);
+            margin-top: abs.rem(24);
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        @include abs.tablet-screen {
+            height: calc(100vh - abs.get(abs.$nav-height, tablet));
+
+            &-links {
+                overflow-y: scroll;
+            }
+
+            &-buttons {
+                display: none;
+            }
+        }
+
+        @include abs.desktop-screen {
+            position: static;
+            display: block !important;
+            width: auto;
+            height: auto;
+            padding: 0;
+            background-color: transparent;
+            box-shadow: none;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+            transition: none;
+
+            &-buttons {
+                display: none;
+            }
+        }
+    }
+
+    &__buttons {
+        display: none;
+
+        .login {
+            @include abs.text-ellipsis(abs.rem(120.25));
+            border: none;
+        }
+
+        .signup {
+            @include abs.text-ellipsis(abs.rem(130.25));
+        }
+
+        @include abs.tablet-screen {
+            display: flex;
+            transform: translate(abs.rem(0), abs.rem(1));
+            height: abs.rem(49);
+        }
+    }
+
+    &__ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: abs.rem(24);
+
+        @include abs.desktop-screen {
+            @include abs.flex-mixin(space-between);
+            flex-direction: row;
+            gap: abs.rem(64);
+            width: abs.rem(428);
+            height: abs.rem(17);
+            overflow-x: scroll;
+            white-space: nowrap;
+            scrollbar-width: none;
+            transform: translate(abs.rem(0), abs.rem(2));
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
+    &__hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        width: abs.rem(48);
+        height: abs.rem(48);
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        transform: translate(abs.rem(0), abs.rem(0.5));
+
+        .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-size: abs.rem(40);
+            line-height: 1;
+
+            &::before {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                font-size: inherit;
+            }
+        }
+
+        @include abs.desktop-screen {
+            display: none;
+        }
+    }
+
+    @include abs.tablet-screen {
+        width: 100%;
+        height: abs.rem(113);
+        margin-top: 0;
+    }
+
+    @include abs.desktop-screen {
+        justify-content: space-between;
+        width: 100%;
+        height: abs.rem(112);
+    }
+}
