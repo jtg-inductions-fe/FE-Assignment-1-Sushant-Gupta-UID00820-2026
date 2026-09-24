@@ -10,41 +10,49 @@
     &__img {
         height: abs.rem(342);
 
-        .travel-img {
+        &-travel {
             height: 100%;
             width: 100%;
             object-fit: cover;
+        }
+
+        &-star {
+            display: none;
+
+            @include abs.desktop-screen {
+                display: block;
+                position: absolute;
+                scale: 0.5;
+                right: -18.8%;
+                top: 22.3%;
+            }
+        }
+
+        @include abs.tablet-screen {
+            height: abs.rem(819.435);
+        }
+
+        @include abs.desktop-screen {
+            width: abs.rem(866);
+            height: abs.rem(675);
+            margin-bottom: abs.rem(64);
+            margin-top: auto;
+            padding-top: abs.rem(8);
         }
     }
 
     &__texts {
         text-align: center;
         margin-top: abs.rem(32);
-        .h3 {
-            @include abs.font-style(
-                $size: abs.rem(16),
-                $color: theme.$text-secondary-color,
-                $weight: abs.get(abs.$font-weight, bold),
-                $align: center
-            );
-            text-transform: uppercase;
-            letter-spacing: 20%;
+
+        @include abs.tablet-screen {
+            margin-top: abs.rem(64);
         }
 
-        .h1 {
-            @include abs.font-style(
-                $size: abs.rem(32),
-                $align: center,
-                $weight: abs.get(abs.$font-weight, bold)
-            );
-            margin-top: abs.rem(16);
-        }
-
-        .p {
-            opacity: 0.5;
-            margin-top: abs.rem(32);
-            padding-inline: abs.rem(40);
-            text-align: center;
+        @include abs.desktop-screen {
+            margin-top: 0;
+            text-align: left;
+            padding-top: abs.rem(2);
         }
     }
 
@@ -53,47 +61,36 @@
         gap: abs.rem(16);
         flex-direction: column;
         margin-top: abs.rem(32);
-    }
 
-    .card-star {
-        display: none;
-    }
-
-    @include abs.tablet-screen {
-        width: 100%;
-        margin-top: abs.rem(16);
-        &__img {
-            height: abs.rem(819.4351196289062);
-        }
-
-        &__info {
-            padding-inline: abs.rem(65);
-        }
-
-        &__texts {
-            margin-top: abs.rem(64);
-
-            .h3 {
-                font-size: abs.rem(23);
-                @include abs.flex-mixin;
-            }
-
-            .h1 {
-                font-size: abs.rem(40);
-            }
-
-            .p {
-                font-size: abs.rem(18);
-                padding-inline: 0;
-            }
-        }
-
-        &__cards {
+        @include abs.tablet-screen {
             flex-direction: row;
             gap: abs.rem(32);
             flex-wrap: wrap;
             margin-top: abs.rem(64);
         }
+
+        @include abs.desktop-screen {
+            padding-bottom: 0;
+        }
+    }
+
+    &__info {
+        @include abs.tablet-screen {
+            padding-inline: abs.rem(65);
+        }
+
+        @include abs.desktop-screen {
+            width: abs.rem(455.58);
+            padding-inline: 0;
+            height: abs.rem(667);
+            margin-bottom: abs.rem(64);
+            margin-top: auto;
+        }
+    }
+
+    @include abs.tablet-screen {
+        width: 100%;
+        margin-top: abs.rem(16);
     }
 
     @include abs.desktop-screen {
@@ -103,55 +100,5 @@
         height: abs.rem(816.64);
         padding-bottom: 0;
         position: relative;
-        &__img {
-            width: abs.rem(866);
-            height: abs.rem(675);
-            margin-bottom: abs.rem(64);
-            margin-top: auto;
-            padding-top: abs.rem(8);
-        }
-
-        &__info {
-            width: abs.rem(455.58);
-            padding-inline: 0;
-            height: abs.rem(667);
-            margin-bottom: abs.rem(64);
-            margin-top: auto;
-        }
-
-        &__texts {
-            margin-top: 0;
-            text-align: left;
-            padding-top: abs.rem(2);
-
-            .h3 {
-                text-align: left;
-                justify-content: flex-start;
-                align-items: flex-start;
-            }
-
-            .h1 {
-                text-align: left;
-                font-size: abs.rem(44);
-                margin-top: abs.rem(18);
-            }
-
-            .p {
-                text-align: left;
-                margin-top: abs.rem(30);
-            }
-        }
-
-        &__cards {
-            padding-bottom: 0;
-        }
-
-        .card-star {
-            display: block;
-            position: absolute;
-            scale: 0.5;
-            right: -18.8%;
-            top: 22.3%;
-        }
     }
 }
