@@ -3,6 +3,7 @@
 
 .brands {
     height: abs.rem(72);
+    position: relative;
 
     &__imgs {
         width: 100%;
@@ -41,5 +42,25 @@
 
     @include abs.desktop-screen {
         height: abs.rem(158.38);
+    }
+}
+
+.bg-yellow {
+    height: abs.rem(406);
+    width: abs.rem(406);
+    background-color: theme.$back-gradient-yellow;
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(abs.rem(150));
+    right: -40%;
+    top: 12%;
+    display: none;
+
+    @include abs.tablet-screen {
+        display: block;
+    }
+
+    @include abs.desktop-screen {
+        right: -27%;
     }
 }
