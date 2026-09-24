@@ -1,4 +1,5 @@
 @use '../abstracts' as abs;
+@use '../themes/' as theme;
 
 .heading {
     @include abs.font-style(
@@ -62,6 +63,35 @@
 
     &--sm {
         font-size: abs.rem(16);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(23);
+        }
+    }
+}
+
+.paragraph {
+    @include abs.font-style(
+        $size: abs.rem(16),
+        $font: abs.get(abs.$font, secondary),
+        $weight: abs.get(abs.$font-weight, regular),
+        $line-height: 1.6
+    );
+
+    &--sm {
+        font-size: abs.rem(14);
+    }
+
+    &--md {
+        font-size: abs.rem(16);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(18);
+        }
+    }
+
+    &--lg {
+        font-size: abs.rem(18);
 
         @include abs.tablet-screen {
             font-size: abs.rem(23);
