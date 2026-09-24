@@ -25,3 +25,12 @@ $nav-height: (
     mobile: 10rem,
     tablet: 13rem,
 );
+
+$shadows: (
+    icon:
+        '0px 9.75px 9.75px 0px #00000017, 0px 22.07px 13.35px 0px #0000000d, 0px 39.53px 15.91px 0px #00000003, 0px 61.6px 17.45px 0px #00000000',
+    explore:
+        '0px 0px 0px 0px #00000012, 0px 34px 75px 0px #00000012, 0px 137px 137px 0px #0000000F, 0px 308px 185px 0px #0000000A, 0px 548px 219px 0px #00000003, 0px 856px 240px 0px #00000000',
+    hero-btn:
+        '0 0 0 0 #0000001a,0 5px 11px 0 #0000001a, 0 20px 20px 0 #00000017, 0 45px 27px 0 #0000000d, 0 81px 32px 0 #00000003, 0 126px 35px 0 #00000000;',
+);

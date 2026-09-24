@@ -1,5 +1,6 @@
 const hamburger = document.querySelector('.nav__hamburger');
 const linksContainer = document.querySelector('.nav__links');
+const body = document.body;
 
 // Toggle Mobile Drawer
 hamburger.addEventListener('click', (event) => {
