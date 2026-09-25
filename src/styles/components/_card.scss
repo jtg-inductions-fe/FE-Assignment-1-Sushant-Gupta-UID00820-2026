@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../abstracts' as abs;
 @use '../themes' as theme;
 
@@ -14,19 +15,20 @@
         @include abs.font-style(
             $size: abs.rem(35),
             $color: theme.$stats-card-color,
-            $weight: abs.get(abs.$font-weight, bold)
+            $weight: map.get(abs.$font-weight, bold)
         );
     }
 
     &__desc {
         @include abs.font-style(
             $size: abs.rem(18),
-            $font: abs.get(abs.$font, secondary)
+            $font: map.get(abs.$font, secondary)
         );
     }
 
     @include abs.tablet-screen {
-        width: abs.rem(431);
+        max-width: abs.rem(431);
+        flex: 1 1 auto;
     }
 
     @include abs.desktop-screen {
