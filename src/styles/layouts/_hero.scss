@@ -10,7 +10,7 @@
 
     &__visuals {
         position: relative;
-        height: abs.rem(366);
+        aspect-ratio: 396.29 / 366;
         margin-inline: auto;
         background: url('/assets/images/background-globe.webp') no-repeat top /
             contain;
@@ -18,34 +18,26 @@
         align-items: flex-end;
 
         @include abs.tablet-screen {
+            aspect-ratio: 1 / 0.923;
             margin: abs.rem(64) abs.rem(62) 0 abs.rem(62);
-            width: abs.rem(772);
-            height: abs.rem(713);
         }
 
         @include abs.desktop-screen {
-            flex: 1;
             margin: 0;
-            min-width: abs.rem(772);
-            min-height: abs.rem(713);
-            transform: translate(abs.rem(8), 0);
+            max-height: abs.rem(713);
+            flex: 2.03;
         }
     }
 
     &__images {
-        height: abs.rem(324.42);
+        aspect-ratio: 1 / 1.095;
         @include abs.flex-mixin(space-between);
         transform: translate(abs.rem(-4.5), abs.rem(-3));
-        flex: 0.74405;
+        flex: 0.74;
 
         @include abs.tablet-screen {
             transform: translate(abs.rem(-8), abs.rem(-6));
-            width: abs.rem(575);
-            height: abs.rem(632);
-        }
-
-        @include abs.desktop-screen {
-            left: 55%;
+            aspect-ratio: 575 / 632;
         }
     }
 
@@ -53,7 +45,7 @@
         @include abs.flex-mixin(space-between);
         flex-direction: column;
         height: 100%;
-        flex: 0.4745;
+        flex: 0.47;
         background-color: inherit;
 
         .hero__img {
@@ -76,7 +68,6 @@
 
     &__icon {
         position: absolute;
-        z-index: 10;
         @include abs.font-style(
             $size: abs.rem(13.69),
             $align: center,
@@ -90,65 +81,82 @@
             font-size: abs.rem(26.67);
             padding: abs.rem(18.665);
         }
+    }
 
-        &--telegram {
-            top: 48%;
-            left: 7.2%;
-            background-color: theme.$text-secondary-color;
+    &__telegram {
+        top: 42%;
+        left: -5.3%;
+        background-color: theme.$text-secondary-color;
 
-            &::before {
-                padding-top: abs.rem(0.5);
-            }
+        &::before {
+            padding-top: abs.rem(0.5);
         }
 
-        &--add-user {
-            background-color: theme.$back-gradient-orange;
-            left: 61.5%;
+        @include abs.tablet-screen {
+            left: -6%;
         }
+    }
 
-        &--top-places {
-            height: fit-content;
-            width: fit-content;
-            scale: 0.5;
-            border-radius: 0;
-            left: 55.5%;
-            bottom: -5.6%;
+    &__add-user {
+        background-color: theme.$back-gradient-orange;
+        left: 67%;
+        top: 91%;
+    }
+
+    &__top-places {
+        @include abs.flex-mixin;
+        gap: abs.rem(3);
+        height: abs.rem(28.75);
+        min-width: abs.rem(85.21);
+        border-radius: abs.rem(30);
+        left: 87%;
+        bottom: 26%;
+        box-shadow: #{abs.get(abs.$shadows, top-places)};
+
+        font-size: abs.rem(7.19);
+        background-color: theme.$body-background-color;
+        letter-spacing: 2.5%;
+
+        @include abs.tablet-screen {
+            right: -10%;
+            left: 92%;
+            bottom: 27.2%;
             box-shadow: none;
-
-            @include abs.tablet-screen {
-                scale: 1;
-                left: 70%;
-                bottom: 5.35%;
-                box-shadow: none;
-            }
+            font-size: abs.rem(7.19 * 1.1);
+            align-items: center;
+            scale: 1.5;
+            gap: abs.rem(6);
         }
+    }
 
-        &--bag {
-            position: relative;
-            box-shadow: none;
-            gap: 0;
-            padding: 0;
-            font-size: abs.rem(20);
-            transform: translate(abs.rem(0), abs.rem(-2));
-        }
+    &__icon-svg {
+        height: abs.rem(12.32);
+        width: abs.rem(12.32);
+    }
+
+    &__bag {
+        position: relative;
+        box-shadow: none;
+        gap: 0;
+        padding: 0;
+        font-size: abs.rem(20);
+        transform: translate(abs.rem(0), abs.rem(-2));
     }
 
     &__content {
         width: 100%;
+        flex: 1.1;
+        min-width: 0;
 
         @include abs.tablet-screen {
-            width: 100%;
             margin-inline: auto;
-            transform: translate(abs.rem(40), abs.rem(16));
         }
 
         @include abs.desktop-screen {
-            flex: 1;
-            height: abs.rem(577);
-            min-width: abs.rem(420.65);
-            margin-top: 0;
+            margin-top: abs.rem(60);
             text-align: left;
-            transform: translate(abs.rem(47), abs.rem(0));
+            max-height: abs.rem(713);
+            min-width: 0;
         }
     }
 
@@ -166,13 +174,13 @@
         font-weight: 700;
         margin-top: abs.rem(2);
 
-        .text {
-            transform: translate(abs.rem(-2), abs.rem(0));
-        }
-
         @include abs.desktop-screen {
             margin-inline: 0;
         }
+    }
+
+    &__explore-text {
+        transform: translate(abs.rem(-2), abs.rem(0));
     }
 
     &__texts {
@@ -225,10 +233,6 @@
         display: inline-flex;
         text-align: center;
 
-        &-text {
-            margin-top: abs.rem(3);
-        }
-
         &--primary {
             height: abs.rem(65);
             box-shadow: #{abs.get(abs.$shadows, hero-btn)};
@@ -239,11 +243,6 @@
             height: abs.rem(72);
             font-size: abs.rem(14);
             @include abs.flex-mixin;
-
-            i {
-                font-size: abs.rem(20);
-                padding: abs.rem(2);
-            }
         }
 
         @include abs.tablet-screen {
@@ -253,13 +252,17 @@
             }
             &--secondary {
                 height: abs.rem(56);
-
-                .icon-play_circle {
-                    font-size: abs.rem(20);
-                    padding: abs.rem(2);
-                }
             }
         }
+    }
+
+    &__play-circle {
+        font-size: abs.rem(20);
+        padding: abs.rem(2);
+    }
+
+    &__btn-text {
+        margin-top: abs.rem(3);
     }
 
     &__triangles {
@@ -269,37 +272,83 @@
             display: block;
             position: absolute;
             scale: 0.5;
-            bottom: -6.53%;
-            left: -2.17%;
+            bottom: -5.25%;
+            left: 0.5%;
         }
 
         @include abs.desktop-screen {
-            bottom: -17.3%;
-            left: -9.6%;
+            bottom: -28.5%;
+        }
+    }
+
+    &__heading {
+        @include abs.font-style(
+            $size: abs.rem(40),
+            $weight: abs.get(abs.$font-weight, bold)
+        );
+        text-align: center;
+
+        @include abs.tablet-screen {
+            margin-inline: auto;
+            font-size: abs.rem(56);
+            margin-top: abs.rem(45);
+        }
+
+        @include abs.desktop-screen {
+            font-size: abs.rem(69);
+            line-height: 1.2;
+            text-align: start;
+        }
+    }
+
+    &__paragraph {
+        margin-top: abs.rem(23);
+        @include abs.font-style(
+            $size: abs.rem(16),
+            $align: center,
+            $font: abs.get(abs.$font, secondary),
+            $line-height: 1.6
+        );
+        opacity: 0.5;
+        margin-inline: auto;
+
+        @include abs.tablet-screen {
+            width: auto;
+            margin-inline: auto;
+            font-size: abs.rem(18);
+            line-height: 1.6;
+            margin-top: abs.rem(40);
+        }
+
+        @include abs.desktop-screen {
+            margin-inline: 0;
+            text-align: start;
+            font-size: abs.rem(18);
+        }
+    }
+
+    &__paragraph-break {
+        @include abs.tablet-screen {
+            display: block;
         }
     }
 
     @include abs.tablet-screen {
-        width: abs.rem(896);
         margin-top: 0;
-        padding-inline: abs.rem(40);
         justify-content: center;
-        gap: abs.rem(48);
-        margin-left: abs.rem(24);
+        gap: abs.rem(64);
     }
 
     @include abs.desktop-screen {
         @include abs.flex-mixin(space-between);
         flex-direction: row-reverse;
-        width: abs.rem(1192.65);
-        height: abs.rem(832.48);
-        margin-inline: auto;
-        padding-inline: 0;
         gap: abs.rem(40);
+        margin-top: abs.rem(60);
+        max-height: abs.rem(832.48);
     }
 }
 
-.bg-orange {
+.bg__orange {
     position: absolute;
     top: abs.rem(-36);
     left: abs.rem(-33);
