@@ -1,3 +1,6 @@
+import Splide from '@splidejs/splide';
+import '@splidejs/splide/css';
+
 const hamburger = document.querySelector('.nav__hamburger');
 const linksContainer = document.querySelector('.nav__links');
 const body = document.body;
@@ -27,3 +30,64 @@ linksContainer.addEventListener('click', (event) => {
         link.classList.add('active');
     }
 });
+
+const htmlTestimonial = `<li class="splide__slide">
+    <article class="testimonial__content">
+    
+        <div class="testimonial__img">
+            <img
+                src='/assets/images/profile-img.webp'
+                alt="" aria-hidden="true"
+                class="testimonial__image"
+            />
+        </div>
+        <div class="testimonial__footer">
+            <div class="testimonial__author">
+                <span class="testimonial__name"
+                    >Mark Smith
+            </span>
+
+                <span class="testimonial__role">
+                        Travel Enthusiast
+                </span>
+            </div>
+
+            <div class="testimonial__rating" role="img" aria-label="rating 5 out of 5">
+                <i class="icon icon-star testimonial__star" aria-hidden="true"></i>
+                <i class="icon icon-star testimonial__star" aria-hidden="true"></i>
+                <i class="icon icon-star testimonial__star" aria-hidden="true"></i>
+                <i class="icon icon-star testimonial__star" aria-hidden="true"></i>
+                <i class="icon icon-star testimonial__star" aria-hidden="true"></i>
+                
+            </div>
+            <blockquote class="testimonial__text">
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC
+            </blockquote>
+        </div>
+    </article>
+</li>`;
+
+const splide = new Splide('.splide', {
+    type: 'loop',
+    perPage: 1,
+    arrows: true,
+    pagination: true,
+    classes: {
+        pagination: 'splide__pagination my-pagination',
+        page: 'splide__pagination__page dots',
+        arrows: 'splide__arrows my-arrows',
+        arrow: 'splide__arrow my-arrow',
+        prev: 'splide__arrow--prev my-prev icon-left_arrow',
+        next: 'splide__arrow--next my-next icon-right_arrow',
+    },
+});
+
+async function showRating() {
+    const list = document.querySelector('.splide__list');
+    for (let i = 0; i < 3; i++) {
+        list.innerHTML += htmlTestimonial;
+    }
+
+    splide.mount();
+}
+showRating();
