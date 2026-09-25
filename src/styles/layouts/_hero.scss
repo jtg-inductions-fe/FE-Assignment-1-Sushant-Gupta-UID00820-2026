@@ -236,6 +236,10 @@
         &--primary {
             height: abs.rem(65);
             box-shadow: #{abs.get(abs.$shadows, hero-btn)};
+
+            @include abs.tablet-screen {
+                height: abs.rem(49);
+            }
         }
 
         &--secondary {
@@ -243,16 +247,14 @@
             height: abs.rem(72);
             font-size: abs.rem(14);
             @include abs.flex-mixin;
+
+            @include abs.tablet-screen {
+                height: abs.rem(56);
+            }
         }
 
         @include abs.tablet-screen {
             display: flex;
-            &--primary {
-                height: abs.rem(49);
-            }
-            &--secondary {
-                height: abs.rem(56);
-            }
         }
     }
 
