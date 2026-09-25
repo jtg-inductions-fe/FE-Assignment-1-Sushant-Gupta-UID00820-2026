@@ -291,12 +291,14 @@
         text-align: center;
 
         @include abs.tablet-screen {
+            width: abs.rem(630);
             margin-inline: auto;
             font-size: abs.rem(56);
             margin-top: abs.rem(45);
         }
 
         @include abs.desktop-screen {
+            width: 100%;
             font-size: abs.rem(69);
             line-height: 1.2;
             text-align: start;
