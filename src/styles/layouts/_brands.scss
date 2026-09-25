@@ -1,0 +1,65 @@
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+.brands {
+    height: abs.rem(72);
+    position: relative;
+
+    &__imgs {
+        width: 100%;
+        height: 100%;
+        @include abs.flex-mixin;
+        flex-wrap: wrap;
+        gap: abs.rem(27);
+
+        @include abs.tablet-screen {
+            height: abs.rem(96);
+            width: abs.rem(570);
+        }
+
+        @include abs.desktop-screen {
+            width: 100%;
+            height: abs.rem(32);
+            gap: abs.rem(100);
+            margin-top: 0;
+        }
+    }
+
+    &__img {
+        height: abs.rem(20);
+
+        @include abs.tablet-screen {
+            height: abs.rem(32);
+        }
+    }
+
+    @include abs.tablet-screen {
+        height: abs.rem(224);
+        margin-top: 0;
+        @include abs.flex-mixin;
+    }
+
+    @include abs.desktop-screen {
+        height: abs.rem(158.38);
+    }
+}
+
+.bg__yellow {
+    height: abs.rem(406);
+    width: abs.rem(406);
+    background-color: theme.$back-gradient-yellow;
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(abs.rem(150));
+    right: -40%;
+    top: 12%;
+    display: none;
+
+    @include abs.tablet-screen {
+        display: block;
+    }
+
+    @include abs.desktop-screen {
+        right: -27%;
+    }
+}
