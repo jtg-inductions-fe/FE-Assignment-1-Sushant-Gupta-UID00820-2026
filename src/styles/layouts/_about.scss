@@ -90,6 +90,67 @@
         }
     }
 
+    &__subheading {
+        @include abs.font-style(
+            $size: abs.rem(16),
+            $color: theme.$text-secondary-color,
+            $weight: abs.get(abs.$font-weight, bold),
+            $align: center
+        );
+        text-transform: uppercase;
+        letter-spacing: 20%;
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(23);
+            @include abs.flex-mixin;
+            transform: translate(abs.rem(2), abs.rem(2));
+        }
+
+        @include abs.desktop-screen {
+            text-align: left;
+            justify-content: flex-start;
+            align-items: flex-start;
+            transform: translate(abs.rem(0), abs.rem(0));
+        }
+    }
+
+    &__heading {
+        @include abs.font-style(
+            $size: abs.rem(32),
+            $align: center,
+            $weight: abs.get(abs.$font-weight, bold)
+        );
+        margin-top: abs.rem(16);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(40);
+            margin-top: abs.rem(20);
+        }
+
+        @include abs.desktop-screen {
+            text-align: left;
+            font-size: abs.rem(44);
+            margin-top: abs.rem(18);
+        }
+    }
+
+    &__description {
+        opacity: 0.5;
+        margin-top: abs.rem(32);
+        padding-inline: abs.rem(40);
+        text-align: center;
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(18);
+            padding-inline: 0;
+            margin-top: abs.rem(30);
+        }
+
+        @include abs.desktop-screen {
+            text-align: left;
+        }
+    }
+
     @include abs.tablet-screen {
         width: 100%;
         margin-top: abs.rem(16);
