@@ -2,46 +2,42 @@
 @use '../themes' as theme;
 
 .about {
-    width: abs.rem(428);
+    width: 100%;
+    max-width: abs.rem(1321);
     margin: 0 auto;
     margin-top: abs.rem(64);
     padding: abs.rem(64) 0;
 
     &__img {
-        height: abs.rem(342);
-
-        &-travel {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            @include abs.desktop-screen {
-                margin-top: abs.rem(3);
-                scale: 1.005;
-            }
-        }
-
-        &-star {
-            display: none;
-
-            @include abs.desktop-screen {
-                display: block;
-                position: absolute;
-                scale: 0.5;
-                right: -18.8%;
-                top: 22.3%;
-            }
-        }
-
-        @include abs.tablet-screen {
-            height: abs.rem(819.435);
-        }
-
         @include abs.desktop-screen {
-            width: abs.rem(866);
+            max-width: abs.rem(866);
             height: abs.rem(675);
             margin-bottom: abs.rem(64);
             margin-top: auto;
             padding-top: abs.rem(8);
+            scale: 1.04;
+        }
+    }
+
+    &__img-travel {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        @include abs.desktop-screen {
+            margin-top: abs.rem(3);
+            scale: 1.005;
+        }
+    }
+
+    &__img-star {
+        display: none;
+
+        @include abs.desktop-screen {
+            display: block;
+            position: absolute;
+            scale: 0.5;
+            right: -17.7%;
+            top: 22.3%;
         }
     }
 
@@ -84,9 +80,11 @@
         }
 
         @include abs.desktop-screen {
-            width: abs.rem(455.58);
+            flex: 1 0;
+            width: 100%;
+            max-width: abs.rem(455.58);
             padding-inline: 0;
-            height: abs.rem(667);
+            min-height: abs.rem(667);
             margin-bottom: abs.rem(64);
             margin-top: auto;
         }
@@ -105,5 +103,7 @@
         padding-bottom: 0;
         position: relative;
         margin-top: 0;
+        margin-left: abs.rem(15);
+        gap: abs.rem(18);
     }
 }
