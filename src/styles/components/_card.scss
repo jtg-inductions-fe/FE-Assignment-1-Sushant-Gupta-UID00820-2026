@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+.card {
+    height: abs.rem(151);
+    width: abs.rem(348);
+    flex-direction: column;
+    gap: abs.rem(16);
+    border-radius: abs.rem(32);
+    @include abs.flex-mixin;
+    border: 1px solid #1918251a;
+
+    &__stats {
+        @include abs.font-style(
+            $size: abs.rem(35),
+            $color: theme.$stats-card-color,
+            $weight: map.get(abs.$font-weight, bold)
+        );
+    }
+
+    &__desc {
+        @include abs.font-style(
+            $size: abs.rem(18),
+            $font: map.get(abs.$font, secondary)
+        );
+    }
+
+    @include abs.tablet-screen {
+        max-width: abs.rem(431);
+        flex: 1 1 auto;
+    }
+
+    @include abs.desktop-screen {
+        width: abs.rem(211.79);
+    }
+}

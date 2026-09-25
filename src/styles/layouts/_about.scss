@@ -1,0 +1,170 @@
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+.about {
+    width: 100%;
+    max-width: abs.rem(1321);
+    margin: 0 auto;
+    margin-top: abs.rem(64);
+    padding: abs.rem(64) 0;
+
+    &__img {
+        @include abs.desktop-screen {
+            max-width: abs.rem(866);
+            height: abs.rem(675);
+            margin-bottom: abs.rem(64);
+            margin-top: auto;
+            padding-top: abs.rem(8);
+            scale: 1.04;
+        }
+    }
+
+    &__img-travel {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        @include abs.desktop-screen {
+            margin-top: abs.rem(3);
+            scale: 1.005;
+        }
+    }
+
+    &__img-star {
+        display: none;
+
+        @include abs.desktop-screen {
+            display: block;
+            position: absolute;
+            scale: 0.5;
+            right: -17.7%;
+            top: 22.3%;
+        }
+    }
+
+    &__texts {
+        text-align: center;
+        margin-top: abs.rem(32);
+
+        @include abs.tablet-screen {
+            margin-top: abs.rem(64);
+        }
+
+        @include abs.desktop-screen {
+            margin-top: 0;
+            text-align: left;
+            padding-top: abs.rem(2);
+        }
+    }
+
+    &__cards {
+        @include abs.flex-mixin;
+        gap: abs.rem(16);
+        flex-direction: column;
+        margin-top: abs.rem(32);
+
+        @include abs.tablet-screen {
+            flex-direction: row;
+            gap: abs.rem(32);
+            flex-wrap: wrap;
+            margin-top: abs.rem(64);
+        }
+
+        @include abs.desktop-screen {
+            padding-bottom: 0;
+        }
+    }
+
+    &__info {
+        @include abs.tablet-screen {
+            padding-inline: abs.rem(65);
+        }
+
+        @include abs.desktop-screen {
+            flex: 1 0;
+            width: 100%;
+            max-width: abs.rem(455.58);
+            padding-inline: 0;
+            min-height: abs.rem(667);
+            margin-bottom: abs.rem(64);
+            margin-top: auto;
+        }
+    }
+
+    &__subheading {
+        @include abs.font-style(
+            $size: abs.rem(16),
+            $color: theme.$text-secondary-color,
+            $weight: abs.get(abs.$font-weight, bold),
+            $align: center
+        );
+        text-transform: uppercase;
+        letter-spacing: 20%;
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(23);
+            @include abs.flex-mixin;
+            transform: translate(abs.rem(2), abs.rem(2));
+        }
+
+        @include abs.desktop-screen {
+            text-align: left;
+            justify-content: flex-start;
+            align-items: flex-start;
+            transform: translate(abs.rem(0), abs.rem(0));
+        }
+    }
+
+    &__heading {
+        @include abs.font-style(
+            $size: abs.rem(32),
+            $align: center,
+            $weight: abs.get(abs.$font-weight, bold)
+        );
+        margin-top: abs.rem(16);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(40);
+            margin-top: abs.rem(20);
+        }
+
+        @include abs.desktop-screen {
+            text-align: left;
+            font-size: abs.rem(44);
+            margin-top: abs.rem(18);
+        }
+    }
+
+    &__description {
+        opacity: 0.5;
+        margin-top: abs.rem(32);
+        padding-inline: abs.rem(40);
+        text-align: center;
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(18);
+            padding-inline: 0;
+            margin-top: abs.rem(30);
+        }
+
+        @include abs.desktop-screen {
+            text-align: left;
+        }
+    }
+
+    @include abs.tablet-screen {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    @include abs.desktop-screen {
+        width: abs.rem(1321.58);
+        margin-inline: 0;
+        display: flex;
+        height: abs.rem(816.64);
+        padding-bottom: 0;
+        position: relative;
+        margin-top: 0;
+        margin-left: abs.rem(15);
+        gap: abs.rem(18);
+    }
+}
