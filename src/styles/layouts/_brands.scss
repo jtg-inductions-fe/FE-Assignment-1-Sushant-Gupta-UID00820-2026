@@ -15,7 +15,6 @@
         @include abs.tablet-screen {
             height: abs.rem(96);
             width: abs.rem(570);
-            margin-top: abs.rem(32);
         }
 
         @include abs.desktop-screen {
