@@ -12,6 +12,19 @@
             height: abs.rem(766);
             padding-block: abs.rem(8) abs.rem(64);
         }
+
+        @include abs.tablet-screen {
+            height: abs.rem(819.435);
+        }
+
+        @include abs.desktop-screen {
+            scale: 0.43;
+            margin-bottom: abs.rem(64);
+            margin-top: auto;
+            padding-top: abs.rem(8);
+            top: 14.5%;
+            right: -21%;
+        }
     }
 
     &__img-travel {
