@@ -6,15 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
             rel="shortcut icon"
-            href="/assets/images/logo.png"
+            href="/assets/images/logo.webp"
             type="image/x-icon"
         />
         <link rel="stylesheet" href="src/styles/main.scss" />
     </head>
 
     <body>
-        <header class="navbar container">
-            <nav class="nav">
+        <header class="navbar">
+            <nav class="nav container">
                 <div class="nav__brand">
                     <a href="#" class="nav__logo-link">
                         <img
@@ -68,6 +68,101 @@
                 </div>
             </nav>
         </header>
+
+        <main>
+            <div class="bg__orange"></div>
+            <section class="container hero">
+                <section class="hero__visuals">
+                    <div class="hero__images">
+                        <i class="hero__icon hero__telegram icon-telegram"></i>
+                        <i class="hero__icon hero__add-user icon-add_user"></i>
+                        <div class="hero__icon hero__top-places">
+                            <svg
+                                width="9"
+                                height="11"
+                                viewBox="0 0 9 11"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="hero__icon-svg"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M0 4.26973C0 1.90848 1.97316 0 4.35987 0C6.75334 0 8.72651 1.90848 8.72651 4.26973C8.72651 5.45956 8.29378 6.56418 7.58154 7.50048C6.79579 8.53324 5.82736 9.4331 4.73721 10.1394C4.48774 10.3026 4.26259 10.3149 3.98873 10.1394C2.89245 9.4331 1.92398 8.53324 1.14497 7.50048C0.432209 6.56418 0 5.45956 0 4.26973ZM2.92299 4.40268C2.92299 5.19366 3.56847 5.81581 4.35987 5.81581C5.15182 5.81581 5.80354 5.19366 5.80354 4.40268C5.80354 3.6178 5.15182 2.96539 4.35987 2.96539C3.56847 2.96539 2.92299 3.6178 2.92299 4.40268Z"
+                                    fill="#FACD49"
+                                />
+                            </svg>
+                            Top Places
+                        </div>
+                        <div class="hero__images-column">
+                            <img
+                                src="/assets/images/layout-1.webp"
+                                alt="Layout 1"
+                                class="hero__img"
+                            />
+                            <img
+                                src="/assets/images/layout-2.webp"
+                                alt="Layout 2"
+                                class="hero__img"
+                            />
+                        </div>
+                        <div class="hero__images-single">
+                            <img
+                                src="/assets/images/layout-3.webp"
+                                alt="Layout 3"
+                                class="hero__img"
+                            />
+                        </div>
+                    </div>
+                </section>
+                <section class="hero__content">
+                    <div class="hero__explore">
+                        <span class="hero__explore-text"
+                            >Explore the world!</span
+                        >
+                        <i class="hero__icon hero__bag icon-bag"></i>
+                    </div>
+
+                    <div class="hero__texts">
+                        <h1 class="heading hero__heading">
+                            Travel
+                            <span class="hero__texts-highlight"
+                                >top destination</span
+                            >
+                            of the world
+                        </h1>
+                        <p class="paragraph hero__paragraph">
+                            We always make our customer happy by providing
+                            <span class="hero__paragraph-break"
+                                >as many choices as possible</span
+                            >
+                        </p>
+                    </div>
+
+                    <div class="hero__btns">
+                        <button
+                            class="btn btn--primary hero__btn hero__btn--primary"
+                        >
+                            <span class="hero__btn-text">Get Started</span>
+                        </button>
+                        <button
+                            class="btn btn--secondary hero__btn hero__btn--secondary"
+                        >
+                            <i
+                                class="icon icon-play_circle hero__play-circle"
+                            ></i>
+                            <span class="hero__btn-text">Watch Demo</span>
+                        </button>
+                    </div>
+                </section>
+
+                <img
+                    class="hero__triangles"
+                    src="/assets/images/traingles.webp"
+                    alt="Traingles"
+                />
+            </section>
+        </main>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
