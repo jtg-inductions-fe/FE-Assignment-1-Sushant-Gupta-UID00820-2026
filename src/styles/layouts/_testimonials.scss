@@ -192,20 +192,26 @@
     justify-content: stretch;
 
     &__track {
-        width: 100%;
         height: 100%;
         padding-top: abs.rem(64);
+
+        // Flex shorthand: flex-grow, flex-shrink, flex-basis
+        // Yeh track ko container ke andar properly stretch/adjust karega bina fixed % width ke
+        flex: 1 1 auto;
 
         @include abs.tablet-screen {
             height: abs.rem(682);
             padding: 0;
-            width: 75.5%;
+            // width: 75.5%; -> Hatakar flex-basis ya max-width use kar sakte hain
+            flex: 0 0 auto;
+            width: auto; // ya fir agar specific space leni hai toh max-width use karein
+            max-width: 75.5%;
             margin-inline: auto;
         }
 
         @include abs.desktop-screen {
-            width: 80%;
             height: abs.rem(645);
+            max-width: 80%; // width ki jagah max-width best rehta hai flex container me
         }
     }
 
@@ -233,7 +239,9 @@
     }
 
     &--loop {
-        transform: translate(abs.rem(10), 0);
+        @include abs.desktop-screen {
+            transform: translate(abs.rem(10), 0);
+        }
     }
 
     @include abs.tablet-screen {
