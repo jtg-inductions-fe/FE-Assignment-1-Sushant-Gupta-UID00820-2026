@@ -47,12 +47,12 @@
         height: 100%;
         @include abs.flex-mixin(space-between);
         @include abs.tablet-screen {
-            width: 90%;
+            max-width: abs.rem(920);
             height: auto;
         }
 
         @include abs.desktop-screen {
-            width: 85%;
+            max-width: abs.rem(1224);
         }
     }
 
@@ -118,7 +118,7 @@
     }
 
     &__text {
-        width: 89%;
+        max-width: abs.rem(383);
         padding-top: abs.rem(32);
         font-size: abs.rem(18);
         color: theme.$text-primary-color;
@@ -127,10 +127,14 @@
         opacity: 0.75;
 
         @include abs.tablet-screen {
-            width: 83%;
+            max-width: abs.rem(576);
             padding-top: abs.rem(30);
 
             font-size: abs.rem(23);
+        }
+
+        @include abs.desktop-screen {
+            max-width: abs.rem(813);
         }
     }
 
@@ -195,23 +199,20 @@
         height: 100%;
         padding-top: abs.rem(64);
 
-        // Flex shorthand: flex-grow, flex-shrink, flex-basis
-        // Yeh track ko container ke andar properly stretch/adjust karega bina fixed % width ke
         flex: 1 1 auto;
 
         @include abs.tablet-screen {
             height: abs.rem(682);
             padding: 0;
-            // width: 75.5%; -> Hatakar flex-basis ya max-width use kar sakte hain
             flex: 0 0 auto;
-            width: auto; // ya fir agar specific space leni hai toh max-width use karein
+            width: auto;
             max-width: 75.5%;
             margin-inline: auto;
         }
 
         @include abs.desktop-screen {
             height: abs.rem(645);
-            max-width: 80%; // width ki jagah max-width best rehta hai flex container me
+            max-width: 80%;
         }
     }
 
