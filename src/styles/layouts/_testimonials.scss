@@ -1,0 +1,313 @@
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+.testimonial {
+    position: relative;
+    max-width: abs.rem(2000);
+    height: abs.rem(735);
+    padding-top: 0;
+    @include abs.flex-mixin;
+    align-items: start;
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        inset: 0;
+        display: none;
+        width: 100%;
+        max-width: abs.rem(2000);
+        background: url('/assets/images/testimonial-bg.webp') no-repeat center /
+            cover;
+        opacity: 0.1;
+        z-index: -1;
+
+        @include abs.tablet-screen {
+            background-position: 0% 45.5%;
+        }
+
+        @include abs.desktop-screen {
+            background: url('/assets/images/testimonial-bg-2.webp') no-repeat
+                center / cover;
+            background-position: 0 32.5%;
+            opacity: 1;
+        }
+    }
+
+    &__image {
+        width: abs.rem(128);
+        height: abs.rem(128);
+        border-radius: 50%;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    &__main {
+        width: 100%;
+        height: 100%;
+        @include abs.flex-mixin(space-between);
+        @include abs.tablet-screen {
+            max-width: abs.rem(920);
+            height: auto;
+        }
+
+        @include abs.desktop-screen {
+            max-width: abs.rem(1224);
+        }
+    }
+
+    &__header {
+        @include abs.flex-mixin;
+        flex-direction: column;
+        gap: abs.rem(16);
+    }
+
+    &__heading {
+        @include abs.font-style(
+            $size: abs.rem(16),
+            $color: theme.$text-secondary-color,
+            $weight: abs.get(abs.$font-weight, bold)
+        );
+        text-transform: uppercase;
+        letter-spacing: 20%;
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(23);
+        }
+    }
+
+    &__subheading {
+        @include abs.font-style(
+            $size: abs.rem(32),
+            $weight: abs.get(abs.$font-weight, bold)
+        );
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(40);
+        }
+
+        @include abs.desktop-screen {
+            font-size: abs.rem(44);
+        }
+    }
+
+    &__author {
+        font-weight: abs.get(abs.$font-weight, bold);
+        font-size: abs.rem(28);
+        text-align: center;
+    }
+
+    &__role {
+        opacity: 0.75;
+
+        &::before {
+            content: '/';
+        }
+    }
+
+    &__content {
+        padding-top: abs.rem(62);
+        @include abs.flex-mixin;
+        flex-direction: column;
+        gap: abs.rem(64);
+
+        @include abs.tablet-screen {
+            padding-top: abs.rem(52);
+            gap: abs.rem(60);
+        }
+    }
+
+    &__text {
+        max-width: abs.rem(383);
+        padding-top: abs.rem(32);
+        font-size: abs.rem(18);
+        color: theme.$text-primary-color;
+        line-height: 1.6;
+        text-align: center;
+        opacity: 0.75;
+
+        @include abs.tablet-screen {
+            max-width: abs.rem(576);
+            padding-top: abs.rem(30);
+
+            font-size: abs.rem(23);
+        }
+
+        @include abs.desktop-screen {
+            max-width: abs.rem(813);
+        }
+    }
+
+    &__footer {
+        @include abs.flex-mixin;
+        flex-direction: column;
+        gap: abs.rem(32);
+
+        @include abs.tablet-screen {
+            padding-top: abs.rem(0);
+            gap: abs.rem(30);
+        }
+    }
+
+    &__name {
+        font-size: abs.rem(28);
+        color: theme.$back-gradient-orange;
+        opacity: 1;
+    }
+
+    &__role {
+        font-size: abs.rem(23);
+        opacity: 0.75;
+    }
+
+    &__star {
+        font-size: abs.rem(26.67);
+        padding: abs.rem(3.33) abs.rem(3.33) abs.rem(2.67) abs.rem(2.67);
+    }
+
+    &__rating {
+        width: abs.rem(224);
+        @include abs.flex-mixin;
+        gap: abs.rem(16);
+    }
+
+    @include abs.tablet-screen {
+        margin-top: abs.rem(-36);
+
+        &::after {
+            display: block;
+        }
+    }
+
+    @include abs.desktop-screen {
+        padding-top: abs.rem(50);
+        margin-top: abs.rem(16);
+
+        &::after {
+            height: calc(100% - abs.rem(50));
+        }
+    }
+}
+
+.splide {
+    width: 100%;
+    height: 100%;
+    @include abs.flex-mixin;
+    justify-content: stretch;
+
+    &__track {
+        height: 100%;
+        padding-top: abs.rem(64);
+
+        flex: 1 1 auto;
+
+        @include abs.tablet-screen {
+            height: abs.rem(682);
+            padding: 0;
+            flex: 0 0 auto;
+            width: auto;
+            max-width: 75.5%;
+            margin-inline: auto;
+        }
+
+        @include abs.desktop-screen {
+            height: abs.rem(645);
+            max-width: 80%;
+        }
+    }
+
+    &__pagination {
+        gap: abs.rem(20);
+        height: abs.rem(20);
+        margin-bottom: abs.rem(10) !important;
+
+        &__page {
+            width: abs.rem(40);
+            height: abs.rem(40);
+            border-radius: 50%;
+            background-color: #1918250d;
+
+            &.is-active {
+                background-color: theme.$text-secondary-color;
+                opacity: 1;
+            }
+
+            &.dots {
+                width: abs.rem(20);
+                height: abs.rem(20);
+            }
+        }
+    }
+
+    &--loop {
+        @include abs.desktop-screen {
+            transform: translate(abs.rem(10), 0);
+        }
+    }
+
+    @include abs.tablet-screen {
+        height: auto;
+    }
+}
+
+.splide__arrow.my-arrow {
+    position: absolute;
+    top: 36%;
+    width: abs.rem(64);
+    height: abs.rem(64);
+
+    @include abs.tablet-screen {
+        top: 50%;
+        width: abs.rem(100);
+        height: abs.rem(100);
+        font-size: abs.rem(20);
+    }
+
+    &.splide__arrow--next.my-next {
+        background-color: theme.$btn-primary-color;
+        color: white;
+        opacity: 1;
+        right: abs.rem(15);
+        bottom: abs.rem(14);
+
+        @include abs.tablet-screen {
+            top: 49%;
+            right: abs.rem(14);
+        }
+
+        @include abs.desktop-screen {
+            top: 50%;
+            right: abs.rem(18);
+        }
+    }
+
+    svg {
+        display: none;
+    }
+
+    &.splide__arrow--prev.my-prev {
+        background-color: white;
+        left: abs.rem(15);
+        bottom: abs.rem(14);
+
+        @include abs.tablet-screen {
+            top: 49%;
+            left: abs.rem(14);
+        }
+
+        @include abs.desktop-screen {
+            top: 50%;
+        }
+    }
+}
+
+.splide .splide__pagination__page.is-active {
+    background-color: theme.$text-secondary-color;
+    scale: 1 !important;
+    transform: none !important;
+}
+
+.splide__pagination__page.dots {
+    height: abs.rem(24);
+    width: abs.rem(24);
+}
