@@ -3,7 +3,6 @@
 
 .testimonial {
     position: relative;
-    max-width: abs.rem(2000);
     height: abs.rem(735);
     padding-top: 0;
     @include abs.flex-mixin;
@@ -16,7 +15,6 @@
         inset: 0;
         display: none;
         width: 100%;
-        max-width: abs.rem(2000);
         background: url('/assets/images/testimonial-bg.webp') no-repeat center /
             cover;
         opacity: 0.1;
@@ -69,7 +67,7 @@
 
     &__role {
         font-size: abs.rem(23);
-        opacity: 0.75;
+        color: theme.$text-testimonial;
 
         &::before {
             content: '/';
