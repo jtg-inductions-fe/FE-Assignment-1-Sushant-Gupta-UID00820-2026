@@ -1,0 +1,246 @@
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+.footer {
+    padding-top: abs.rem(120);
+    @include abs.flex-mixin(flex-start);
+    align-items: stretch;
+    flex-direction: column;
+    gap: abs.rem(80);
+    max-width: abs.rem(1192.65);
+    margin-inline: abs.rem(32) 0;
+    position: relative;
+
+    &__logo {
+        height: abs.rem(40);
+    }
+
+    &__image {
+        display: none;
+        position: absolute;
+        right: abs.rem(-132);
+        scale: 0.5;
+        top: abs.rem(135);
+
+        @include abs.tablet-screen {
+            display: block;
+        }
+
+        @include abs.desktop-screen {
+            top: 8%;
+            left: 94.7%;
+        }
+    }
+
+    &__left {
+        width: 100%;
+        @include abs.flex-mixin(space-between);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: abs.rem(32);
+
+        @include abs.desktop-screen {
+            max-width: abs.rem(564);
+            gap: abs.rem(35);
+        }
+    }
+
+    &__heading {
+        @include abs.flex-mixin(flex-start);
+        gap: abs.rem(16);
+    }
+
+    &__brand-name {
+        margin-top: abs.rem(2);
+        @include abs.font-style(
+            $size: abs.rem(24),
+            $weight: abs.get(abs.$font-weight, bold),
+            $line-height: abs.rem(40)
+        );
+    }
+
+    &__description {
+        color: grey;
+        font-size: abs.rem(16);
+        line-height: 1.6;
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(23);
+        }
+    }
+
+    &__socials {
+        max-width: abs.rem(160);
+        @include abs.flex-mixin(space-between);
+        align-items: center;
+        gap: abs.rem(32);
+        height: abs.rem(32);
+
+        @include abs.desktop-screen {
+            padding-top: 0;
+            margin-top: abs.rem(28);
+        }
+    }
+
+    &__right {
+        display: block;
+        width: 100%;
+        @include abs.flex-mixin(flex-start);
+        align-items: stretch;
+        gap: abs.rem(48);
+        margin-bottom: abs.rem(48);
+        flex-direction: column;
+        padding-right: abs.rem(32);
+
+        @include abs.tablet-screen {
+            margin-bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: abs.rem(65);
+            width: 100%;
+            padding-top: abs.rem(5);
+        }
+
+        @include abs.desktop-screen {
+            width: auto;
+            padding-right: 0;
+            gap: abs.rem(32);
+        }
+    }
+
+    &__column {
+        @include abs.flex-mixin(space-between);
+        align-items: start;
+        flex-direction: column;
+        position: relative;
+
+        @include abs.tablet-screen {
+            gap: abs.rem(32);
+            justify-content: start;
+        }
+
+        @include abs.desktop-screen {
+            max-width: abs.rem(166.7);
+            gap: abs.rem(35);
+        }
+    }
+
+    &__items {
+        color: grey;
+        text-align: start;
+        line-height: 3;
+        @include abs.font-style(
+            $size: abs.rem(16),
+            $weight: abs.get(abs.$font-weight, regular),
+            $font: abs.get(abs.$font, secondary)
+        );
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(18);
+            line-height: normal;
+            font-style: normal !important;
+        }
+    }
+
+    &__columns {
+        font-size: abs.rem(23);
+
+        &--items {
+            padding-top: abs.rem(30);
+            @include abs.flex-mixin(flex-start);
+            align-items: stretch;
+            gap: abs.rem(30);
+            flex-direction: column;
+            display: none;
+            color: theme.$text-primary-color;
+            opacity: 0.75;
+            font-weight: abs.get(abs.$font-weight, bold);
+
+            @include abs.tablet-screen {
+                padding-top: 0;
+                gap: abs.rem(40);
+                display: flex;
+            }
+        }
+
+        &--active {
+            @include abs.flex-mixin;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        @include abs.tablet-screen {
+            @include abs.flex-mixin(flex-start);
+            align-items: stretch;
+            flex-direction: column;
+            position: static;
+            gap: abs.rem(35);
+        }
+    }
+
+    &__rotate {
+        transform: rotate(180deg);
+    }
+
+    &__accordian-button {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: abs.rem(5);
+        width: abs.rem(10);
+        height: abs.rem(10);
+        padding: abs.rem(10);
+        border: 1 solid grey;
+        border-radius: 50%;
+        @include abs.flex-mixin;
+
+        @include abs.tablet-screen {
+            display: none;
+        }
+    }
+
+    &__icon {
+        font-size: abs.rem(18.64);
+    }
+
+    &__social-link {
+        height: abs.rem(32);
+        width: abs.rem(32);
+        @include abs.flex-mixin;
+        background-color: theme.$icon-color;
+        border-radius: 50%;
+
+        .icon-facebook {
+            background-color: white;
+            border-radius: 50%;
+            font-size: abs.rem(32);
+        }
+    }
+
+    &__drop-down {
+        font-size: abs.rem(24);
+        color: #292d32;
+        transform: translate(abs.rem(-2), abs.rem(-5));
+    }
+
+    @include abs.tablet-screen {
+        padding: abs.rem(165) 0 abs.rem(60) 0;
+        @include abs.flex-mixin(flex-start);
+        align-items: stretch;
+        gap: abs.rem(58);
+        flex-direction: column;
+        width: 87%;
+        margin-left: abs.rem(64);
+    }
+
+    @include abs.desktop-screen {
+        @include abs.flex-mixin(space-between);
+        align-items: start;
+        gap: abs.rem(80);
+        padding-top: abs.rem(224);
+        flex-direction: row;
+        gap: abs.rem(64);
+        max-width: abs.rem(1192.65);
+        margin-left: abs.rem(130);
+    }
+}
