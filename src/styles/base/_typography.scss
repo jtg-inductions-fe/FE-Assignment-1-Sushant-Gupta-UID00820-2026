@@ -98,3 +98,15 @@
         }
     }
 }
+
+.author {
+    font-weight: abs.get(abs.$font-weight, bold);
+    font-size: abs.rem(28);
+    text-align: center;
+}
+
+.text {
+    font-family: abs.get(abs.$font, default);
+    color: theme.$text-testimonial;
+    text-align: center;
+}
