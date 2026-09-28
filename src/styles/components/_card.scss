@@ -32,6 +32,6 @@
     }
 
     @include abs.desktop-screen {
-        width: abs.rem(211.79);
+        flex-basis: abs.rem(211.79);
     }
 }
