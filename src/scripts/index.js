@@ -3,6 +3,7 @@ import './testimonials';
 const hamburger = document.querySelector('.nav__hamburger');
 const linksContainer = document.querySelector('.nav__links');
 const body = document.body;
+const footer = document.querySelector('.footer');
 
 /**
  * Toggles the mobile navigation drawer open/closed state,
@@ -33,5 +34,23 @@ linksContainer.addEventListener('click', (event) => {
             currentActive.classList.remove('active');
         }
         link.classList.add('active');
+    }
+});
+
+/**
+ * Handles the accordion of the footer section
+ * using event delegation
+ */
+footer.addEventListener('click', (event) => {
+    const button = event.target.closest('.footer__accordian-button');
+
+    const icon = button.firstElementChild;
+    const isExpanded = icon.classList.toggle('footer__rotate');
+
+    const navElementId = button.getAttribute('aria-controls');
+    button.setAttribute('aria-expanded', isExpanded);
+    const panel = document.getElementById(navElementId);
+    if (panel) {
+        panel.classList.toggle('footer__columns-items--active');
     }
 });

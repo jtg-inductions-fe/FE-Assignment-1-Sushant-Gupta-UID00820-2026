@@ -7,9 +7,8 @@
     align-items: stretch;
     flex-direction: column;
     gap: abs.rem(80);
-    max-width: abs.rem(1192.65);
-    margin-inline: abs.rem(32) 0;
     position: relative;
+    margin-left: abs.rem(15);
 
     &__logo {
         height: abs.rem(40);
@@ -18,7 +17,7 @@
     &__image {
         display: none;
         position: absolute;
-        right: abs.rem(-132);
+        right: abs.rem(-63);
         scale: 0.5;
         top: abs.rem(135);
 
@@ -28,7 +27,7 @@
 
         @include abs.desktop-screen {
             top: 8%;
-            left: 94.7%;
+            left: 87.5%;
         }
     }
 
@@ -52,11 +51,7 @@
 
     &__brand-name {
         margin-top: abs.rem(2);
-        @include abs.font-style(
-            $size: abs.rem(24),
-            $weight: abs.get(abs.$font-weight, bold),
-            $line-height: abs.rem(40)
-        );
+        line-height: abs.rem(40);
     }
 
     &__description {
@@ -87,10 +82,10 @@
         width: 100%;
         @include abs.flex-mixin(flex-start);
         align-items: stretch;
-        gap: abs.rem(48);
+        gap: abs.rem(80);
         margin-bottom: abs.rem(48);
         flex-direction: column;
-        padding-right: abs.rem(32);
+        padding-right: abs.rem(30);
 
         @include abs.tablet-screen {
             margin-bottom: 0;
@@ -114,8 +109,14 @@
         flex-direction: column;
         position: relative;
 
+        .hide {
+            @include abs.tablet-screen {
+                display: none;
+            }
+        }
+
         @include abs.tablet-screen {
-            gap: abs.rem(32);
+            gap: abs.rem(36);
             justify-content: start;
         }
 
@@ -145,36 +146,36 @@
     &__columns {
         font-size: abs.rem(23);
 
-        &--items {
-            padding-top: abs.rem(30);
-            @include abs.flex-mixin(flex-start);
-            align-items: stretch;
-            gap: abs.rem(30);
-            flex-direction: column;
-            display: none;
-            color: theme.$text-primary-color;
-            opacity: 0.75;
-            font-weight: abs.get(abs.$font-weight, bold);
-
-            @include abs.tablet-screen {
-                padding-top: 0;
-                gap: abs.rem(40);
-                display: flex;
-            }
-        }
-
-        &--active {
-            @include abs.flex-mixin;
-            flex-direction: column;
-            width: 100%;
-        }
-
         @include abs.tablet-screen {
             @include abs.flex-mixin(flex-start);
             align-items: stretch;
             flex-direction: column;
             position: static;
             gap: abs.rem(35);
+        }
+    }
+
+    &__columns-items {
+        padding-top: abs.rem(30);
+        @include abs.flex-mixin(flex-start);
+        align-items: stretch;
+        gap: abs.rem(30);
+        flex-direction: column;
+        display: none;
+        color: theme.$text-testimonial;
+        font-weight: abs.get(abs.$font-weight, bold);
+        font-style: normal;
+
+        @include abs.tablet-screen {
+            padding-top: 0;
+            gap: abs.rem(40);
+            display: flex;
+        }
+
+        &--active {
+            @include abs.flex-mixin;
+            flex-direction: column;
+            width: 100%;
         }
     }
 
@@ -224,13 +225,13 @@
     }
 
     @include abs.tablet-screen {
-        padding: abs.rem(165) 0 abs.rem(60) 0;
+        padding-top: abs.rem(162);
+        padding-bottom: abs.rem(60);
         @include abs.flex-mixin(flex-start);
         align-items: stretch;
         gap: abs.rem(58);
         flex-direction: column;
-        width: 87%;
-        margin-left: abs.rem(64);
+        margin-left: 0;
     }
 
     @include abs.desktop-screen {
@@ -240,7 +241,5 @@
         padding-top: abs.rem(224);
         flex-direction: row;
         gap: abs.rem(64);
-        max-width: abs.rem(1192.65);
-        margin-left: abs.rem(130);
     }
 }
