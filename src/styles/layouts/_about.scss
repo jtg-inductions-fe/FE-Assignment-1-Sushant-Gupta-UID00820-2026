@@ -37,7 +37,7 @@
 
     &__texts {
         text-align: center;
-        margin-top: abs.rem(32);
+        margin-top: abs.rem(30);
 
         @include abs.tablet-screen {
             margin-top: abs.rem(64);
@@ -84,6 +84,7 @@
         color: theme.$text-secondary-color;
         letter-spacing: 20%;
         text-align: center;
+        padding-left: abs.rem(3);
 
         @include abs.tablet-screen {
             @include abs.flex-mixin;
@@ -99,12 +100,8 @@
     }
 
     &__heading {
-        margin-top: abs.rem(16);
+        margin-top: abs.rem(18);
         text-align: center;
-
-        @include abs.tablet-screen {
-            margin-top: abs.rem(18);
-        }
 
         @include abs.desktop-screen {
             text-align: left;
@@ -113,13 +110,12 @@
 
     &__description {
         color: theme.$text-about-description;
-        margin-top: abs.rem(32);
+        margin-top: abs.rem(30);
         padding-inline: abs.rem(40);
         text-align: center;
 
         @include abs.tablet-screen {
             padding-inline: 0;
-            margin-top: abs.rem(30);
         }
 
         @include abs.desktop-screen {
