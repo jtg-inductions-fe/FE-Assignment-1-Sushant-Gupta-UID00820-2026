@@ -3,17 +3,14 @@
 
 .about {
     width: 100%;
-    margin: 0 0;
     margin-top: abs.rem(64);
-    padding: abs.rem(64) 0;
+    padding-block: abs.rem(64);
 
     &__img {
         @include abs.desktop-screen {
-            max-width: abs.rem(901);
-            height: abs.rem(702);
-            margin-bottom: abs.rem(64);
-            margin-top: auto;
-            padding-top: abs.rem(8);
+            max-width: abs.rem(900);
+            height: abs.rem(766);
+            padding-block: abs.rem(8) abs.rem(64);
         }
     }
 
@@ -79,13 +76,10 @@
         }
 
         @include abs.desktop-screen {
-            width: 100%;
             max-width: abs.rem(455.58);
             padding-inline: 0;
             min-height: abs.rem(667);
-            margin-bottom: abs.rem(64);
-            margin-top: auto;
-            margin-left: abs.rem(-20);
+            margin: auto 0 abs.rem(64) abs.rem(-20);
         }
     }
 
@@ -138,7 +132,6 @@
     }
 
     @include abs.tablet-screen {
-        width: 100%;
         margin-top: 0;
     }
 
@@ -148,7 +141,6 @@
         height: abs.rem(816.64);
         padding-bottom: 0;
         position: relative;
-        margin-top: 0;
         gap: abs.rem(18);
     }
 }
