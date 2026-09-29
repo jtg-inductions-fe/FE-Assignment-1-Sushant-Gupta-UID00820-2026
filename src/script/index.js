@@ -1,11 +1,14 @@
 const hamburger = document.querySelector('.nav__hamburger');
 const linksContainer = document.querySelector('.nav__links');
+const body = document.body;
 
 // Toggle Mobile Drawer
 hamburger.addEventListener('click', (event) => {
     event.stopPropagation();
     const isOpen = linksContainer.classList.toggle('is-open');
     hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    body.classList.toggle('no-scroll', isOpen);
+    hamburger.style.zIndex = 30;
 });
 
 // Prevent clicks inside drawer from closing it, and handle active link state

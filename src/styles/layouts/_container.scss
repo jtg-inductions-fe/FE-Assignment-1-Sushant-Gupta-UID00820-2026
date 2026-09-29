@@ -3,7 +3,7 @@
 // Responsive container with breakpoint-based width adjustments.
 .container {
     width: 100%;
-    padding-inline: abs.rem(16);
+    padding-inline: abs.rem(16.86);
 
     @include abs.tablet-screen {
         padding-inline: abs.rem(64);

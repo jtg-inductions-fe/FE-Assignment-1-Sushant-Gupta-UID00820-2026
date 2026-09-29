@@ -17,6 +17,11 @@ body {
     }
 }
 
+body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
 // Maintains the image's aspect ratio when its width is resized.
 img {
     height: auto;

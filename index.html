@@ -6,15 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
             rel="shortcut icon"
-            href="/assets/images/logo.png"
+            href="/assets/images/logo.webp"
             type="image/x-icon"
         />
         <link rel="stylesheet" href="src/styles/main.scss" />
     </head>
 
     <body>
-        <header class="navbar container">
-            <nav class="nav">
+        <header class="navbar">
+            <nav class="nav container">
                 <div class="nav__brand">
                     <a href="#" class="nav__logo-link">
                         <img
@@ -68,6 +68,92 @@
                 </div>
             </nav>
         </header>
+
+        <main>
+            <section class="container hero">
+                <div class="hero__bg-orange"></div>
+                <section class="hero__visuals">
+                    <div class="hero__images">
+                        <i class="hero__icon hero__telegram icon-telegram"></i>
+                        <i class="hero__icon hero__add-user icon-add_user"></i>
+                        <div class="hero__icon hero__top-places">
+                            <img
+                                src="/assets/svgs/top-places.svg"
+                                class="hero__icon-svg"
+                                alt=""
+                                aria-label="hidden"
+                            />
+                            Top Places
+                        </div>
+                        <div class="hero__images-column">
+                            <img
+                                src="/assets/images/layout-1.webp"
+                                alt="Layout 1"
+                                class="hero__img"
+                            />
+                            <img
+                                src="/assets/images/layout-2.webp"
+                                alt="Layout 2"
+                                class="hero__img"
+                            />
+                        </div>
+                        <div class="hero__images-single">
+                            <img
+                                src="/assets/images/layout-3.webp"
+                                alt="Layout 3"
+                                class="hero__img"
+                            />
+                        </div>
+                    </div>
+                </section>
+                <section class="hero__content">
+                    <div class="hero__explore">
+                        <span class="hero__explore-text"
+                            >Explore the world!</span
+                        >
+                        <i class="hero__icon hero__bag icon-bag"></i>
+                    </div>
+
+                    <div class="hero__texts">
+                        <h1 class="heading hero__heading">
+                            Travel
+                            <span class="hero__texts-highlight"
+                                >top destination</span
+                            >
+                            of the world
+                        </h1>
+                        <p class="paragraph hero__paragraph">
+                            We always make our customer happy by providing
+                            <span class="hero__paragraph-break"
+                                >as many choices as possible</span
+                            >
+                        </p>
+                    </div>
+
+                    <div class="hero__btns">
+                        <button
+                            class="btn btn--primary hero__btn hero__btn--primary"
+                        >
+                            <span class="hero__btn-text">Get Started</span>
+                        </button>
+                        <button
+                            class="btn btn--secondary hero__btn hero__btn--secondary"
+                        >
+                            <i
+                                class="icon icon-play_circle hero__play-circle"
+                            ></i>
+                            <span class="hero__btn-text">Watch Demo</span>
+                        </button>
+                    </div>
+                </section>
+
+                <img
+                    class="hero__triangles"
+                    src="/assets/images/traingles.webp"
+                    alt="Traingles"
+                />
+            </section>
+        </main>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
