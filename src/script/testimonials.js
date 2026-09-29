@@ -57,7 +57,7 @@ async function showRating() {
 
         for (let i = 0; i < testimonial.rating; i++) {
             const star = document.createElement('i');
-            star.className = 'icon icon-star testimonial__star';
+            star.classList.add('icon', 'icon-star', 'testimonial__star');
             star.setAttribute('aria-hidden', 'true');
             ratingContainer.appendChild(star);
         }

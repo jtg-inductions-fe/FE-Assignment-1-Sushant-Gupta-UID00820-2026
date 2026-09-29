@@ -63,6 +63,7 @@
     &__heading {
         color: theme.$text-secondary-color;
         letter-spacing: 20%;
+        padding-left: abs.rem(3);
     }
 
     &__role {
