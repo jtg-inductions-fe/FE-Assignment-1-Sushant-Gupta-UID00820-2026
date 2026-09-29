@@ -3,7 +3,7 @@
 @use '../themes' as theme;
 
 .card {
-    height: abs.rem(151);
+    padding-block: abs.rem(34.9);
     width: abs.rem(348);
     gap: abs.rem(16);
     border-radius: abs.rem(32);
