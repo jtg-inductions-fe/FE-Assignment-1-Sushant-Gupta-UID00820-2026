@@ -5,6 +5,7 @@ const hamburger = document.querySelector('.nav__hamburger');
 const linksContainer = document.querySelector('.nav__links');
 const body = document.body;
 const footer = document.querySelector('.footer');
+const nav = document.querySelector('.nav');
 
 /**
  * Toggles the mobile navigation drawer open/closed state,
@@ -16,6 +17,31 @@ hamburger.addEventListener('click', (event) => {
     hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
     body.classList.toggle('no-scroll', isOpen);
     hamburger.style.zIndex = 30;
+});
+
+/**
+ * Tab Capture when drawer is open
+ * using keydown event listener and key tracking
+ */
+nav.addEventListener('keydown', (event) => {
+    event.stopPropagation();
+
+    const isOpen = linksContainer.classList.contains('is-open');
+    if (isOpen && event.key == 'Escape') {
+        linksContainer.classList.toggle('is-open');
+        hamburger.setAttribute('aria-label', 'Close menu');
+        body.classList.toggle('no-scroll');
+    }
+
+    if (isOpen && event.key == 'Tab') {
+        if (
+            event.target.id == 'drawer-signup' ||
+            event.target.id == 'nav-signup'
+        ) {
+            event.stopPropagation();
+            hamburger.focus();
+        }
+    }
 });
 
 /**
