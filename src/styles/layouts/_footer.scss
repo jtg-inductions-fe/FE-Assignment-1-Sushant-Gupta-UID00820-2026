@@ -191,7 +191,6 @@
         width: abs.rem(10);
         height: abs.rem(10);
         padding: abs.rem(10);
-        border: 1 solid grey;
         border-radius: 50%;
         @include abs.flex-mixin;
 
@@ -221,7 +220,7 @@
     &__drop-down {
         font-size: abs.rem(24);
         color: #292d32;
-        transform: translate(abs.rem(-2), abs.rem(-5));
+        margin: abs.rem(-10) 0 0 abs.rem(-5);
     }
 
     @include abs.tablet-screen {
