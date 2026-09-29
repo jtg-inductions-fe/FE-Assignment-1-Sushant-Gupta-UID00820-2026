@@ -90,7 +90,7 @@
 
         @include abs.tablet-screen {
             @include abs.flex-mixin;
-            transform: translate(abs.rem(2), abs.rem(2));
+            padding: abs.rem(2) 0 0 abs.rem(4);
         }
 
         @include abs.desktop-screen {
@@ -106,12 +106,11 @@
         text-align: center;
 
         @include abs.tablet-screen {
-            margin-top: abs.rem(20);
+            margin-top: abs.rem(18);
         }
 
         @include abs.desktop-screen {
             text-align: left;
-            margin-top: abs.rem(18);
         }
     }
 
