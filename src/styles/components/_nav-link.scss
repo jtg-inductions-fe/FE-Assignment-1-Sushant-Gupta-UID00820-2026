@@ -14,7 +14,7 @@
     }
 
     @include abs.tablet-screen {
-        font-size: abs.rem(24);
+        font-size: abs.rem(32);
     }
 
     @include abs.desktop-screen {
