@@ -6,7 +6,7 @@
     position: relative;
     z-index: abs.get(abs.$z-index, nav);
     width: 100%;
-    height: abs.rem(48);
+    padding-top: abs.rem(35);
 
     &__brand {
         @include abs.flex-mixin(space-between);
@@ -24,7 +24,6 @@
 
     &__logo {
         width: abs.rem(40);
-        height: abs.rem(40);
         max-width: fit-content;
     }
 
@@ -40,7 +39,7 @@
 
     &__links {
         position: absolute;
-        top: abs.rem(-35);
+        top: 0;
         left: 0;
         display: flex;
         flex-direction: column;
@@ -64,10 +63,6 @@
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
-        }
-
-        @include abs.tablet-screen {
-            height: 105vh;
         }
 
         @include abs.desktop-screen {
@@ -109,6 +104,10 @@
         flex-direction: column;
         align-items: center;
         gap: abs.rem(24);
+
+        @include abs.tablet-screen {
+            gap: abs.rem(48);
+        }
 
         @include abs.desktop-screen {
             @include abs.flex-mixin(space-between);
@@ -163,13 +162,13 @@
 
     @include abs.tablet-screen {
         width: 100%;
-        height: abs.rem(113);
         margin-top: 0;
+        padding-block: abs.rem(32);
     }
 
     @include abs.desktop-screen {
         justify-content: space-between;
         width: 100%;
-        height: abs.rem(112);
+        padding-top: abs.rem(66);
     }
 }
