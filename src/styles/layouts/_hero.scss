@@ -125,6 +125,7 @@
         font-size: abs.rem(7.19);
         background-color: theme.$body-background-color;
         letter-spacing: 2.5%;
+        white-space: nowrap;
 
         @include abs.tablet-screen {
             right: -10%;
