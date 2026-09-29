@@ -24,7 +24,6 @@
 
         @include abs.desktop-screen {
             margin: 0;
-            max-height: abs.rem(713);
             flex: 2.37;
         }
     }
@@ -165,7 +164,6 @@
         @include abs.desktop-screen {
             margin-top: abs.rem(68);
             text-align: left;
-            max-height: abs.rem(713);
             min-width: 0;
         }
     }
@@ -174,7 +172,7 @@
         @include abs.flex-mixin;
         gap: abs.rem(16);
         width: abs.rem(224);
-        height: abs.rem(56);
+        padding-block: abs.rem(18);
         margin-inline: auto;
         border-radius: abs.rem(30);
         background-color: inherit;
@@ -244,17 +242,18 @@
         text-align: center;
 
         &--primary {
-            height: abs.rem(65);
+            padding-block: abs.rem(22.6);
             box-shadow: #{abs.get(abs.$shadows, hero-btn)};
 
             @include abs.tablet-screen {
                 height: abs.rem(49);
+                padding-block: abs.rem(0) !important;
             }
         }
 
         &--secondary {
             gap: abs.rem(8);
-            height: abs.rem(72);
+            padding-block: abs.rem(23.2);
             font-size: abs.rem(14);
             @include abs.flex-mixin;
 
@@ -386,7 +385,6 @@
         flex-direction: row-reverse;
         gap: abs.rem(40);
         margin-top: abs.rem(60);
-        max-height: abs.rem(832.48);
         margin-bottom: abs.rem(65);
     }
 }
