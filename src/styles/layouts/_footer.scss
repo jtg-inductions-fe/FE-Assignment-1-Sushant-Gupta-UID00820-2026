@@ -198,17 +198,12 @@
 
     @include abs.tablet-screen {
         padding: abs.rem(162) abs.rem(64) abs.rem(64) abs.rem(64);
-        @include abs.flex-mixin(flex-start);
-        align-items: stretch;
+        @include abs.flex-mixin(flex-start, stretch, column);
         gap: abs.rem(60);
-        flex-direction: column;
     }
 
     @include abs.desktop-screen {
-        @include abs.flex-mixin(space-between);
-        align-items: start;
-        gap: abs.rem(80);
-        flex-direction: row;
+        @include abs.flex-mixin(space-between, start, row);
         gap: abs.rem(64);
         padding: abs.rem(224) abs.rem(117) abs.rem(64) abs.rem(130);
     }
