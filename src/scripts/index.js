@@ -45,7 +45,7 @@ footer.addEventListener('click', (event) => {
     const button = event.target.closest('.footer__accordian-button');
 
     const icon = button.firstElementChild;
-    const isExpanded = icon.classList.toggle('footer__rotate');
+    const isExpanded = icon.classList.toggle('footer__drop-down--rotate');
 
     const navElementId = button.getAttribute('aria-controls');
     button.setAttribute('aria-expanded', isExpanded);
