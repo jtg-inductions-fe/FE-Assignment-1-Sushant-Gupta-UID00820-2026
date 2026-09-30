@@ -3,7 +3,7 @@
 
 .testimonial {
     position: relative;
-    height: abs.rem(735);
+    padding-bottom: abs.rem(94.74);
     padding-top: 0;
     @include abs.flex-mixin;
     align-items: start;
@@ -20,7 +20,7 @@
         z-index: -1;
 
         @include abs.tablet-screen {
-            background-position: 0% 45.5%;
+            background-position: 0% 49.2%;
         }
 
         @include abs.desktop-screen {
@@ -56,7 +56,7 @@
     &__header {
         @include abs.flex-mixin;
         flex-direction: column;
-        gap: abs.rem(16);
+        gap: abs.rem(17);
     }
 
     &__heading {
@@ -75,7 +75,6 @@
 
         &::before {
             content: '/';
-            margin: abs.rem(3);
             margin-right: abs.rem(5);
         }
     }
@@ -84,11 +83,11 @@
         padding-top: abs.rem(62);
         @include abs.flex-mixin;
         flex-direction: column;
-        gap: abs.rem(64);
+        gap: abs.rem(66);
 
         @include abs.tablet-screen {
             padding-top: abs.rem(52);
-            gap: abs.rem(60);
+            gap: abs.rem(58);
         }
     }
 
@@ -101,7 +100,7 @@
 
         @include abs.tablet-screen {
             max-width: abs.rem(576);
-            padding-top: abs.rem(30);
+            padding-top: abs.rem(26);
         }
 
         @include abs.desktop-screen {
@@ -132,7 +131,7 @@
     &__rating {
         width: abs.rem(224);
         @include abs.flex-mixin;
-        gap: abs.rem(16);
+        gap: abs.rem(15);
     }
 
     @include abs.tablet-screen {
@@ -145,7 +144,7 @@
 
     @include abs.desktop-screen {
         padding-top: abs.rem(50);
-        margin-top: abs.rem(16);
+        margin-top: abs.rem(0);
 
         &::after {
             height: calc(100% - abs.rem(50));
