@@ -51,12 +51,8 @@
 
     &__description {
         color: theme.$text-about-description;
-        font-size: abs.rem(16);
         line-height: 1.6;
-
-        @include abs.tablet-screen {
-            font-size: abs.rem(23);
-        }
+        text-transform: none;
     }
 
     &__socials {
@@ -114,7 +110,7 @@
 
     &__items {
         text-align: start;
-        color: inherit;
+        color: theme.$text-testimonial;
     }
 
     &__columns {
@@ -131,9 +127,6 @@
         @include abs.flex-mixin(flex-start, stretch, column);
         gap: abs.rem(30);
         display: none;
-        color: theme.$text-testimonial;
-        font-weight: abs.get(abs.$font-weight, bold);
-        font-style: normal;
 
         @include abs.tablet-screen {
             gap: abs.rem(32);
