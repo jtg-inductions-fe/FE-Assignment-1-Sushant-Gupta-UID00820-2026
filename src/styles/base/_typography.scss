@@ -9,11 +9,8 @@
     );
 
     &--sm {
-        font-size: abs.rem(24);
-
-        @include abs.tablet-screen {
-            font-size: abs.rem(28);
-        }
+        font-size: abs.rem(28);
+        text-align: center;
     }
 
     &--md {
@@ -91,22 +88,11 @@
     }
 
     &--lg {
+        font-family: abs.get(abs.$font, default);
         font-size: abs.rem(18);
 
         @include abs.tablet-screen {
             font-size: abs.rem(23);
         }
     }
-}
-
-.author {
-    font-weight: abs.get(abs.$font-weight, bold);
-    font-size: abs.rem(28);
-    text-align: center;
-}
-
-.text {
-    font-family: abs.get(abs.$font, default);
-    color: theme.$text-testimonial;
-    text-align: center;
 }

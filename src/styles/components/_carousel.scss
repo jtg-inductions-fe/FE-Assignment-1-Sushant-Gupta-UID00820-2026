@@ -32,22 +32,22 @@
         gap: abs.rem(20);
         height: abs.rem(20);
         margin-bottom: abs.rem(10) !important; // override inline splide margins
+    }
 
-        &__page {
-            width: abs.rem(40);
-            height: abs.rem(40);
-            border-radius: 50%;
-            background-color: #1918250d;
+    &__pagination__page {
+        width: abs.rem(40);
+        height: abs.rem(40);
+        border-radius: 50%;
+        background-color: #1918250d;
 
-            &.is-active {
-                background-color: theme.$text-secondary-color;
-                opacity: 1;
-            }
+        &.is-active {
+            background-color: theme.$text-secondary-color;
+            opacity: 1;
+        }
 
-            &.dots {
-                width: abs.rem(20);
-                height: abs.rem(20);
-            }
+        &.dots {
+            width: abs.rem(20);
+            height: abs.rem(20);
         }
     }
 
