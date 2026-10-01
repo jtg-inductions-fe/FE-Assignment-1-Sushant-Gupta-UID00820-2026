@@ -231,7 +231,89 @@
                     </div>
                 </div>
             </section>
+
+            <section class="testimonial" id="discover">
+                <div class="testimonial__main">
+                    <div class="splide" aria-label="Customer testimonials">
+                        <div class="splide__track">
+                            <div class="testimonial__header">
+                                <h3
+                                    class="subtitle subtitle--sm testimonial__heading"
+                                >
+                                    testimonials
+                                </h3>
+                                <p
+                                    class="heading heading--md testimonial__subheading"
+                                >
+                                    Trust our clients
+                                </p>
+                            </div>
+                            <ul class="splide__list"></ul>
+                        </div>
+                    </div>
+                </div>
+                <template id="testimonial-template">
+                    <li class="splide__slide">
+                        <article class="testimonial__content">
+                            <div class="testimonial__img">
+                                <img
+                                    src="/assets/images/profile-img.webp"
+                                    alt=""
+                                    aria-hidden="true"
+                                    class="testimonial__image"
+                                />
+                            </div>
+                            <div class="testimonial__footer">
+                                <div class="heading heading--sm">
+                                    <span class="testimonial__name"
+                                        >Mark Smith</span
+                                    >
+                                    <span class="testimonial__role"
+                                        >Travel Enthusiast</span
+                                    >
+                                </div>
+
+                                <div
+                                    class="testimonial__rating"
+                                    role="img"
+                                    aria-label="rating 5 out of 5"
+                                >
+                                    <i
+                                        class="icon icon-star testimonial__star"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <i
+                                        class="icon icon-star testimonial__star"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <i
+                                        class="icon icon-star testimonial__star"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <i
+                                        class="icon icon-star testimonial__star"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <i
+                                        class="icon icon-star testimonial__star"
+                                        aria-hidden="true"
+                                    ></i>
+                                </div>
+
+                                <blockquote
+                                    class="paragraph paragraph--lg testimonial__text"
+                                >
+                                    Contrary to popular belief, Lorem Ipsum is
+                                    not simply random text. It has roots in a
+                                    piece of classical Latin literature from 45
+                                    BC
+                                </blockquote>
+                            </div>
+                        </article>
+                    </li>
+                </template>
+            </section>
         </main>
-        <script type="module" src="./src/script/index.js"></script>
+        <script type="module" src="./src/scripts/index.js"></script>
     </body>
 </html>
