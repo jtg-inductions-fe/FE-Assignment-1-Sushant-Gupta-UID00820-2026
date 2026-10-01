@@ -1,4 +1,5 @@
 import './testimonials';
+import './special-deals';
 
 const hamburger = document.querySelector('.nav__hamburger');
 const linksContainer = document.querySelector('.nav__links');
@@ -35,6 +36,10 @@ linksContainer.addEventListener('click', (event) => {
         }
         link.classList.add('active');
     }
+
+    const isOpen = linksContainer.classList.toggle('is-open');
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    body.classList.toggle('no-scroll', isOpen);
 });
 
 /**
