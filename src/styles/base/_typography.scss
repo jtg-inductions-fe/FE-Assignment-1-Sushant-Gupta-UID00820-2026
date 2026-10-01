@@ -96,3 +96,30 @@
         }
     }
 }
+
+.special-text {
+    font-family: abs.get(abs.$font, secondary);
+    line-height: 1;
+
+    &--xs {
+        font-size: abs.rem(10);
+    }
+
+    &--sm {
+        font-size: abs.rem(12);
+    }
+
+    &--md {
+        font-size: abs.rem(14);
+    }
+
+    &--lg {
+        font-size: abs.rem(20);
+    }
+}
+
+.roboto {
+    font-family: abs.get(abs.$font, coupon);
+    font-size: abs.rem(12);
+    font-weight: abs.rem(700);
+}

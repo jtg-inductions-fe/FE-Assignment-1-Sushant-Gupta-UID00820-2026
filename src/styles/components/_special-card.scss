@@ -1,0 +1,59 @@
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+.special-card {
+    display: flex;
+    justify-content: space-between;
+    padding: abs.rem(16);
+    border: abs.rem(1) solid theme.$special-card-border;
+    border-radius: abs.rem(16);
+    background: #{abs.$special-card-gradient};
+    min-width: abs.rem(312);
+
+    &__left {
+        @include abs.flex-mixin(start, start, column);
+        gap: abs.rem(3);
+    }
+
+    &__label {
+        &--expired {
+            color: theme.$special-card-label-expired;
+        }
+    }
+
+    &__expiry {
+        font-weight: abs.get(abs.$font-weight, regular);
+        color: theme.$expire-in-color;
+
+        &--expired {
+            color: theme.$special-card-expiry-expired;
+        }
+    }
+
+    &__right {
+        display: flex;
+        height: fit-content;
+        gap: abs.rem(8);
+    }
+
+    &__code {
+        padding: abs.rem(4) abs.rem(10);
+        border: abs.rem(1) solid theme.$coupon-code-border;
+        border-radius: abs.rem(8);
+    }
+
+    &__copy {
+        height: fit-content;
+        padding: abs.rem(6.5);
+        cursor: pointer;
+
+        &--expired {
+            pointer-events: none;
+        }
+    }
+
+    &--expired {
+        background-color: theme.$special-card-expired-background;
+        border-color: theme.$special-card-expired-border;
+    }
+}
