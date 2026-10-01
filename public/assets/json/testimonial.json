@@ -1,0 +1,26 @@
+[
+    {
+        "id": 2,
+        "name": "Sarah Johnson",
+        "role": "Digital Nomad",
+        "rating": 4,
+        "text": "The service completely exceeded my expectations. Smooth booking and incredible support throughout the entire trip!",
+        "image": "/assets/images/profile-img.webp"
+    },
+    {
+        "id": 1,
+        "name": "Mark Smith",
+        "role": "Travel Enthusiast",
+        "rating": 5,
+        "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.",
+        "image": "/assets/images/profile-img.webp"
+    },
+    {
+        "id": 3,
+        "name": "David Lee",
+        "role": "Photography Blogger",
+        "rating": 5,
+        "text": "An absolute game-changer for anyone who loves exploring off-the-beaten-path destinations. Highly recommended!",
+        "image": "/assets/images/profile-img.webp"
+    }
+]

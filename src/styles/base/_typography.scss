@@ -1,0 +1,125 @@
+@use '../abstracts' as abs;
+@use '../themes/' as theme;
+
+.heading {
+    @include abs.font-style(
+        $size: abs.rem(24),
+        $weight: abs.get(abs.$font-weight, bold),
+        $line-height: 1.2
+    );
+
+    &--sm {
+        font-size: abs.rem(28);
+        text-align: center;
+    }
+
+    &--md {
+        font-size: abs.rem(32);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(40);
+        }
+
+        @include abs.desktop-screen {
+            font-size: abs.rem(44);
+        }
+    }
+
+    &--lg {
+        font-size: abs.rem(32);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(40);
+        }
+
+        @include abs.desktop-screen {
+            font-size: abs.rem(44);
+        }
+    }
+
+    &--xl {
+        font-size: abs.rem(40);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(56);
+        }
+
+        @include abs.desktop-screen {
+            font-size: abs.rem(69);
+        }
+    }
+}
+
+.subtitle {
+    @include abs.font-style(
+        $size: abs.rem(16),
+        $weight: abs.get(abs.$font-weight, bold)
+    );
+    text-transform: uppercase;
+    letter-spacing: 1.2;
+
+    &--sm {
+        font-size: abs.rem(16);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(23);
+        }
+    }
+}
+
+.paragraph {
+    @include abs.font-style(
+        $size: abs.rem(16),
+        $font: abs.get(abs.$font, secondary),
+        $weight: abs.get(abs.$font-weight, regular),
+        $line-height: 1.6
+    );
+
+    &--sm {
+        font-size: abs.rem(14);
+    }
+
+    &--md {
+        font-size: abs.rem(16);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(18);
+        }
+    }
+
+    &--lg {
+        font-family: abs.get(abs.$font, default);
+        font-size: abs.rem(18);
+
+        @include abs.tablet-screen {
+            font-size: abs.rem(23);
+        }
+    }
+}
+
+.special-text {
+    font-family: abs.get(abs.$font, secondary);
+    line-height: 1;
+
+    &--xs {
+        font-size: abs.rem(10);
+    }
+
+    &--sm {
+        font-size: abs.rem(12);
+    }
+
+    &--md {
+        font-size: abs.rem(14);
+    }
+
+    &--lg {
+        font-size: abs.rem(20);
+    }
+}
+
+.roboto {
+    font-family: abs.get(abs.$font, coupon);
+    font-size: abs.rem(12);
+    font-weight: abs.rem(700);
+}

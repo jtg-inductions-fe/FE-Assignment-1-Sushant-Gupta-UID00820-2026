@@ -1,0 +1,145 @@
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+.about {
+    width: 100%;
+    margin-top: abs.rem(64);
+    padding-block: abs.rem(64);
+
+    &__img {
+        @include abs.desktop-screen {
+            max-width: abs.rem(900);
+            height: abs.rem(766);
+            padding-block: abs.rem(8) abs.rem(64);
+        }
+    }
+
+    &__img-travel {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        @include abs.desktop-screen {
+            margin-top: abs.rem(3);
+            scale: 1.005;
+        }
+    }
+
+    &__img-star {
+        display: none;
+
+        @include abs.desktop-screen {
+            display: block;
+            position: absolute;
+            width: abs.rem(256);
+            height: abs.rem(349);
+            right: 0;
+            top: 43.7%;
+        }
+    }
+
+    &__texts {
+        text-align: center;
+        margin-top: abs.rem(32);
+
+        @include abs.tablet-screen {
+            margin-top: abs.rem(64);
+        }
+
+        @include abs.desktop-screen {
+            margin-top: 0;
+            text-align: left;
+            padding-top: abs.rem(2);
+        }
+    }
+
+    &__cards {
+        @include abs.flex-mixin;
+        gap: abs.rem(16);
+        flex-direction: column;
+        margin-top: abs.rem(32);
+
+        @include abs.tablet-screen {
+            flex-direction: row;
+            gap: abs.rem(32);
+            flex-wrap: wrap;
+            margin-top: abs.rem(64);
+        }
+
+        @include abs.desktop-screen {
+            padding-bottom: 0;
+        }
+    }
+
+    &__info {
+        @include abs.tablet-screen {
+            padding-inline: abs.rem(65);
+        }
+
+        @include abs.desktop-screen {
+            max-width: abs.rem(455.58);
+            padding-inline: 0;
+            min-height: abs.rem(667);
+            margin: auto 0 abs.rem(64) abs.rem(-20);
+        }
+    }
+
+    &__subheading {
+        color: theme.$text-secondary-color;
+        letter-spacing: 20%;
+        text-align: center;
+
+        @include abs.tablet-screen {
+            @include abs.flex-mixin;
+            padding: abs.rem(2) 0 0 abs.rem(4);
+        }
+
+        @include abs.desktop-screen {
+            text-align: left;
+            justify-content: flex-start;
+            align-items: flex-start;
+            transform: translate(abs.rem(0), abs.rem(0));
+        }
+    }
+
+    &__heading {
+        margin-top: abs.rem(16);
+        text-align: center;
+
+        @include abs.tablet-screen {
+            margin-top: abs.rem(18);
+        }
+
+        @include abs.desktop-screen {
+            text-align: left;
+        }
+    }
+
+    &__description {
+        color: theme.$text-about-description;
+        margin-top: abs.rem(32);
+        padding-inline: abs.rem(40);
+        text-align: center;
+
+        @include abs.tablet-screen {
+            padding-inline: 0;
+            margin-top: abs.rem(30);
+        }
+
+        @include abs.desktop-screen {
+            text-align: left;
+        }
+    }
+
+    @include abs.tablet-screen {
+        margin-top: 0;
+    }
+
+    @include abs.desktop-screen {
+        margin-inline: 0;
+        display: flex;
+        height: abs.rem(816.64);
+        padding-bottom: 0;
+        position: relative;
+        gap: abs.rem(18);
+    }
+}

@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?bpgdtn');
+    src:
+        url('/assets/icons/icomoon/fonts/icomoon.eot?bpgdtn#iefix')
+            format('embedded-opentype'),
+        url('/assets/icons/icomoon/fonts/icomoon.ttf?bpgdtn') format('truetype'),
+        url('/assets/icons/icomoon/fonts/icomoon.woff?bpgdtn') format('woff'),
+        url('/assets/icons/icomoon/fonts/icomoon.svg?bpgdtn#icomoon')
+            format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-logo:before {
+    content: '\e900';
+}
+.icon-twitter:before {
+    content: '\e901';
+    color: #f1f2f2;
+}
+.icon-telegram:before {
+    content: '\e902';
+    color: #fff;
+}
+.icon-star:before {
+    content: '\e903';
+    color: #facd49;
+}
+.icon-right_arrow:before {
+    content: '\e904';
+    color: #fff;
+}
+.icon-play_circle:before {
+    content: '\e905';
+    color: #5d50c6;
+}
+.icon-menubar:before {
+    content: '\e906';
+    color: #5d50c6;
+}
+.icon-left_arrow:before {
+    content: '\e907';
+}
+.icon-insta:before {
+    content: '\e908';
+    color: #fff;
+}
+.icon-facebook:before {
+    content: '\e909';
+    color: #5d50c6;
+}
+.icon-drop_down:before {
+    content: '\e90a';
+}
+.icon-bag:before {
+    content: '\e90b';
+    color: #f85e9f;
+}
+.icon-add_user:before {
+    content: '\e90c';
+    color: #fff;
+}

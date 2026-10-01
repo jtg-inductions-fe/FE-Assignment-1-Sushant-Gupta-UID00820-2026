@@ -1,0 +1,57 @@
+/// Global CSS reset.
+///
+/// Removes browser default margins, paddings, list styles, and text decorations while normalizing box sizing, media elements, form controls, links, and tables for consistent rendering across browsers.
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    min-height: 100vh;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+    margin: 0;
+}
+
+button {
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}

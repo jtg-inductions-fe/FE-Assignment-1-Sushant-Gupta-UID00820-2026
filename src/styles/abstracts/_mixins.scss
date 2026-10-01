@@ -1,0 +1,49 @@
+@use './variables' as var;
+@use '../themes' as pal;
+@use './functions' as func;
+
+@mixin flex-mixin($justify: center, $align: center, $direction: row) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+// Truncates the text if it exceeds the width
+@mixin text-ellipsis($max-width: 100%) {
+    max-width: $max-width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Sets the font family and styles ($size is now first!)
+@mixin font-style(
+    $size,
+    $font: func.get(var.$font, default),
+    $align: start,
+    $color: pal.$text-primary-color,
+    $line-height: 1.2,
+    $weight: func.get(var.$font-weight, regular)
+) {
+    font-family: $font;
+    font-size: $size;
+    text-align: $align;
+    color: $color;
+    line-height: $line-height;
+    font-weight: $weight;
+}
+
+// Media query for tablet screen (Fixed to use local $breakpoints map)
+@mixin tablet-screen {
+    @media (min-width: func.get(var.$breakpoints, mobile)) {
+        @content;
+    }
+}
+
+// Media query for desktop screen (Fixed to use local $breakpoints map)
+@mixin desktop-screen {
+    @media (min-width: func.get(var.$breakpoints, tablet)) {
+        @content;
+    }
+}

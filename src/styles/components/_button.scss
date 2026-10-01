@@ -1,0 +1,23 @@
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+.btn {
+    padding: abs.rem(16) abs.rem(32);
+    font-size: abs.rem(14);
+    border-radius: abs.rem(50);
+    white-space: nowrap;
+    font-weight: abs.get(abs.$font-weight, bold);
+    text-transform: capitalize;
+    @include abs.text-ellipsis;
+
+    &--primary {
+        background-color: theme.$btn-primary-color;
+        color: theme.$text-light-color;
+    }
+
+    &--secondary {
+        background-color: theme.$btn-secondary-color;
+        color: theme.$text-primary-color;
+        border: 1px solid #eeeeee;
+    }
+}
