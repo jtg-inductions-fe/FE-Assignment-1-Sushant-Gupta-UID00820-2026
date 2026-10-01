@@ -92,7 +92,7 @@
         gap: abs.rem(32);
         position: relative;
 
-        .hide {
+        &--hide {
             @include abs.tablet-screen {
                 display: none;
             }
@@ -167,12 +167,12 @@
         @include abs.flex-mixin;
         background-color: theme.$icon-color;
         border-radius: 50%;
+    }
 
-        .icon-facebook {
-            background-color: white;
-            border-radius: 50%;
-            font-size: abs.rem(32);
-        }
+    &__icon-facebook {
+        background-color: white;
+        border-radius: 50%;
+        font-size: abs.rem(32);
     }
 
     &__drop-down {
