@@ -2,10 +2,11 @@
 @use '../themes' as pal;
 @use './functions' as func;
 
-@mixin flex-mixin($justify: center) {
+@mixin flex-mixin($justify: center, $align: center, $direction: row) {
     display: flex;
-    align-items: center;
+    align-items: $align;
     justify-content: $justify;
+    flex-direction: $direction;
 }
 
 // Truncates the text if it exceeds the width
