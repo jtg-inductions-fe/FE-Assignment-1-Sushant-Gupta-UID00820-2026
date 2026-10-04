@@ -1,8 +1,13 @@
+import './testimonials';
+
 const hamburger = document.querySelector('.nav__hamburger');
 const linksContainer = document.querySelector('.nav__links');
 const body = document.body;
 
-// Toggle Mobile Drawer
+/**
+ * Toggles the mobile navigation drawer open/closed state,
+ * updates accessibility attributes, and prevents background scrolling.
+ */
 hamburger.addEventListener('click', (event) => {
     event.stopPropagation();
     const isOpen = linksContainer.classList.toggle('is-open');
@@ -11,7 +16,10 @@ hamburger.addEventListener('click', (event) => {
     hamburger.style.zIndex = 30;
 });
 
-// Prevent clicks inside drawer from closing it, and handle active link state
+/**
+ * Handles navigation link selection, preventing event propagation
+ * and managing the active class state for menu items.
+ */
 linksContainer.addEventListener('click', (event) => {
     event.stopPropagation();
 
