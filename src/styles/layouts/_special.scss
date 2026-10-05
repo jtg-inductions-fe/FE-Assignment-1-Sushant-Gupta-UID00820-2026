@@ -156,9 +156,11 @@
     &__segment-text {
         @include abs.flex-mixin;
         height: 100%;
+        padding: abs.rem(20) abs.rem(20) 0 abs.rem(20);
         color: theme.$body-background-color;
-        font-weight: 700;
+        font-weight: abs.get(abs.$font-weight, bold);
         text-align: center;
+        line-height: 1.4;
 
         &--1 {
             rotate: -45deg;
