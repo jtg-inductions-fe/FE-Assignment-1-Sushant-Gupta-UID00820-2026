@@ -53,16 +53,21 @@
     }
 
     &__subheading {
+        line-height: 1;
         color: theme.$heading-color;
         letter-spacing: 10%;
         text-transform: uppercase;
+        font-weight: abs.get(abs.$font-weight, bold);
     }
 
     &__title {
+        line-height: 1;
+        font-weight: abs.get(abs.$font-weight, bold);
         color: theme.$text-primary-color;
     }
 
     &__description {
+        line-height: 1;
         font-weight: abs.get(abs.$font-weight, regular);
         color: theme.$special-para-color;
     }
@@ -84,6 +89,8 @@
         aspect-ratio: 1;
         background-color: theme.$spin-wheel-bg-color;
         border-radius: 50%;
+        border: 4px solid #ffffff;
+        box-shadow: #{abs.get(abs.$shadows, wheel)};
         @include abs.flex-mixin;
         position: relative;
         overflow: hidden;
@@ -101,6 +108,8 @@
         left: 50%;
         transform: translate(-50%, -50%);
         font-weight: abs.get(abs.$font-weight, regular);
+        z-index: 1;
+        line-height: 1;
     }
 
     &__segment {
@@ -109,32 +118,32 @@
         position: absolute;
 
         &--1 {
-            background-color: theme.$spin-quater-1;
+            background-color: theme.$spin-quarter-1;
             top: 0;
             left: 0;
-            border-right: #{abs.$spin-wheel-quater-border};
-            border-bottom: #{abs.$spin-wheel-quater-border};
+            border-right: #{abs.$spin-wheel-quarter-border};
+            border-bottom: #{abs.$spin-wheel-quarter-border};
         }
         &--2 {
-            background-color: theme.$spin-quater-2;
+            background-color: theme.$spin-quarter-2;
             top: 0;
             right: 0;
-            border-left: #{abs.$spin-wheel-quater-border};
-            border-bottom: #{abs.$spin-wheel-quater-border};
+            border-left: #{abs.$spin-wheel-quarter-border};
+            border-bottom: #{abs.$spin-wheel-quarter-border};
         }
         &--3 {
-            background-color: theme.$spin-quater-3;
+            background-color: theme.$spin-quarter-3;
             bottom: 0;
             left: 0;
-            border-right: #{abs.$spin-wheel-quater-border};
-            border-top: #{abs.$spin-wheel-quater-border};
+            border-right: #{abs.$spin-wheel-quarter-border};
+            border-top: #{abs.$spin-wheel-quarter-border};
         }
         &--4 {
-            background-color: theme.$spin-quater-4;
+            background-color: theme.$spin-quarter-4;
             bottom: 0;
             right: 0;
-            border-left: #{abs.$spin-wheel-quater-border};
-            border-top: #{abs.$spin-wheel-quater-border};
+            border-left: #{abs.$spin-wheel-quarter-border};
+            border-top: #{abs.$spin-wheel-quarter-border};
         }
     }
 
@@ -149,8 +158,9 @@
         background-color: theme.$body-background-color;
         padding: abs.rem(15.89) abs.rem(10.66);
         border-radius: 50%;
-        border: abs.rem(3) solid theme.$heading-color;
+        border: 3px solid theme.$heading-color;
         cursor: pointer;
+        line-height: 1;
     }
 
     &__segment-text {
@@ -188,6 +198,8 @@
         border-radius: 50%;
         padding: abs.rem(1.4) abs.rem(5.23);
         margin-left: abs.rem(8);
+        font-weight: abs.get(abs.$font-weight, bold);
+        line-height: 1;
     }
 
     &__win {
@@ -197,6 +209,8 @@
     &__win-text {
         font-weight: abs.get(abs.$font-weight, bold);
         padding-bottom: abs.rem(8);
+        line-height: 1;
+        text-align: center;
     }
 
     &__win-wrapper {
@@ -204,8 +218,7 @@
     }
 
     &__deals-list {
-        display: flex;
-        flex-direction: column;
+        @include abs.flex-mixin(start, center, column);
         gap: abs.rem(12);
         max-height: abs.rem(320);
         overflow-y: auto;
@@ -214,13 +227,15 @@
 
     &__go-back-btn {
         background-color: theme.$body-background-color;
-        border: abs.rem(1.5) solid theme.$special-back-button-border;
+        border: 1.5px solid theme.$special-back-button-border;
         border-radius: abs.rem(24);
-        padding: abs.rem(16.7) 0;
+        padding-block: abs.rem(16.7);
         width: 100%;
         font-weight: abs.get(abs.$font-weight, bold);
         cursor: pointer;
         margin-top: auto;
+        line-height: 1;
+        text-align: center;
     }
 
     @include abs.tablet-screen {
