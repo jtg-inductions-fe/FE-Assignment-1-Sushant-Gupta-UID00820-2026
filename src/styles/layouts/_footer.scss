@@ -100,12 +100,6 @@
         @include abs.desktop-screen {
             max-width: abs.rem(166.7);
         }
-
-        &--hide {
-            @include abs.tablet-screen {
-                display: none;
-            }
-        }
     }
 
     &__items {
@@ -120,6 +114,12 @@
             @include abs.flex-mixin(flex-start, stretch, column);
             position: static;
             gap: abs.rem(35);
+        }
+
+        &--hide {
+            @include abs.tablet-screen {
+                display: none;
+            }
         }
     }
 
