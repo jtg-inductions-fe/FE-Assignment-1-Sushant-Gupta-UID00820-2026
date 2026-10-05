@@ -21,6 +21,9 @@ let wonIndex = -1;
 let lastSpinDeg = 0;
 let isSpinning = false;
 
+/**
+ * Fetches the won offers from localStorage
+ */
 const getWonOffers = () => {
     try {
         return JSON.parse(localStorage.getItem('wonOffers')) || [];
@@ -29,6 +32,9 @@ const getWonOffers = () => {
     }
 };
 
+/**
+ * Fetches the offers from the Provided API
+ */
 const fetchOffers = async () => {
     try {
         const response = await fetch(
@@ -41,6 +47,10 @@ const fetchOffers = async () => {
     }
 };
 
+/**
+ * Filters the already won offers from all offers and
+ * picks 4 random offers to display
+ */
 const getRandomOffers = (array) => {
     const wonOffers = getWonOffers();
     const shuffled = [...array];
@@ -56,6 +66,10 @@ const getRandomOffers = (array) => {
     return filtered.slice(0, 4);
 };
 
+/**
+ * Initializes the wheel using template tag and
+ * renders the offer details dynamically
+ */
 const initWheel = () => {
     specialWheel.innerHTML = '';
     randomOffers = getRandomOffers(allOffers);
@@ -83,6 +97,9 @@ const initWheel = () => {
     }
 };
 
+/**
+ * It handles the spinning and winning logic of the wheel
+ */
 const handleSpin = () => {
     if (isSpinning) return;
     isSpinning = true;
@@ -171,6 +188,10 @@ const handleSpin = () => {
     }, 3000);
 };
 
+/**
+ * Renders the previously unlocked deals / won offers
+ * on the unlocked deals page.
+ */
 const renderUnlockedDeals = () => {
     const wonOffers = getWonOffers();
 
@@ -221,17 +242,27 @@ const renderUnlockedDeals = () => {
     });
 };
 
+/**
+ * Unlocked button event listener
+ */
 viewUnlockedBtn.addEventListener('click', () => {
     spinView.classList.add('special__view--hidden');
     dealsView.classList.remove('special__view--hidden');
     renderUnlockedDeals();
 });
 
+/**
+ * Go back button event listener
+ */
 goBackBtn.addEventListener('click', () => {
     dealsView.classList.add('special__view--hidden');
     spinView.classList.remove('special__view--hidden');
 });
 
+/**
+ * Initializes the spinning wheel when the
+ * special deals nav-link is clicked
+ */
 const initSpin = async () => {
     allOffers = await fetchOffers();
 

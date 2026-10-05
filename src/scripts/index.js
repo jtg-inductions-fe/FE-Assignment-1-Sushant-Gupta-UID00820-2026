@@ -1,5 +1,5 @@
 import './testimonials';
-import './special-deals';
+import './specialDeals';
 
 const hamburger = document.querySelector('.nav__hamburger');
 const linksContainer = document.querySelector('.nav__links');
