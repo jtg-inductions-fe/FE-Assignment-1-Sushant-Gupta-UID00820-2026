@@ -31,6 +31,8 @@ let lastSpinDeg = 0;
 let isSpinning = false;
 
 /**
+ * @return {Object[]}
+ *
  * Fetches the won offers from localStorage
  */
 const getWonOffers = () => {
