@@ -31,6 +31,14 @@
         height: abs.rem(20);
         bottom: abs.rem(-90) !important;
         margin-bottom: abs.rem(10) !important; // override inline splide margins
+
+        @include abs.tablet-screen {
+            bottom: abs.rem(5) !important;
+        }
+
+        @include abs.desktop-screen {
+            bottom: abs.rem(-2) !important;
+        }
     }
 
     &__pagination__page {
@@ -87,8 +95,8 @@
         }
 
         @include abs.desktop-screen {
-            top: 50%;
-            right: abs.rem(18);
+            top: 49.5%;
+            right: abs.rem(17);
         }
     }
 
@@ -109,7 +117,8 @@
         }
 
         @include abs.desktop-screen {
-            top: 50%;
+            top: 49.5%;
+            left: abs.rem(17);
         }
     }
 }

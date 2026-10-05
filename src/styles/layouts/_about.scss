@@ -4,7 +4,7 @@
 .about {
     width: 100%;
     margin-top: abs.rem(64);
-    padding-block: abs.rem(64);
+    padding: abs.rem(64) abs.rem(0);
 
     &__img {
         @include abs.desktop-screen {

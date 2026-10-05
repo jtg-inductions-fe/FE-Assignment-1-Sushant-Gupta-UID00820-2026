@@ -19,13 +19,13 @@
         z-index: -1;
 
         @include abs.tablet-screen {
-            background-position: 0% 49.2%;
+            background-position: 0% 45.5%;
         }
 
         @include abs.desktop-screen {
             background: url('/assets/images/testimonial-bg-2.webp') no-repeat
                 center / cover;
-            background-position: 0 32.5%;
+            background-position: 0 33.5%;
             opacity: 1;
         }
     }
@@ -132,6 +132,7 @@
 
     @include abs.tablet-screen {
         margin-top: abs.rem(-36);
+        padding-bottom: abs.rem(54.74);
 
         &::after {
             display: block;
@@ -139,8 +140,9 @@
     }
 
     @include abs.desktop-screen {
-        padding-top: abs.rem(50);
+        padding-top: abs.rem(55);
         margin-top: abs.rem(0);
+        transform: translate(abs.rem(-3), abs.rem(-3));
 
         &::after {
             height: calc(100% - abs.rem(50));

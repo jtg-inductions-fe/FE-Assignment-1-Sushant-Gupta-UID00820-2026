@@ -23,7 +23,7 @@
         }
 
         @include abs.desktop-screen {
-            top: abs.rem(220);
+            top: abs.rem(200);
             right: abs.rem(-10);
         }
     }
@@ -42,6 +42,10 @@
     &__heading {
         @include abs.flex-mixin(flex-start);
         gap: abs.rem(16);
+
+        @include abs.desktop-screen {
+            margin-top: abs.rem(5);
+        }
     }
 
     &__brand-name {
@@ -206,6 +210,6 @@
     @include abs.desktop-screen {
         @include abs.flex-mixin(space-between, start, row);
         gap: abs.rem(64);
-        padding: abs.rem(224) abs.rem(117) abs.rem(64) abs.rem(130);
+        padding: abs.rem(204) abs.rem(117) abs.rem(64) abs.rem(130);
     }
 }
