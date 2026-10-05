@@ -14,9 +14,26 @@
     overscroll-behavior: contain;
     max-width: abs.rem(360);
 
+    opacity: 0;
+    transform: translateY(100%);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+    pointer-events: none;
+
     &::backdrop {
         background-color: theme.$special-backdrop-color;
         opacity: 0.5;
+    }
+
+    &--open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+
+        &::backdrop {
+            opacity: 0.5;
+        }
     }
 
     &__content {

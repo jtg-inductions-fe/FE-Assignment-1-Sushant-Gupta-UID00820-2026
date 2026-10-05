@@ -5,6 +5,7 @@ import {
     MIN_CIRCLE_SPIN_DEGREE,
     LOCAL_STORAGE_KEY,
     SPIN_TIME,
+    TRANSITION_TIME,
 } from './constants';
 
 const specialLink = document.querySelector('#special');
@@ -364,10 +365,16 @@ const initSpin = async () => {
         specialWinWrapper.innerHTML = '';
         specialWinWrapper.style.display = 'none';
         isSpinning = false;
+
+        dialog.classList.add('special--open');
     });
 
     closeBtn.addEventListener('click', () => {
-        dialog.close();
+        dialog.classList.remove('special--open');
+
+        setTimeout(() => {
+            dialog.close();
+        }, TRANSITION_TIME * 1000);
     });
 };
 

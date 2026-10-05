@@ -5,3 +5,4 @@ export const CIRCLE_DEGREE = 360;
 export const MIN_CIRCLE_SPIN_DEGREE = 1800;
 export const LOCAL_STORAGE_KEY = 'wonOffers';
 export const SPIN_TIME = 3;
+export const TRANSITION_TIME = 0.5;
