@@ -207,7 +207,7 @@ const handleSpin = (allOffers, storedLastSpinDegree) => {
         specialWinWrapper.style.display = 'block';
         specialWinWrapper.innerHTML = '';
 
-        if (updatedWonOffers.length > 6) {
+        if (updatedWonOffers.length > 7) {
             specialWinWrapper.innerHTML = `
                 <div class="special__win">
                     <p class="special__win-text special-text special-text--sm">
@@ -230,7 +230,8 @@ const handleSpin = (allOffers, storedLastSpinDegree) => {
 
             dealCardTemplateClone.querySelector(
                 '.special-card__expiry',
-            ).textContent = `Expires in ${randomOffers[wonIndex].validFor}d`;
+            ).textContent =
+                `Expires in ${randomOffers[wonIndex].validFor === null ? 7 : randomOffers[wonIndex].validFor}d`;
 
             dealCardTemplateClone.querySelector(
                 '.special-card__code',
@@ -359,6 +360,7 @@ const initSpin = async () => {
         loadingText.style.display = 'none';
         initWheel(allOffers);
         specialWinWrapper.innerHTML = '';
+        specialWinWrapper.style.display = 'none';
         isSpinning = false;
     });
 

@@ -15,8 +15,9 @@
     }
 
     &__label {
-        line-height: 1;
+        line-height: 1.215;
         font-weight: abs.get(abs.$font-weight, bold);
+        max-width: abs.rem(134);
         &--expired {
             color: theme.$special-card-label-expired;
         }
@@ -26,6 +27,7 @@
         font-weight: abs.get(abs.$font-weight, regular);
         color: theme.$expire-in-color;
         line-height: 1;
+        padding-top: abs.rem(1.5);
 
         &--expired {
             color: theme.$special-card-expiry-expired;
