@@ -4,12 +4,12 @@
 .nav__link {
     @include abs.font-style(
         $size: abs.rem(16),
-        $color: #19182580,
+        $color: theme.$text-about-description,
         $weight: abs.get(abs.$font-weight, bold)
     );
     text-transform: capitalize;
 
-    &.active {
+    &--active {
         color: theme.$text-primary-color;
     }
 

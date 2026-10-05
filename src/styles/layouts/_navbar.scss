@@ -59,7 +59,7 @@
             transform 0.3s ease,
             visibility 0.3s ease;
 
-        &.is-open {
+        &--open {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
@@ -67,15 +67,15 @@
 
         @include abs.desktop-screen {
             position: static;
-            display: block !important;
+            display: block;
             width: auto;
             height: auto;
             padding: 0;
             background-color: transparent;
             box-shadow: none;
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: none !important;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
             transition: none;
         }
     }
@@ -100,9 +100,7 @@
     }
 
     &__ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include abs.flex-mixin($align: center, $direction: column);
         gap: abs.rem(24);
 
         @include abs.tablet-screen {
@@ -110,8 +108,7 @@
         }
 
         @include abs.desktop-screen {
-            @include abs.flex-mixin(space-between);
-            flex-direction: row;
+            @include abs.flex-mixin(space-between, $direction: row);
             gap: abs.rem(64);
             width: abs.rem(428);
             height: abs.rem(17);

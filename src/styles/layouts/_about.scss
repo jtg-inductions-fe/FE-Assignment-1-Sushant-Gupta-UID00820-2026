@@ -51,9 +51,8 @@
     }
 
     &__cards {
-        @include abs.flex-mixin;
+        @include abs.flex-mixin($direction: column);
         gap: abs.rem(16);
-        flex-direction: column;
         margin-top: abs.rem(32);
 
         @include abs.tablet-screen {

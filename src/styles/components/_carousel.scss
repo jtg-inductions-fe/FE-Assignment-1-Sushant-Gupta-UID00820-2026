@@ -5,8 +5,7 @@
 .splide {
     width: 100%;
     height: 100%;
-    @include abs.flex-mixin;
-    justify-content: stretch;
+    @include abs.flex-mixin(stretch);
 
     &__track {
         height: 100%;

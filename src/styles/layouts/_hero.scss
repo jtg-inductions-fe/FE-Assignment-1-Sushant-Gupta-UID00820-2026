@@ -14,8 +14,7 @@
 
         background: url('/assets/images/background-globe.webp') no-repeat top /
             contain;
-        @include abs.flex-mixin;
-        align-items: flex-end;
+        @include abs.flex-mixin($align: flex-end);
 
         @include abs.tablet-screen {
             aspect-ratio: 1 / 0.923;
@@ -46,8 +45,7 @@
     }
 
     &__images-column {
-        @include abs.flex-mixin(space-between);
-        flex-direction: column;
+        @include abs.flex-mixin(space-between, $direction: column);
         height: 100%;
         flex-grow: 1;
         flex-shrink: 1;
@@ -247,7 +245,7 @@
 
             @include abs.tablet-screen {
                 height: abs.rem(49);
-                padding-block: abs.rem(0) !important;
+                padding-block: abs.rem(0);
             }
         }
 
@@ -381,8 +379,7 @@
     }
 
     @include abs.desktop-screen {
-        @include abs.flex-mixin(space-between);
-        flex-direction: row-reverse;
+        @include abs.flex-mixin(space-between, $direction: row-reverse);
         gap: abs.rem(40);
         margin-top: abs.rem(60);
         margin-bottom: abs.rem(65);

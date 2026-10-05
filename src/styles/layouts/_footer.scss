@@ -103,8 +103,12 @@
     }
 
     &__items {
-        text-align: start;
+        text-align: center;
         color: theme.$text-testimonial;
+
+        @include abs.tablet-screen {
+            text-align: start;
+        }
     }
 
     &__columns {
@@ -136,6 +140,10 @@
         &--active {
             @include abs.flex-mixin($direction: column);
             width: 100%;
+
+            @include abs.tablet-screen {
+                align-items: stretch;
+            }
         }
     }
 
