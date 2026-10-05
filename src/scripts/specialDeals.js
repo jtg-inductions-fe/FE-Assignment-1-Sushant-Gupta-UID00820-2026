@@ -242,7 +242,9 @@ const handleSpin = (allOffers, storedLastSpinDegree) => {
                 .querySelector('.special__win')
                 .appendChild(dealCardTemplateClone);
 
-            const copyBtn = specialWinWrapper.querySelector('.special__copy');
+            const copyBtn = specialWinWrapper.querySelector(
+                '.special-card__copy',
+            );
 
             if (copyBtn) {
                 copyBtnEventListener(copyBtn, randomOffers[wonIndex].promoCode);
