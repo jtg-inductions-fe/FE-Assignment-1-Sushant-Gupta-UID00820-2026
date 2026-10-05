@@ -42,6 +42,9 @@ const getWonOffers = () => {
 };
 
 /**
+ *
+ * @returns {Object[]}
+ *
  * Fetches the offers from the Provided API
  */
 const fetchOffers = async () => {
@@ -54,6 +57,9 @@ const fetchOffers = async () => {
 };
 
 /**
+ * @param {Object[]} allOffers
+ * @returns {null}
+ *
  * Filters the already won offers from all offers and
  * picks 4 random offers to display
  */
@@ -80,9 +86,13 @@ const getRandomOffers = (allOffers) => {
 };
 
 /**
+ * @param {Object[]} allOffers
+ * @returns {null}
+ *
  * Initializes the wheel using template tag and
  * renders the offer details dynamically
  */
+
 const initWheel = (allOffers) => {
     specialWheel.innerHTML = '';
     randomOffers = getRandomOffers(allOffers);
@@ -108,12 +118,17 @@ const initWheel = (allOffers) => {
 
     const spinBtn = specialWheel.querySelector('#spin-btn');
     if (spinBtn) {
-        spinBtn.addEventListener('click', () => handleSpin(allOffers));
+        spinBtn.addEventListener('click', () =>
+            handleSpin(allOffers, lastSpinDeg),
+        );
     }
 };
 
 /**
- * Returns the Winning ondex of the offer
+ * @param {number} remainderDegree
+ * @returns {number}
+ *
+ * Returns the Winning index of the offer
  */
 const getWonIndex = (remainderDegree) => {
     if (remainderDegree < 90) return 0;
@@ -123,9 +138,33 @@ const getWonIndex = (remainderDegree) => {
 };
 
 /**
+ * @param {number} storedLastSpinDegree
+ * @returns {number}
+ *
+ * Takes the last spin degree as argument and
+ * returns a random degree to spin
+ */
+const getRandomSpinDegree = (storedLastSpinDegree) => {
+    let randomDegree =
+        storedLastSpinDegree +
+        MIN_CIRCLE_SPIN_DEGREE +
+        Math.floor(CIRCLE_DEGREE * (Math.random() * 5 + 1));
+
+    lastSpinDeg = randomDegree;
+
+    return randomDegree;
+};
+
+/**
+ *
+ * @param {Object[]} allOffers
+ * @param {number} storedLastSpinDegree
+ * @returns {null}
+ *
+ *
  * It handles the spinning and winning logic of the wheel
  */
-const handleSpin = (allOffers) => {
+const handleSpin = (allOffers, storedLastSpinDegree) => {
     if (isSpinning) return;
     isSpinning = true;
 
@@ -145,12 +184,7 @@ const handleSpin = (allOffers) => {
             if (textEl) textEl.textContent = randomOffers[i].label;
         }
     }
-
-    const randomDegree =
-        lastSpinDeg +
-        MIN_CIRCLE_SPIN_DEGREE +
-        Math.floor(CIRCLE_DEGREE * (Math.random() * 5 + 1));
-    lastSpinDeg = randomDegree;
+    const randomDegree = getRandomSpinDegree(storedLastSpinDegree);
 
     specialWheel.style.transform = `rotate(${randomDegree}deg)`;
     specialWheel.style.transition = `transform ${SPIN_TIME}s ease-out`;
@@ -185,18 +219,25 @@ const handleSpin = (allOffers) => {
             if (spinBtn) spinBtn.disabled = true;
         } else {
             const winTemplateClone = winTemplate.content.cloneNode(true);
+            const dealCardTemplateClone =
+                dealCardTemplate.content.cloneNode(true);
 
-            winTemplateClone.querySelector('.special-card__label').textContent =
-                randomOffers[wonIndex].label;
+            dealCardTemplateClone.querySelector(
+                '.special-card__label',
+            ).textContent = randomOffers[wonIndex].label;
 
-            winTemplateClone.querySelector(
+            dealCardTemplateClone.querySelector(
                 '.special-card__expiry',
             ).textContent = `Expires in ${randomOffers[wonIndex].validFor}d`;
 
-            winTemplateClone.querySelector('.special-card__code').textContent =
-                randomOffers[wonIndex].promoCode;
+            dealCardTemplateClone.querySelector(
+                '.special-card__code',
+            ).textContent = randomOffers[wonIndex].promoCode;
 
             specialWinWrapper.appendChild(winTemplateClone);
+            specialWinWrapper
+                .querySelector('.special__win')
+                .appendChild(dealCardTemplateClone);
 
             const copyBtn = specialWinWrapper.querySelector('.special__copy');
 
@@ -210,6 +251,14 @@ const handleSpin = (allOffers) => {
     }, SPIN_TIME * 1000);
 };
 
+/**
+ *
+ * @param {HTMLElement} copyBtn
+ * @param {string} promoCode
+ * @returns {null}
+ *
+ * Adds an eventListener to the CopyBtn element
+ */
 const copyBtnEventListener = (copyBtn, promoCode) => {
     copyBtn.addEventListener('click', () => {
         navigator.clipboard.writeText(promoCode);
@@ -217,6 +266,8 @@ const copyBtnEventListener = (copyBtn, promoCode) => {
 };
 
 /**
+ * @return {null}
+ *
  * Renders the previously unlocked deals / won offers
  * on the unlocked deals page.
  */
@@ -288,6 +339,8 @@ goBackBtn.addEventListener('click', () => {
 });
 
 /**
+ * @return {null}
+ *
  * Initializes the spinning wheel when the
  * special deals nav-link is clicked
  */
