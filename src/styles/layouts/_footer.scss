@@ -1,0 +1,203 @@
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+.footer {
+    padding: abs.rem(120) 0 0 abs.rem(31.86);
+    @include abs.flex-mixin(flex-start, stretch, column);
+    gap: abs.rem(80);
+    position: relative;
+
+    &__logo {
+        height: abs.rem(40);
+    }
+
+    &__image {
+        display: none;
+        position: absolute;
+        right: abs.rem(0);
+        width: abs.rem(127);
+        top: abs.rem(312);
+
+        @include abs.tablet-screen {
+            display: block;
+        }
+
+        @include abs.desktop-screen {
+            top: abs.rem(220);
+            right: abs.rem(-10);
+        }
+    }
+
+    &__left {
+        width: 100%;
+        @include abs.flex-mixin(space-between, flex-start, column);
+        gap: abs.rem(32);
+
+        @include abs.desktop-screen {
+            max-width: abs.rem(564);
+            gap: abs.rem(35);
+        }
+    }
+
+    &__heading {
+        @include abs.flex-mixin(flex-start);
+        gap: abs.rem(16);
+    }
+
+    &__brand-name {
+        margin-top: abs.rem(2);
+        line-height: abs.rem(40);
+    }
+
+    &__description {
+        color: theme.$text-about-description;
+        line-height: 1.6;
+        text-transform: none;
+    }
+
+    &__socials {
+        max-width: abs.rem(160);
+        @include abs.flex-mixin(space-between);
+        gap: abs.rem(32);
+        height: abs.rem(32);
+
+        @include abs.desktop-screen {
+            padding-top: 0;
+            margin-top: abs.rem(28);
+        }
+    }
+
+    &__right {
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(1, 1fr);
+        gap: abs.rem(80);
+        padding: 0 abs.rem(34) abs.rem(48) 0;
+
+        @include abs.tablet-screen {
+            grid-template-columns: repeat(3, 1fr);
+            gap: abs.rem(66);
+            padding-top: abs.rem(5);
+        }
+
+        @include abs.desktop-screen {
+            width: auto;
+            padding-right: 0;
+            gap: abs.rem(32);
+        }
+    }
+
+    &__column {
+        @include abs.flex-mixin(space-between, start, column);
+        gap: abs.rem(32);
+        position: relative;
+
+        @include abs.tablet-screen {
+            gap: abs.rem(32);
+            justify-content: start;
+        }
+
+        @include abs.desktop-screen {
+            max-width: abs.rem(166.7);
+        }
+    }
+
+    &__items {
+        text-align: start;
+        color: theme.$text-testimonial;
+    }
+
+    &__columns {
+        font-size: abs.rem(23);
+
+        @include abs.tablet-screen {
+            @include abs.flex-mixin(flex-start, stretch, column);
+            position: static;
+            gap: abs.rem(35);
+        }
+
+        &--hide {
+            @include abs.tablet-screen {
+                display: none;
+            }
+        }
+    }
+
+    &__columns-items {
+        @include abs.flex-mixin(flex-start, stretch, column);
+        gap: abs.rem(30);
+        display: none;
+
+        @include abs.tablet-screen {
+            gap: abs.rem(32);
+            display: flex;
+        }
+
+        &--active {
+            @include abs.flex-mixin($direction: column);
+            width: 100%;
+        }
+    }
+
+    &__accordian-button {
+        display: block;
+        width: abs.rem(14);
+        height: abs.rem(14);
+        padding: abs.rem(10);
+        border-radius: 50%;
+        @include abs.flex-mixin;
+
+        @include abs.tablet-screen {
+            display: none;
+        }
+    }
+
+    &__column-group {
+        @include abs.flex-mixin(space-between, start);
+        width: 100%;
+    }
+
+    &__icon {
+        font-size: abs.rem(18.64);
+    }
+
+    &__social-link {
+        height: abs.rem(32);
+        width: abs.rem(32);
+        @include abs.flex-mixin;
+        background-color: theme.$icon-color;
+        border-radius: 50%;
+    }
+
+    &__icon-facebook {
+        background-color: white;
+        border-radius: 50%;
+        font-size: abs.rem(32);
+    }
+
+    &__drop-down {
+        font-size: abs.rem(24);
+        color: theme.$btn-accordion-color;
+
+        &--rotate {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__items-break {
+        display: block;
+        padding-top: abs.rem(8);
+    }
+
+    @include abs.tablet-screen {
+        padding: abs.rem(162) abs.rem(64) abs.rem(64) abs.rem(64);
+        @include abs.flex-mixin(flex-start, stretch, column);
+        gap: abs.rem(60);
+    }
+
+    @include abs.desktop-screen {
+        @include abs.flex-mixin(space-between, start, row);
+        gap: abs.rem(64);
+        padding: abs.rem(224) abs.rem(117) abs.rem(64) abs.rem(130);
+    }
+}
