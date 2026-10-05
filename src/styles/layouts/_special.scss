@@ -214,7 +214,7 @@
 
     &__go-back-btn {
         background-color: theme.$body-background-color;
-        border: abs.rem(1.5) solid #e0e0e0;
+        border: abs.rem(1.5) solid theme.$special-back-button-border;
         border-radius: abs.rem(24);
         padding: abs.rem(16.7) 0;
         width: 100%;
