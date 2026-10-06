@@ -12,6 +12,10 @@ export const LOCAL_STORAGE_KEY_WON_OFFERS = 'wonOffers';
 
 export const CHECK_LOGO_HEIGHT = '15px';
 
+export const ONE_DAY_IN_SEC = 86400000;
+
+export const DEFAULT_DAYS_FOR_EXPIRED_OFFERS = 7;
+
 export const TIME_IN_SEC = {
     SPIN: 3,
     TRANSITION: 0.5,

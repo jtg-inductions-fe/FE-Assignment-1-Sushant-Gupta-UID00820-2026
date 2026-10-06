@@ -5,6 +5,8 @@ import {
     TIME_IN_SEC,
     API_ENDPOINTS,
     SPIN_CONSTANTS,
+    ONE_DAY_IN_SEC,
+    DEFAULT_DAYS_FOR_EXPIRED_OFFERS,
 } from './constants';
 
 const specialLink = document.querySelector('#special');
@@ -161,6 +163,41 @@ const getRandomSpinDegree = (storedLastSpinDegree) => {
 
 /**
  *
+ * @param {Object[]} randomOffers
+ * @param {Object[]} updatedWonOffers
+ * @param {number} wonIndex
+ *
+ * @return {null}
+ *
+ * Updates the Won Offer in localStorage. Also
+ * calculates the time in IPOC timestamps
+ */
+const updateWinningOffer = (randomOffers, updatedWonOffers, wonIndex) => {
+    let currentWinTime = new Date().getTime();
+
+    let currentExpiryTime;
+
+    if (randomOffers[wonIndex].validFor == null) {
+        currentExpiryTime =
+            currentWinTime + DEFAULT_DAYS_FOR_EXPIRED_OFFERS * ONE_DAY_IN_SEC;
+    } else {
+        currentExpiryTime =
+            currentWinTime + randomOffers[wonIndex].validFor * ONE_DAY_IN_SEC;
+    }
+    updatedWonOffers.push({
+        ...randomOffers[wonIndex],
+        winTime: currentWinTime,
+        expiryTime: currentExpiryTime,
+    });
+
+    localStorage.setItem(
+        LOCAL_STORAGE_KEY_WON_OFFERS,
+        JSON.stringify(updatedWonOffers),
+    );
+};
+
+/**
+ *
  * @param {Object[]} allOffers
  * @param {number} storedLastSpinDegree
  * @returns {null}
@@ -199,12 +236,7 @@ const handleSpin = (allOffers, storedLastSpinDegree) => {
 
         let updatedWonOffers = getWonOffers();
 
-        updatedWonOffers.push(randomOffers[wonIndex]);
-
-        localStorage.setItem(
-            LOCAL_STORAGE_KEY_WON_OFFERS,
-            JSON.stringify(updatedWonOffers),
-        );
+        updateWinningOffer(randomOffers, updatedWonOffers, wonIndex);
 
         specialWinWrapper.style.display = 'block';
         specialWinWrapper.innerHTML = '';
@@ -233,7 +265,7 @@ const handleSpin = (allOffers, storedLastSpinDegree) => {
             dealCardTemplateClone.querySelector(
                 '.special-card__expiry',
             ).textContent =
-                `Expires in ${randomOffers[wonIndex].validFor === null ? 7 : randomOffers[wonIndex].validFor}d`;
+                `Expires in ${randomOffers[wonIndex].validFor === null ? DEFAULT_DAYS_FOR_EXPIRED_OFFERS : randomOffers[wonIndex].validFor}d`;
 
             dealCardTemplateClone.querySelector(
                 '.special-card__code',
@@ -289,13 +321,14 @@ const renderUnlockedDeals = () => {
     const wonOffers = getWonOffers();
 
     const sortedWonOffers = wonOffers.filter(
-        (wonOffer) => wonOffer.validFor !== null,
+        (wonOffer) => wonOffer.expiryTime - new Date().getTime() >= 0,
     );
 
-    sortedWonOffers.sort((a, b) => a.validFor - b.validFor);
+    sortedWonOffers.sort((a, b) => a.expiryTime - b.expiryTime);
 
     wonOffers.forEach((wonOffer) => {
-        if (wonOffer.validFor === null) {
+        const remainingExpiryTime = wonOffer.expiryTime - new Date().getTime();
+        if (remainingExpiryTime <= 0) {
             sortedWonOffers.push(wonOffer);
         }
     });
@@ -303,7 +336,7 @@ const renderUnlockedDeals = () => {
     unlockedDealsList.innerHTML = '';
 
     sortedWonOffers.forEach((storedWonOffer) => {
-        const isExpired = storedWonOffer.validFor <= 0;
+        const isExpired = storedWonOffer.expiryTime <= new Date().getTime();
 
         const clone = dealCardTemplate.content.cloneNode(true);
 
@@ -325,7 +358,11 @@ const renderUnlockedDeals = () => {
             copyBtn.disabled = true;
             copyIcon.src = ICON_SRC['COPY_DISABLE'];
         } else {
-            expiry.textContent = `Expires in ${storedWonOffer.validFor}d`;
+            let expiresInDays = Math.ceil(
+                (storedWonOffer.expiryTime - new Date().getTime()) /
+                    ONE_DAY_IN_SEC,
+            );
+            expiry.textContent = `Expires in ${expiresInDays}d`;
             copyIcon.src = ICON_SRC['COPY'];
         }
 
