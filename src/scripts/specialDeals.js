@@ -378,4 +378,16 @@ const initSpin = async () => {
     });
 };
 
+dialog.addEventListener('keydown', (event) => {
+    if (dialog.classList.contains('special--open')) {
+        if (
+            (event.target.classList.contains('special__unlocked-btn') ||
+                event.target.id == 'go-back-btn') &&
+            event.key == 'Tab'
+        ) {
+            dialog.focus();
+        }
+    }
+});
+
 initSpin();
