@@ -12,10 +12,15 @@ const footer = document.querySelector('.footer');
  */
 hamburger.addEventListener('click', (event) => {
     event.stopPropagation();
-    const isOpen = linksContainer.classList.toggle('is-open');
-    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    body.classList.toggle('no-scroll', isOpen);
-    hamburger.style.zIndex = 30;
+    if (body.clientWidth <= 1024) {
+        const isOpen = linksContainer.classList.toggle('is-open');
+        hamburger.setAttribute(
+            'aria-label',
+            isOpen ? 'Close menu' : 'Open menu',
+        );
+        body.classList.toggle('no-scroll', isOpen);
+        hamburger.style.zIndex = 30;
+    }
 });
 
 /**
@@ -36,10 +41,14 @@ linksContainer.addEventListener('click', (event) => {
         }
         link.classList.add('active');
     }
-
-    const isOpen = linksContainer.classList.toggle('is-open');
-    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    body.classList.toggle('no-scroll', isOpen);
+    if (body.clientWidth <= 1024) {
+        const isOpen = linksContainer.classList.toggle('is-open');
+        hamburger.setAttribute(
+            'aria-label',
+            isOpen ? 'Close menu' : 'Open menu',
+        );
+        body.classList.toggle('no-scroll', isOpen);
+    }
 });
 
 /**

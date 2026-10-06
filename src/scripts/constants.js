@@ -1,13 +1,25 @@
-export const API_ENDPOINT =
-    'https://gist.githubusercontent.com/ameer-wajid-ali/1f29ebee4295cede36f8d74b45e576df/raw/122966c9a123861249f173911d8d93a76dc06d7a/';
-export const MAX_OFFERS = 4;
-export const CIRCLE_DEGREE = 360;
-export const MIN_CIRCLE_SPIN_DEGREE = 1800;
-export const LOCAL_STORAGE_KEY = 'wonOffers';
-export const SPIN_TIME = 3;
-export const TRANSITION_TIME = 0.5;
+export const API_ENDPOINTS = {
+    OFFERS: 'https://gist.githubusercontent.com/ameer-wajid-ali/1f29ebee4295cede36f8d74b45e576df/raw/122966c9a123861249f173911d8d93a76dc06d7a/',
+};
+
+export const SPIN_CONSTANTS = {
+    MAX_OFFERS: 4,
+    CIRCLE_DEGREE: 360,
+    MIN_CIRCLE_SPIN_DEGREE: 1800,
+};
+
+export const LOCAL_STORAGE_KEY_WON_OFFERS = 'wonOffers';
+
 export const CHECK_LOGO_HEIGHT = '15px';
-export const CHECK_LOGO_TIME = 1;
-export const COPY_ICON_SRC = '/assets/svgs/copy.svg';
-export const DISABLE_COPY_ICON_SRC = '/assets/svgs/copy-disable.svg';
-export const CHECK_ICON_SRC = '/assets/svgs/check.svg';
+
+export const TIME_IN_SEC = {
+    SPIN: 3,
+    TRANSITION: 0.5,
+    CHECK_FLIP: 1,
+};
+
+export const ICON_SRC = {
+    COPY: '/assets/svgs/copy.svg',
+    COPY_DISABLE: '/assets/svgs/copy-disable.svg',
+    CHECK: '/assets/svgs/check.svg',
+};

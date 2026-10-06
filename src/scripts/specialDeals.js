@@ -1,16 +1,10 @@
 import {
-    API_ENDPOINT,
-    MAX_OFFERS,
-    CIRCLE_DEGREE,
-    MIN_CIRCLE_SPIN_DEGREE,
-    LOCAL_STORAGE_KEY,
-    SPIN_TIME,
-    TRANSITION_TIME,
+    LOCAL_STORAGE_KEY_WON_OFFERS,
     CHECK_LOGO_HEIGHT,
-    CHECK_LOGO_TIME,
-    CHECK_ICON_SRC,
-    COPY_ICON_SRC,
-    DISABLE_COPY_ICON_SRC,
+    ICON_SRC,
+    TIME_IN_SEC,
+    API_ENDPOINTS,
+    SPIN_CONSTANTS,
 } from './constants';
 
 const specialLink = document.querySelector('#special');
@@ -43,7 +37,9 @@ let isSpinning = false;
  */
 const getWonOffers = () => {
     try {
-        return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
+        return (
+            JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_WON_OFFERS)) || []
+        );
     } catch {
         return [];
     }
@@ -57,7 +53,7 @@ const getWonOffers = () => {
  */
 const fetchOffers = async () => {
     try {
-        const response = await fetch(API_ENDPOINT);
+        const response = await fetch(API_ENDPOINTS['OFFERS']);
         return await response.json();
     } catch (error) {
         throw new Error('Internal server error', error);
@@ -90,7 +86,7 @@ const getRandomOffers = (allOffers) => {
         ];
     }
 
-    return filtered.slice(0, MAX_OFFERS);
+    return filtered.slice(0, SPIN_CONSTANTS['MAX_OFFERS']);
 };
 
 /**
@@ -105,7 +101,7 @@ const initWheel = (allOffers) => {
     specialWheel.innerHTML = '';
     randomOffers = getRandomOffers(allOffers);
 
-    if (randomOffers.length < MAX_OFFERS) {
+    if (randomOffers.length < SPIN_CONSTANTS['MAX_OFFERS']) {
         specialWheel.innerHTML =
             '<p class="special__loading-text">No More Offers!</p>';
 
@@ -155,8 +151,8 @@ const getWonIndex = (remainderDegree) => {
 const getRandomSpinDegree = (storedLastSpinDegree) => {
     let randomDegree =
         storedLastSpinDegree +
-        MIN_CIRCLE_SPIN_DEGREE +
-        Math.floor(CIRCLE_DEGREE * (Math.random() * 5 + 1));
+        SPIN_CONSTANTS['MIN_CIRCLE_SPIN_DEGREE'] +
+        Math.floor(SPIN_CONSTANTS['CIRCLE_DEGREE'] * (Math.random() * 5 + 1));
 
     lastSpinDeg = randomDegree;
 
@@ -195,10 +191,10 @@ const handleSpin = (allOffers, storedLastSpinDegree) => {
     const randomDegree = getRandomSpinDegree(storedLastSpinDegree);
 
     specialWheel.style.transform = `rotate(${randomDegree}deg)`;
-    specialWheel.style.transition = `transform ${SPIN_TIME}s ease-out`;
+    specialWheel.style.transition = `transform ${TIME_IN_SEC['SPIN']}s ease-out`;
 
     setTimeout(() => {
-        const remainderDegree = lastSpinDeg % CIRCLE_DEGREE;
+        const remainderDegree = lastSpinDeg % SPIN_CONSTANTS['CIRCLE_DEGREE'];
         let wonIndex = getWonIndex(remainderDegree);
 
         let updatedWonOffers = getWonOffers();
@@ -206,7 +202,7 @@ const handleSpin = (allOffers, storedLastSpinDegree) => {
         updatedWonOffers.push(randomOffers[wonIndex]);
 
         localStorage.setItem(
-            LOCAL_STORAGE_KEY,
+            LOCAL_STORAGE_KEY_WON_OFFERS,
             JSON.stringify(updatedWonOffers),
         );
 
@@ -216,7 +212,7 @@ const handleSpin = (allOffers, storedLastSpinDegree) => {
         if (updatedWonOffers.length > 7) {
             specialWinWrapper.innerHTML = `
                 <div class="special__win">
-                    <p class="special__win-text special-text special-text--sm">
+                    <p class="special__win-text paragraph paragraph--xs">
                         You've unlocked maximum deals! View them below.
                     </p>
                 </div>
@@ -259,7 +255,7 @@ const handleSpin = (allOffers, storedLastSpinDegree) => {
 
         specialUnlockedCount.textContent = updatedWonOffers.length;
         isSpinning = false;
-    }, SPIN_TIME * 1000);
+    }, TIME_IN_SEC['SPIN'] * 1000);
 };
 
 /**
@@ -274,12 +270,12 @@ const copyBtnEventListener = (copyBtn, promoCode) => {
     copyBtn.addEventListener('click', () => {
         navigator.clipboard.writeText(promoCode);
         const copyIcon = copyBtn.querySelector('.special-card__copy-icon');
-        copyIcon.src = CHECK_ICON_SRC;
+        copyIcon.src = ICON_SRC['CHECK'];
         copyIcon.style.height = CHECK_LOGO_HEIGHT;
 
         setTimeout(() => {
-            copyIcon.src = COPY_ICON_SRC;
-        }, CHECK_LOGO_TIME * 1000);
+            copyIcon.src = ICON_SRC['COPY'];
+        }, TIME_IN_SEC['CHECK_FLIP'] * 1000);
     });
 };
 
@@ -327,15 +323,32 @@ const renderUnlockedDeals = () => {
             expiry.classList.add('special-card__expiry--expired');
             label.classList.add('special-card__label--expired');
             copyBtn.disabled = true;
-            copyIcon.src = DISABLE_COPY_ICON_SRC;
+            copyIcon.src = ICON_SRC['COPY_DISABLE'];
         } else {
             expiry.textContent = `Expires in ${storedWonOffer.validFor}d`;
-            copyIcon.src = COPY_ICON_SRC;
-
-            copyBtnEventListener(copyBtn, storedWonOffer.promoCode);
+            copyIcon.src = ICON_SRC['COPY'];
         }
 
         unlockedDealsList.appendChild(clone);
+    });
+
+    unlockedDealsList.addEventListener('click', (event) => {
+        const closestCopyBtn = event.target.closest('.special-card__copy');
+        navigator.clipboard.writeText(
+            event.target
+                .closest('.special-card')
+                .querySelector('.special-card__code').textContent,
+        );
+
+        const copyIcon = closestCopyBtn.querySelector(
+            '.special-card__copy-icon',
+        );
+        copyIcon.src = ICON_SRC['CHECK'];
+        copyIcon.style.height = CHECK_LOGO_HEIGHT;
+
+        setTimeout(() => {
+            copyIcon.src = ICON_SRC['COPY'];
+        }, TIME_IN_SEC['CHECK_FLIP'] * 1000);
     });
 };
 
@@ -386,7 +399,7 @@ const initSpin = async () => {
 
         setTimeout(() => {
             dialog.close();
-        }, TRANSITION_TIME * 1000);
+        }, TIME_IN_SEC['TRANSITION'] * 1000);
     });
 };
 
