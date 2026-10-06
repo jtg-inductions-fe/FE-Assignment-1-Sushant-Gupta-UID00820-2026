@@ -6,6 +6,11 @@ import {
     LOCAL_STORAGE_KEY,
     SPIN_TIME,
     TRANSITION_TIME,
+    CHECK_LOGO_HEIGHT,
+    CHECK_LOGO_TIME,
+    CHECK_ICON_SRC,
+    COPY_ICON_SRC,
+    DISABLE_COPY_ICON_SRC,
 } from './constants';
 
 const specialLink = document.querySelector('#special');
@@ -268,6 +273,13 @@ const handleSpin = (allOffers, storedLastSpinDegree) => {
 const copyBtnEventListener = (copyBtn, promoCode) => {
     copyBtn.addEventListener('click', () => {
         navigator.clipboard.writeText(promoCode);
+        const copyIcon = copyBtn.querySelector('.special-card__copy-icon');
+        copyIcon.src = CHECK_ICON_SRC;
+        copyIcon.style.height = CHECK_LOGO_HEIGHT;
+
+        setTimeout(() => {
+            copyIcon.src = COPY_ICON_SRC;
+        }, CHECK_LOGO_TIME * 1000);
     });
 };
 
@@ -315,10 +327,10 @@ const renderUnlockedDeals = () => {
             expiry.classList.add('special-card__expiry--expired');
             label.classList.add('special-card__label--expired');
             copyBtn.disabled = true;
-            copyIcon.src = '/assets/svgs/copy-disable.svg';
+            copyIcon.src = DISABLE_COPY_ICON_SRC;
         } else {
             expiry.textContent = `Expires in ${storedWonOffer.validFor}d`;
-            copyIcon.src = '/assets/svgs/copy.svg';
+            copyIcon.src = COPY_ICON_SRC;
 
             copyBtnEventListener(copyBtn, storedWonOffer.promoCode);
         }
