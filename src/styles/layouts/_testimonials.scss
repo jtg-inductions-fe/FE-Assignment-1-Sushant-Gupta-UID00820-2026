@@ -61,9 +61,27 @@
         color: theme.$text-secondary-color;
         letter-spacing: abs.rem(3.2);
         padding-left: abs.rem(3);
+        @include abs.text-ellipsis(abs.rem(162));
 
         @include abs.tablet-screen {
             letter-spacing: abs.rem(4.5);
+            max-width: abs.rem(230);
+        }
+    }
+
+    &__author {
+        @include abs.text-ellipsis(abs.rem(380));
+    }
+
+    &__subheading {
+        @include abs.text-ellipsis(abs.rem(245));
+
+        @include abs.tablet-screen {
+            max-width: abs.rem(300);
+        }
+
+        @include abs.desktop-screen {
+            max-width: abs.rem(330);
         }
     }
 

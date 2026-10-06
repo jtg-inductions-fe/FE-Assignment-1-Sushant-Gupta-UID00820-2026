@@ -188,6 +188,7 @@
     }
 
     &__explore-text {
+        @include abs.text-ellipsis(abs.rem(120));
         transform: translate(abs.rem(-2), abs.rem(0));
     }
 
@@ -274,6 +275,7 @@
 
     &__btn-text {
         margin-top: abs.rem(3);
+        @include abs.text-ellipsis(abs.rem(85));
     }
 
     &__triangles {

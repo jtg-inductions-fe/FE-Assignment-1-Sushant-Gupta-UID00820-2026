@@ -50,6 +50,7 @@
     &__brand-name {
         margin-top: abs.rem(2);
         line-height: abs.rem(40);
+        @include abs.text-ellipsis(abs.rem(100));
     }
 
     &__description {
@@ -116,6 +117,7 @@
 
     &__columns {
         font-size: abs.rem(23);
+        @include abs.text-ellipsis(abs.rem(120));
 
         @include abs.tablet-screen {
             @include abs.flex-mixin(flex-start, stretch, column);

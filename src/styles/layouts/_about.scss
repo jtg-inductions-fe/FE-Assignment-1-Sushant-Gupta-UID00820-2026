@@ -83,11 +83,13 @@
     &__subheading {
         color: theme.$text-secondary-color;
         letter-spacing: 20%;
-        text-align: center;
         padding-left: abs.rem(3);
+        margin-inline: auto;
+        @include abs.text-ellipsis(abs.rem(160));
 
         @include abs.tablet-screen {
             @include abs.flex-mixin;
+            max-width: abs.rem(230);
             padding: abs.rem(2) 0 0 abs.rem(4);
         }
 
@@ -96,6 +98,7 @@
             justify-content: flex-start;
             align-items: flex-start;
             padding: 0;
+            margin-inline: 0;
         }
     }
 
