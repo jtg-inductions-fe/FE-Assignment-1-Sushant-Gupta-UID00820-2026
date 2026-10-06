@@ -30,8 +30,8 @@
             position: absolute;
             width: abs.rem(256);
             height: abs.rem(349);
-            right: 0;
-            top: 42.7%;
+            right: -26%;
+            top: -19%;
         }
     }
 
@@ -54,6 +54,7 @@
         @include abs.flex-mixin($direction: column);
         gap: abs.rem(16);
         margin-top: abs.rem(32);
+        position: relative;
 
         @include abs.tablet-screen {
             flex-direction: row;
