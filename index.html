@@ -16,7 +16,7 @@
         <header class="navbar">
             <nav class="nav container">
                 <div class="nav__brand">
-                    <a href="#" class="nav__logo-link">
+                    <a href="/" class="nav__logo-link">
                         <img
                             src="/assets/images/logo.webp"
                             alt="logo-img"
@@ -36,13 +36,19 @@
                     <div class="nav__drawer-links">
                         <ul class="nav__ul">
                             <li>
-                                <a class="nav__link active" href="#">home</a>
+                                <a class="nav__link active" href="/">home</a>
                             </li>
-                            <li><a class="nav__link" href="#">discover</a></li>
                             <li>
-                                <a class="nav__link" href="#">special deals</a>
+                                <a class="nav__link" href="#about">discover</a>
                             </li>
-                            <li><a class="nav__link" href="#">contact</a></li>
+                            <li>
+                                <a id="special" class="nav__link" href="#"
+                                    >special deals</a
+                                >
+                            </li>
+                            <li>
+                                <a class="nav__link" href="#footer">contact</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -70,7 +76,7 @@
         </header>
 
         <main>
-            <section class="container hero">
+            <section id="home" class="container hero">
                 <div class="hero__bg-orange"></div>
                 <section class="hero__visuals">
                     <div class="hero__images">
@@ -183,7 +189,7 @@
                 </div>
                 <div class="brands__bg-yellow"></div>
             </section>
-            <section class="about">
+            <section id="about" class="about">
                 <div class="about__img">
                     <img
                         src="/assets/images/about-img.webp"
@@ -314,7 +320,7 @@
                 </template>
             </section>
         </main>
-        <footer class="footer container">
+        <footer id="footer" class="footer container">
             <div class="footer__left">
                 <div class="footer__heading">
                     <img
@@ -497,6 +503,178 @@
                 class="footer__image"
             />
         </footer>
+
+        <dialog id="my-dialog" class="special">
+            <button
+                type="button"
+                id="close-btn"
+                class="special__close"
+                aria-label="Close"
+            >
+                <img src="/assets/svgs/close.svg" alt="" />
+            </button>
+
+            <div class="special__content">
+                <div id="spin-view" class="special__view">
+                    <div class="special__intro">
+                        <h3 class="special__subheading paragraph paragraph--xs">
+                            <img
+                                class="special__gift-icon"
+                                src="/assets/svgs/gift.svg"
+                                alt=""
+                            />
+                            <span>Special Deals</span>
+                        </h3>
+                        <h2 class="special__title paragraph paragraph--xl">
+                            Spin & Win!
+                        </h2>
+                        <p class="special__description paragraph paragraph--xs">
+                            Tap the center of the wheel to spin
+                        </p>
+                    </div>
+
+                    <div class="special__game">
+                        <img
+                            class="special__pointer"
+                            src="/assets/svgs/triangle.svg"
+                            alt=""
+                        />
+                        <template id="wheel-template">
+                            <div class="special__segment-wrapper">
+                                <div
+                                    class="special__segment special__segment--1"
+                                >
+                                    <span
+                                        class="special__segment-text special__segment-text--1 paragraph paragraph--xs"
+                                        >20% off Flights</span
+                                    >
+                                </div>
+                                <div
+                                    class="special__segment special__segment--2"
+                                >
+                                    <span
+                                        class="special__segment-text special__segment-text--2 paragraph paragraph--xs"
+                                        >10% off Packages</span
+                                    >
+                                </div>
+                                <div
+                                    class="special__segment special__segment--3"
+                                >
+                                    <span
+                                        class="special__segment-text special__segment-text--3 paragraph paragraph--xs"
+                                        >VIP Lounge Access</span
+                                    >
+                                </div>
+                                <div
+                                    class="special__segment special__segment--4"
+                                >
+                                    <span
+                                        class="special__segment-text special__segment-text--4 paragraph paragraph--xs"
+                                        >Free Hotel Nights</span
+                                    >
+                                </div>
+                                <button
+                                    type="button"
+                                    id="spin-btn"
+                                    class="special__spin-button paragraph paragraph--xxs"
+                                >
+                                    Spin
+                                </button>
+                            </div>
+                        </template>
+                        <div id="special-wheel" class="special__wheel">
+                            <div
+                                id="loading-text"
+                                class="special__loading-text paragraph paragraph--xs"
+                            >
+                                Loading...
+                            </div>
+                        </div>
+                    </div>
+
+                    <template id="win-template">
+                        <div class="special__win">
+                            <p
+                                class="special__win-text paragraph paragraph--xs"
+                            >
+                                You Won!
+                            </p>
+                        </div>
+                    </template>
+                    <div class="special__win-wrapper"></div>
+
+                    <button class="btn btn--secondary special__unlocked-btn">
+                        View All Unlocked Deals
+                        <span
+                            class="special__unlocked-count paragraph paragraph--xs"
+                            >0</span
+                        >
+                    </button>
+                </div>
+
+                <div
+                    id="deals-view"
+                    class="special__view special__view--hidden"
+                >
+                    <div class="special__intro">
+                        <h3 class="special__subheading paragraph paragraph--xs">
+                            <img
+                                class="special__gift-icon"
+                                src="/assets/svgs/gift.svg"
+                                alt=""
+                            />
+                            <span>Special Deals</span>
+                        </h3>
+                        <h2 class="special__title paragraph paragraph--xl">
+                            Unlocked Deals
+                        </h2>
+                        <p class="special__description paragraph paragraph--xs">
+                            All the deals you've unlocked yet!
+                        </p>
+                    </div>
+
+                    <template id="deal-card-template">
+                        <div class="special-card">
+                            <div class="special-card__left">
+                                <h4
+                                    class="paragraph paragraph--sm special-card__label"
+                                ></h4>
+                                <p
+                                    class="special-card__expiry paragraph paragraph--xs"
+                                ></p>
+                            </div>
+                            <div class="special-card__right">
+                                <h5
+                                    class="special-card__code paragraph paragraph--xs"
+                                ></h5>
+                                <button
+                                    class="special-card__copy"
+                                    aria-label="Copy"
+                                >
+                                    <img
+                                        class="special-card__copy-icon"
+                                        src="/assets/svgs/copy.svg"
+                                        alt="copy"
+                                    />
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                    <div
+                        id="unlocked-deals-list"
+                        class="special__deals-list"
+                    ></div>
+
+                    <button
+                        type="button"
+                        id="go-back-btn"
+                        class="special__go-back-btn paragraph paragraph--sm"
+                    >
+                        Go Back
+                    </button>
+                </div>
+            </div>
+        </dialog>
         <script type="module" src="./src/scripts/index.js"></script>
     </body>
 </html>

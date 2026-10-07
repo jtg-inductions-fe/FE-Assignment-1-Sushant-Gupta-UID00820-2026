@@ -1,0 +1,266 @@
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+.special {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    margin-inline: auto;
+    border-radius: abs.rem(24) abs.rem(24) 0 0;
+    background-color: theme.$body-background-color;
+    border: none;
+    padding: abs.rem(24);
+    overflow: hidden;
+    overscroll-behavior: contain;
+    max-width: abs.rem(360);
+
+    opacity: 0;
+    transform: translateY(100%);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+
+    &::backdrop {
+        background-color: theme.$special-backdrop-color;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    &--open {
+        opacity: 1;
+        transform: translateY(0);
+
+        &::backdrop {
+            opacity: 0.5;
+        }
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__view {
+        @include abs.flex-mixin($direction: column);
+        gap: abs.rem(20);
+
+        &--hidden {
+            display: none;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: abs.rem(16.5);
+        right: abs.rem(15.5);
+        height: abs.rem(20);
+        aspect-ratio: 1;
+        @include abs.flex-mixin;
+        z-index: 1;
+    }
+
+    &__gift-icon {
+        display: inline;
+    }
+
+    &__intro {
+        @include abs.flex-mixin($direction: column);
+        gap: abs.rem(8);
+    }
+
+    &__subheading {
+        height: abs.rem(16);
+        line-height: 1;
+        color: theme.$heading-color;
+        letter-spacing: 10%;
+        text-transform: uppercase;
+        font-weight: abs.get(abs.$font-weight, bold);
+    }
+
+    &__title {
+        padding-block: abs.rem(2);
+        line-height: 1;
+        font-weight: abs.get(abs.$font-weight, bold);
+        color: theme.$text-primary-color;
+    }
+
+    &__description {
+        padding-block: abs.rem(1.5);
+        line-height: 1;
+        font-weight: abs.get(abs.$font-weight, regular);
+        color: theme.$special-para-color;
+    }
+
+    &__game {
+        position: relative;
+        padding-top: abs.rem(9);
+        @include abs.flex-mixin($direction: column);
+    }
+
+    &__pointer {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+
+    &__wheel {
+        height: abs.rem(227);
+        width: abs.rem(227);
+        background-color: theme.$spin-wheel-bg-color;
+        border-radius: 50%;
+        border: 4px solid theme.$body-background-color;
+        box-shadow: #{abs.get(abs.$shadows, wheel)};
+        @include abs.flex-mixin;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__wheel-wrapper {
+        position: relative;
+        border-radius: 50%;
+    }
+
+    &__loading-text {
+        font-weight: abs.get(abs.$font-weight, regular);
+        z-index: 1;
+        line-height: 1;
+    }
+
+    &__segment {
+        height: 50%;
+        width: 50%;
+        position: absolute;
+
+        &--1 {
+            background-color: theme.$spin-quarter-1;
+            top: 0;
+            left: 0;
+            border-right: #{abs.$spin-wheel-quarter-border};
+            border-bottom: #{abs.$spin-wheel-quarter-border};
+        }
+        &--2 {
+            background-color: theme.$spin-quarter-2;
+            top: 0;
+            right: 0;
+            border-left: #{abs.$spin-wheel-quarter-border};
+            border-bottom: #{abs.$spin-wheel-quarter-border};
+        }
+        &--3 {
+            background-color: theme.$spin-quarter-3;
+            bottom: 0;
+            left: 0;
+            border-right: #{abs.$spin-wheel-quarter-border};
+            border-top: #{abs.$spin-wheel-quarter-border};
+        }
+        &--4 {
+            background-color: theme.$spin-quarter-4;
+            bottom: 0;
+            right: 0;
+            border-left: #{abs.$spin-wheel-quarter-border};
+            border-top: #{abs.$spin-wheel-quarter-border};
+        }
+    }
+
+    &__spin-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: theme.$heading-color;
+        letter-spacing: 4%;
+        font-weight: abs.get(abs.$font-weight, bold);
+        background-color: theme.$body-background-color;
+        padding: abs.rem(13.78) abs.rem(7.085);
+        border-radius: 50%;
+        border: 3px solid theme.$heading-color;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    &__segment-text {
+        @include abs.flex-mixin;
+        height: 100%;
+        padding: abs.rem(15) abs.rem(20) 0 abs.rem(20);
+        color: theme.$body-background-color;
+        font-weight: abs.get(abs.$font-weight, bold);
+        text-align: center;
+        line-height: 1.4;
+
+        &--1 {
+            rotate: -45deg;
+        }
+        &--2 {
+            rotate: 45deg;
+        }
+        &--3 {
+            rotate: -135deg;
+        }
+        &--4 {
+            rotate: 135deg;
+            color: theme.$text-primary-color;
+        }
+    }
+
+    &__unlocked-btn {
+        padding: abs.rem(14.6) abs.rem(61.32);
+        max-width: abs.rem(312);
+    }
+
+    &__unlocked-count {
+        display: inline-block;
+        text-align: center;
+        padding-top: abs.rem(3);
+        color: theme.$body-background-color;
+        background-color: theme.$icon-color;
+        border-radius: 50%;
+        margin-left: abs.rem(8);
+        font-weight: abs.get(abs.$font-weight, bold);
+        line-height: 1;
+        height: abs.rem(18);
+        width: abs.rem(18);
+    }
+
+    &__win {
+        text-align: center;
+    }
+
+    &__win-text {
+        font-weight: abs.get(abs.$font-weight, bold);
+        padding-block: abs.rem(2.9) abs.rem(8);
+        line-height: 1;
+        text-align: center;
+    }
+
+    &__win-wrapper {
+        display: none;
+    }
+
+    &__deals-list {
+        @include abs.flex-mixin(start, stretch, column);
+        gap: abs.rem(12);
+        max-height: abs.rem(320);
+        overflow-y: auto;
+        padding-right: abs.rem(4);
+    }
+
+    &__go-back-btn {
+        background-color: theme.$body-background-color;
+        border: 1.5px solid theme.$special-back-button-border;
+        border-radius: abs.rem(24);
+        padding-block: abs.rem(16.7);
+        width: 100%;
+        font-weight: abs.get(abs.$font-weight, bold);
+        cursor: pointer;
+        margin-top: auto;
+        line-height: 1;
+        text-align: center;
+    }
+
+    @include abs.tablet-screen {
+        top: 50%;
+        left: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        margin-inline: 0;
+        border-radius: abs.rem(24);
+    }
+}

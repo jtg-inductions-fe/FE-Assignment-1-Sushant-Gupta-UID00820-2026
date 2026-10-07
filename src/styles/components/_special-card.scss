@@ -1,0 +1,67 @@
+@use '../abstracts' as abs;
+@use '../themes' as theme;
+
+.special-card {
+    @include abs.flex-mixin(space-between);
+    padding: abs.rem(16);
+    border: 1px solid theme.$special-card-border;
+    border-radius: abs.rem(16);
+    background: #{abs.$special-card-gradient};
+    min-width: abs.rem(312);
+
+    &__left {
+        @include abs.flex-mixin(start, start, column);
+        gap: abs.rem(3);
+    }
+
+    &__label {
+        line-height: 1.215;
+        font-weight: abs.get(abs.$font-weight, bold);
+        max-width: abs.rem(134);
+        &--expired {
+            color: theme.$special-card-label-expired;
+        }
+    }
+
+    &__expiry {
+        font-weight: abs.get(abs.$font-weight, regular);
+        color: theme.$expire-in-color;
+        line-height: 1;
+        padding-top: abs.rem(1.5);
+
+        &--expired {
+            color: theme.$special-card-expiry-expired;
+        }
+    }
+
+    &__right {
+        display: flex;
+        height: fit-content;
+        gap: abs.rem(8);
+    }
+
+    &__code {
+        padding: abs.rem(1.2) abs.rem(10) 0 abs.rem(10);
+        border: 1px solid theme.$coupon-code-border;
+        border-radius: abs.rem(8);
+        background-color: theme.$body-background-color;
+        font-weight: abs.get(abs.$font-weight, bold);
+        font-family: abs.get(abs.$font, coupon);
+        margin-bottom: abs.rem(6);
+    }
+
+    &__copy {
+        height: fit-content;
+        padding: abs.rem(6.5);
+        cursor: pointer;
+
+        &--expired {
+            pointer-events: none;
+        }
+    }
+
+    &--expired {
+        background-color: theme.$special-card-expired-background;
+        border-color: theme.$special-card-expired-border;
+    }
+}

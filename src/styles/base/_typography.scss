@@ -75,6 +75,14 @@
         $line-height: 1.6
     );
 
+    &--xxs {
+        font-size: abs.rem(10);
+    }
+
+    &--xs {
+        font-size: abs.rem(12);
+    }
+
     &--sm {
         font-size: abs.rem(14);
     }
@@ -94,5 +102,9 @@
         @include abs.tablet-screen {
             font-size: abs.rem(23);
         }
+    }
+
+    &--xl {
+        font-size: abs.rem(20);
     }
 }
