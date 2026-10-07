@@ -161,6 +161,7 @@
         padding-top: abs.rem(55);
         margin-top: abs.rem(0);
         transform: translate(abs.rem(-3), abs.rem(-3));
+        margin-inline: auto;
 
         &::after {
             height: calc(100% - abs.rem(50));

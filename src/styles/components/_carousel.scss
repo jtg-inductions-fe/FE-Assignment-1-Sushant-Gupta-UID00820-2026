@@ -81,12 +81,25 @@
     }
 
     &.splide__arrow--next.my-next {
-        background-color: theme.$btn-primary-color;
-        color: white;
+        background-color: white;
         opacity: 1;
         right: abs.rem(16);
         top: abs.rem(264.375);
         box-shadow: #{abs.get(abs.$shadows, next-btn)};
+        transition: all 0.3s ease-out;
+
+        &::before {
+            color: theme.$text-card-color;
+        }
+
+        &:hover,
+        &:active {
+            background-color: theme.$icon-color;
+
+            &::before {
+                color: theme.$btn-secondary-color;
+            }
+        }
 
         @include abs.tablet-screen {
             top: abs.rem(336.225);
@@ -108,7 +121,17 @@
         background-color: white;
         left: abs.rem(16);
         top: abs.rem(264.375);
-        border: 1px solid #1918251a;
+        box-shadow: #{abs.get(abs.$shadows, next-btn)};
+        transition: all 0.3s ease-out;
+        opacity: 1;
+        &:hover,
+        &:active {
+            background-color: theme.$icon-color;
+
+            &::before {
+                color: theme.$btn-secondary-color;
+            }
+        }
 
         @include abs.tablet-screen {
             top: abs.rem(336.225);

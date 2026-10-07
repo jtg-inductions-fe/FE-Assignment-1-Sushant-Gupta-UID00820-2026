@@ -13,6 +13,10 @@
         color: theme.$text-primary-color;
     }
 
+    &:hover {
+        text-decoration: underline;
+    }
+
     @include abs.tablet-screen {
         font-size: abs.rem(32);
     }

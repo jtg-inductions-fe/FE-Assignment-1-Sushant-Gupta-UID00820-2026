@@ -7,6 +7,7 @@ import {
     SPIN_CONSTANTS,
     ONE_DAY_IN_SEC,
     DEFAULT_DAYS_FOR_EXPIRED_OFFERS,
+    KEYDOWN_KEYS,
 } from './constants';
 
 const specialLink = document.querySelector('#special');
@@ -14,6 +15,7 @@ const dialog = document.querySelector('#my-dialog');
 const closeBtn = document.querySelector('#close-btn');
 
 const specialWheel = document.querySelector('#special-wheel');
+const specialGame = document.querySelector('.special__game');
 const wheelTemplate = document.querySelector('#wheel-template');
 const winTemplate = document.querySelector('#win-template');
 const specialWinWrapper = document.querySelector('.special__win-wrapper');
@@ -104,8 +106,8 @@ const initWheel = (allOffers) => {
     randomOffers = getRandomOffers(allOffers);
 
     if (randomOffers.length < SPIN_CONSTANTS['MAX_OFFERS']) {
-        specialWheel.innerHTML =
-            '<p class="special__loading-text">No More Offers!</p>';
+        specialGame.innerHTML =
+            '<p class="special__no-offers heading">No More Offers!</p>';
 
         loadingText.style.display = 'block';
         return;
@@ -445,7 +447,7 @@ dialog.addEventListener('keydown', (event) => {
         if (
             (event.target.classList.contains('special__unlocked-btn') ||
                 event.target.id == 'go-back-btn') &&
-            event.key == 'Tab'
+            event.key == KEYDOWN_KEYS['TAB']
         ) {
             dialog.focus();
         }

@@ -96,6 +96,11 @@
         @include abs.text-ellipsis(abs.rem(200));
     }
 
+    &__no-offers {
+        text-decoration: underline;
+        font-family: abs.get(abs.$font, coupon);
+    }
+
     &__game {
         position: relative;
         padding-top: abs.rem(9);

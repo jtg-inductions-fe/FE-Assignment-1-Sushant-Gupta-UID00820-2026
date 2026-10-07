@@ -66,15 +66,12 @@
                 </div>
 
                 <div class="nav__buttons">
-                    <button
-                        class="btn btn--secondary login"
-                        aria-label="Login Button"
-                    >
+                    <button class="btn btn--secondary login" aria-label="Login">
                         log in
                     </button>
                     <button
                         class="btn btn--primary signup"
-                        aria-label="Signup Button"
+                        aria-label="Signup"
                         id="nav-signup"
                     >
                         sign up
@@ -211,9 +208,9 @@
                         <h3 class="subtitle subtitle--sm about__subheading">
                             travel point
                         </h3>
-                        <h1 class="heading heading--md about__heading">
+                        <h2 class="heading heading--md about__heading">
                             We helping you find your dream location
-                        </h1>
+                        </h2>
                         <p class="paragraph paragraph--md about__description">
                             Contrary to popular belief, Lorem Ipsum is not
                             simply random text. It has roots in a piece of
@@ -246,7 +243,7 @@
                 </div>
             </section>
 
-            <section class="testimonial" id="discover">
+            <section class="testimonial container" id="discover">
                 <div class="testimonial__main">
                     <div class="splide" aria-label="Customer testimonials">
                         <div class="splide__track">
@@ -382,7 +379,7 @@
             <div class="footer__right">
                 <nav class="footer__column" aria-label="Company">
                     <div class="footer__column-group">
-                        <h3 class="footer__columns">Company</h3>
+                        <h4 class="footer__columns">Company</h4>
                         <button
                             type="button"
                             class="footer__accordian-button"
@@ -420,10 +417,10 @@
 
                 <nav class="footer__column" aria-label="Contact">
                     <div class="footer__column-group">
-                        <h3 class="footer__columns">
+                        <h4 class="footer__columns">
                             Contact
                             <span class="footer__columns--hide">Us</span>
-                        </h3>
+                        </h4>
                         <button
                             type="button"
                             class="footer__accordian-button"
@@ -468,7 +465,7 @@
 
                 <nav class="footer__column">
                     <div class="footer__column-group">
-                        <h3 class="footer__columns">Meet Us</h3>
+                        <h4 class="footer__columns">Meet Us</h4>
                         <button
                             type="button"
                             class="footer__accordian-button"
@@ -527,17 +524,17 @@
             <div class="special__content">
                 <div id="spin-view" class="special__view">
                     <div class="special__intro">
-                        <h3 class="special__subheading paragraph paragraph--xs">
+                        <h5 class="special__subheading paragraph paragraph--xs">
                             <img
                                 class="special__gift-icon"
                                 src="/assets/svgs/gift.svg"
                                 alt=""
                             />
                             <span>Special Deals</span>
-                        </h3>
-                        <h2 class="special__title paragraph paragraph--xl">
+                        </h5>
+                        <h4 class="special__title paragraph paragraph--xl">
                             Spin & Win!
-                        </h2>
+                        </h4>
                         <p class="special__description paragraph paragraph--xs">
                             Tap the center of the wheel to spin
                         </p>
@@ -587,6 +584,7 @@
                                     type="button"
                                     id="spin-btn"
                                     class="special__spin-button paragraph paragraph--xxs"
+                                    aria-label="Spin Wheel"
                                 >
                                     Spin
                                 </button>
@@ -613,7 +611,10 @@
                     </template>
                     <div class="special__win-wrapper"></div>
 
-                    <button class="btn btn--secondary special__unlocked-btn">
+                    <button
+                        class="btn btn--secondary special__unlocked-btn"
+                        aria-label="View Unlocked Deals"
+                    >
                         <span class="special__unlocked-btn-text"
                             >View All Unlocked Deals</span
                         >
@@ -629,17 +630,17 @@
                     class="special__view special__view--hidden"
                 >
                     <div class="special__intro">
-                        <h3 class="special__subheading paragraph paragraph--xs">
+                        <h5 class="special__subheading paragraph paragraph--xs">
                             <img
                                 class="special__gift-icon"
                                 src="/assets/svgs/gift.svg"
                                 alt=""
                             />
                             <span>Special Deals</span>
-                        </h3>
-                        <h2 class="special__title paragraph paragraph--xl">
+                        </h5>
+                        <h4 class="special__title paragraph paragraph--xl">
                             Unlocked Deals
-                        </h2>
+                        </h4>
                         <p class="special__description paragraph paragraph--xs">
                             All the deals you've unlocked yet!
                         </p>
@@ -648,17 +649,17 @@
                     <template id="deal-card-template">
                         <div class="special-card">
                             <div class="special-card__left">
-                                <h4
+                                <h5
                                     class="paragraph paragraph--sm special-card__label"
-                                ></h4>
+                                ></h5>
                                 <p
                                     class="special-card__expiry paragraph paragraph--xs"
                                 ></p>
                             </div>
                             <div class="special-card__right">
-                                <h5
+                                <h4
                                     class="special-card__code paragraph paragraph--xs"
-                                ></h5>
+                                ></h4>
                                 <button
                                     class="special-card__copy"
                                     aria-label="Copy"

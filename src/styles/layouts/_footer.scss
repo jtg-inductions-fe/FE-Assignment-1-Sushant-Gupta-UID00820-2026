@@ -110,6 +110,10 @@
         text-align: center;
         color: theme.$text-testimonial;
 
+        &:hover {
+            text-decoration: underline;
+        }
+
         @include abs.tablet-screen {
             text-align: start;
         }
@@ -184,6 +188,11 @@
         @include abs.flex-mixin;
         background-color: theme.$icon-color;
         border-radius: 50%;
+        transition: all 0.5s ease-out;
+
+        &:hover {
+            box-shadow: #{abs.get(abs.$shadows, icon)};
+        }
     }
 
     &__icon-facebook {
@@ -216,7 +225,6 @@
         @include abs.flex-mixin(space-between, start, row);
         gap: abs.rem(64);
         padding: abs.rem(204) abs.rem(117) abs.rem(64) abs.rem(130);
-        max-width: abs.rem(1440);
         margin-inline: auto;
     }
 }
