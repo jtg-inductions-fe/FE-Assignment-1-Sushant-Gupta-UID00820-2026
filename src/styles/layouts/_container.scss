@@ -10,6 +10,7 @@
     }
 
     @include abs.desktop-screen {
+        max-width: abs.rem(1440);
         padding-inline: abs.rem(130) abs.rem(117);
     }
 }

@@ -32,3 +32,5 @@ export const KEYDOWN_KEYS = {
     ESC: 'Escape',
     TAB: 'Tab',
 };
+
+export const MAX_PAGINATION_DOTS = 5;

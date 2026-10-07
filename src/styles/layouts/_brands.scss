@@ -64,5 +64,6 @@
 
     @include abs.desktop-screen {
         padding-block: abs.rem(63.79);
+        margin-inline: auto;
     }
 }

@@ -1,3 +1,51 @@
+# Travlog
+
+Travlog is a responsive, static travel-landing-page built with plain HTML, SCSS and vanilla JavaScript, bundled with Vite. It was built as Frontend Assignment 1.
+
+## About the Project
+
+The page presents a travel-booking brand and includes:
+
+-   **Navbar**: responsive navigation with a mobile hamburger drawer (keyboard focus is trapped while the drawer is open), and scroll-based active link highlighting.
+-   **Hero**: headline, call-to-action and visual collage.
+-   **Brands**: partner logos (Expedia, Airbnb, Booking, Tripadvisor, etc.).
+-   **About**: short brand introduction section.
+-   **Testimonials**: a carousel built with [Splide](https://splidejs.com/). Testimonial data is loaded dynamically from `public/assets/json/testimonial.json` and rendered through an HTML `<template>`.
+-   **Footer**: company, contact and location columns.
+-   **Special Deals (spin-the-wheel)**: clicking "special deals" in the navbar opens a `<dialog>` with a spin wheel. Offers are fetched from a remote API, 4 random not-yet-won offers are placed on the wheel, and the winning offer (with a copyable promo code) is stored in `localStorage` so it can be viewed later in the "unlocked deals" view. Expired offers become available again after a set number of days.
+
+### Tech Stack
+
+| Area            | Tools                                                  |
+| --------------- | ------------------------------------------------------ |
+| Build tool      | Vite 5, `vite-plugin-html`, `vite-plugin-image-optimizer` |
+| Styling         | SCSS (Sass), organised using the 7-1 pattern           |
+| Scripting       | Vanilla JavaScript (ES modules)                        |
+| Carousel        | `@splidejs/splide`                                     |
+| Code quality    | ESLint, Prettier, Husky, lint-staged                   |
+
+## Folder Structure
+```
+FE-Assignment-1-Sushant-Gupta/
+├── .github/workflows/
+│           └── pr-check.yml    # CI: validates branch name, PR title and commit messages
+├── .husky/
+│   ├── pre-commit              # Validates branch name, then runs lint-staged
+│   └── commit-msg              # Validates commit message format
+├── public/                     # Static assets used in the project like fonts, images, svgs, etc.
+├── src/                        
+│   ├── scripts/                # JS Scripts - index.js, specialDeals.js, constants.js and testimonials.js
+│   └── styles/                 # Styles using 7-1 folder structure and SCSS partials 
+├── index.html                  # Single page markup
+├── vite.config.js              # Vite config (plugins, build output names, dev server port)
+├── eslint.config.js            # ESLint config
+├── prettier.config.js          # Prettier config
+├── .nvmrc                      # Node version used by nvm
+├── .npmrc                      # npm settings (engine-strict)
+└── package.json                # Scripts and dependencies
+└── README.md                   # Project documentation
+```
+
 ## Getting Started
 
 ### Prerequisites
