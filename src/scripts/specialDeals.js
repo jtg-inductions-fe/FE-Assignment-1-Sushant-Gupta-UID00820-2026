@@ -1,6 +1,6 @@
 import {
     LOCAL_STORAGE_KEY_WON_OFFERS,
-    CHECK_LOGO_HEIGHT,
+    CHECK_ICON_HEIGHT,
     ICON_SRC,
     TIME_IN_SEC,
     API_ENDPOINTS,
@@ -303,7 +303,7 @@ const copyBtnEventListener = (copyBtn, promoCode) => {
         navigator.clipboard.writeText(promoCode);
         const copyIcon = copyBtn.querySelector('.special-card__copy-icon');
         copyIcon.src = ICON_SRC['CHECK'];
-        copyIcon.style.height = CHECK_LOGO_HEIGHT;
+        copyIcon.style.height = CHECK_ICON_HEIGHT;
 
         setTimeout(() => {
             copyIcon.src = ICON_SRC['COPY'];
@@ -381,7 +381,7 @@ const renderUnlockedDeals = () => {
             '.special-card__copy-icon',
         );
         copyIcon.src = ICON_SRC['CHECK'];
-        copyIcon.style.height = CHECK_LOGO_HEIGHT;
+        copyIcon.style.height = CHECK_ICON_HEIGHT;
 
         setTimeout(() => {
             copyIcon.src = ICON_SRC['COPY'];

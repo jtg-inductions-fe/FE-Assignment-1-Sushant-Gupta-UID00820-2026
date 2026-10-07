@@ -10,7 +10,7 @@ export const SPIN_CONSTANTS = {
 
 export const LOCAL_STORAGE_KEY_WON_OFFERS = 'wonOffers';
 
-export const CHECK_LOGO_HEIGHT = '15px';
+export const CHECK_ICON_HEIGHT = '1.5rem';
 
 export const ONE_DAY_IN_SEC = 86400000;
 

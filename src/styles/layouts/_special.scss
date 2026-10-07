@@ -19,7 +19,6 @@
     transition:
         opacity 0.5s ease,
         transform 0.5s ease;
-    pointer-events: none;
 
     &::backdrop {
         background-color: theme.$special-backdrop-color;
@@ -30,7 +29,6 @@
     &--open {
         opacity: 1;
         transform: translateY(0);
-        pointer-events: auto;
 
         &::backdrop {
             opacity: 0.5;
