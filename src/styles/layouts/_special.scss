@@ -209,8 +209,10 @@
     &__unlocked-btn {
         padding: abs.rem(14.6) abs.rem(61.32);
         max-width: abs.rem(312);
+    }
 
-        @include abs.text-ellipsis(abs.rem(312));
+    &__unlocked-btn-text {
+        @include abs.text-ellipsis(abs.rem(160));
     }
 
     &__unlocked-count {

@@ -28,9 +28,8 @@
 
     &__pagination.splide__pagination {
         gap: abs.rem(20);
-        height: abs.rem(20);
+        height: abs.rem(30);
         bottom: abs.rem(-90);
-        margin-bottom: abs.rem(10); // override inline splide margins
 
         @include abs.tablet-screen {
             bottom: abs.rem(5);
@@ -71,12 +70,11 @@
 
 .splide__arrow.my-arrow {
     position: absolute;
-    top: 36%;
     width: abs.rem(64);
     height: abs.rem(64);
+    font-size: abs.rem(12);
 
     @include abs.tablet-screen {
-        top: 50%;
         width: abs.rem(100);
         height: abs.rem(100);
         font-size: abs.rem(20);
@@ -86,16 +84,17 @@
         background-color: theme.$btn-primary-color;
         color: white;
         opacity: 1;
-        right: abs.rem(15);
-        top: 41.1%;
+        right: abs.rem(16);
+        top: abs.rem(264.375);
+        box-shadow: #{abs.get(abs.$shadows, next-btn)};
 
         @include abs.tablet-screen {
-            top: 49.3%;
+            top: abs.rem(336.225);
             right: abs.rem(12);
         }
 
         @include abs.desktop-screen {
-            top: 49.5%;
+            top: abs.rem(319.275);
             right: abs.rem(17);
         }
     }
@@ -107,17 +106,17 @@
 
     &.splide__arrow--prev.my-prev {
         background-color: white;
-        left: abs.rem(15);
-        top: 41.1%;
+        left: abs.rem(16);
+        top: abs.rem(264.375);
         border: 1px solid #1918251a;
 
         @include abs.tablet-screen {
-            top: 49.3%;
+            top: abs.rem(336.225);
             left: abs.rem(12);
         }
 
         @include abs.desktop-screen {
-            top: 49.5%;
+            top: abs.rem(319.275);
             left: abs.rem(17);
         }
     }
@@ -126,7 +125,6 @@
 // Kill splide's default active scaling animation on pagination dots
 .splide .splide__pagination__page.is-active {
     background-color: theme.$text-secondary-color;
-    scale: 1;
     transform: none;
 }
 

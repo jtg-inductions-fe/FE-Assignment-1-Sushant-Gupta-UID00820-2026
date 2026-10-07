@@ -1,5 +1,6 @@
 import './testimonials';
 import './specialDeals';
+import { KEYDOWN_KEYS } from './constants';
 
 const hamburger = document.querySelector('.nav__hamburger');
 const linksContainer = document.querySelector('.nav__links');
@@ -19,8 +20,6 @@ hamburger.addEventListener('click', (event) => {
             'aria-label',
             isOpen ? 'Close menu' : 'Open menu',
         );
-        body.classList.toggle('no-scroll', isOpen);
-        hamburger.style.zIndex = 30;
     }
 });
 
@@ -32,13 +31,12 @@ nav.addEventListener('keydown', (event) => {
     event.stopPropagation();
 
     const isOpen = linksContainer.classList.contains('nav__links--open');
-    if (isOpen && event.key == 'Escape') {
+    if (isOpen && event.key == KEYDOWN_KEYS['ESC']) {
         linksContainer.classList.toggle('nav__links--open');
         hamburger.setAttribute('aria-label', 'Close menu');
-        body.classList.toggle('no-scroll');
     }
 
-    if (isOpen && event.key == 'Tab') {
+    if (isOpen && event.key == KEYDOWN_KEYS['TAB']) {
         if (
             event.target.id == 'drawer-signup' ||
             event.target.id == 'nav-signup'
@@ -73,7 +71,6 @@ linksContainer.addEventListener('click', (event) => {
             'aria-label',
             isOpen ? 'Close menu' : 'Open menu',
         );
-        body.classList.toggle('no-scroll', isOpen);
     }
 });
 

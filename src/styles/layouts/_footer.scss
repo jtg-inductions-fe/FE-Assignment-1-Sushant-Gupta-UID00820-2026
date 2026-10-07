@@ -172,6 +172,10 @@
 
     &__icon {
         font-size: abs.rem(18.64);
+
+        &.icon-insta {
+            font-size: abs.rem(16);
+        }
     }
 
     &__social-link {
@@ -212,5 +216,7 @@
         @include abs.flex-mixin(space-between, start, row);
         gap: abs.rem(64);
         padding: abs.rem(204) abs.rem(117) abs.rem(64) abs.rem(130);
+        max-width: abs.rem(1440);
+        margin-inline: auto;
     }
 }

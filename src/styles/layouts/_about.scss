@@ -2,12 +2,19 @@
 @use '../themes' as theme;
 
 .about {
-    width: 100%;
-    margin-top: abs.rem(64);
-    padding: abs.rem(64) abs.rem(0);
+    padding-block: abs.rem(128) abs.rem(64);
 
     &__img {
+        margin-left: abs.rem(-16.86);
+        width: 100vw;
+
+        @include abs.tablet-screen {
+            margin-left: abs.rem(-64);
+        }
+
         @include abs.desktop-screen {
+            width: auto;
+            margin-left: abs.rem(-130);
             height: abs.rem(766);
             padding-block: abs.rem(8) abs.rem(64);
         }
@@ -30,8 +37,8 @@
             position: absolute;
             width: abs.rem(256);
             height: abs.rem(349);
-            right: -26%;
-            top: -19%;
+            right: abs.rem(-118.44);
+            top: abs.rem(-63.45);
         }
     }
 
@@ -70,20 +77,20 @@
 
     &__info {
         @include abs.tablet-screen {
-            padding-inline: abs.rem(65);
+            // padding-inline: abs.rem(65);
         }
 
         @include abs.desktop-screen {
             max-width: abs.rem(455.58);
             padding-inline: 0;
-            margin: abs.rem(20) 0 abs.rem(64) abs.rem(-20);
+            margin: abs.rem(10) 0 abs.rem(64) abs.rem(-20);
         }
     }
 
     &__subheading {
         color: theme.$text-secondary-color;
         letter-spacing: 20%;
-        padding-left: abs.rem(3);
+        padding-left: abs.rem(6);
         margin-inline: auto;
         @include abs.text-ellipsis(abs.rem(160));
 
@@ -114,27 +121,27 @@
     &__description {
         color: theme.$text-about-description;
         margin-top: abs.rem(30);
-        padding-inline: abs.rem(40);
         text-align: center;
 
         @include abs.tablet-screen {
-            padding-inline: 0;
+            padding-inline: abs.rem(10);
         }
 
         @include abs.desktop-screen {
             text-align: left;
+            padding-inline: 0;
         }
     }
 
     @include abs.tablet-screen {
-        margin-top: 0;
+        padding-top: abs.rem(64);
     }
 
     @include abs.desktop-screen {
         margin-inline: 0;
         display: flex;
         padding-bottom: 0;
-        position: relative;
         gap: abs.rem(18);
+        @include abs.flex-mixin;
     }
 }

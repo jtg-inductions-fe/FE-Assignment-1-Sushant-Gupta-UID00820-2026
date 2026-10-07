@@ -92,11 +92,11 @@
 
     &__telegram {
         top: 42%;
-        left: -5.3%;
+        left: -5.8%;
         background-color: theme.$text-secondary-color;
 
         &::before {
-            padding-top: abs.rem(0.5);
+            padding-top: abs.rem(5);
         }
 
         @include abs.tablet-screen {
@@ -112,10 +112,10 @@
 
     &__top-places {
         @include abs.flex-mixin;
-        gap: abs.rem(3);
+        gap: abs.rem(5);
         height: abs.rem(28.75);
-        width: abs.rem(85.21);
         border-radius: abs.rem(30);
+        padding-inline: abs.rem(23);
         left: 87%;
         bottom: 26%;
         box-shadow: #{abs.get(abs.$shadows, top-places)};
@@ -129,17 +129,34 @@
             right: -10%;
             left: 92%;
             bottom: 27.2%;
-            box-shadow: none;
-            font-size: abs.rem(7.9);
+            padding-inline: abs.rem(60);
             align-items: center;
             scale: 1.5;
             gap: abs.rem(6);
+            font-weight: abs.get(abs.$font-weight, bold);
+            font-size: abs.rem(10);
         }
     }
 
     &__icon-svg {
-        height: abs.rem(12.32);
-        width: abs.rem(12.32);
+        height: abs.rem(12);
+        width: abs.rem(12);
+        position: absolute;
+        left: abs.rem(18);
+
+        @include abs.tablet-screen {
+            left: abs.rem(25);
+            height: abs.rem(15);
+        }
+    }
+
+    &__top-places-text {
+        padding-left: abs.rem(11);
+        @include abs.tablet-screen {
+            padding-top: abs.rem(3);
+            padding-left: abs.rem(15);
+            font-size: abs.rem(9);
+        }
     }
 
     &__bag {
@@ -153,18 +170,17 @@
 
     &__content {
         width: 100%;
+        @include abs.flex-mixin($direction: column);
         flex: 1.2;
         min-width: 0;
 
-        @include abs.tablet-screen {
-            margin-inline: auto;
-        }
-
         @include abs.desktop-screen {
+            max-width: abs.rem(480);
             margin-top: abs.rem(62);
             text-align: left;
             min-width: 0;
             flex-basis: abs.rem(420);
+            align-items: start;
         }
     }
 
@@ -173,7 +189,6 @@
         gap: abs.rem(16);
         width: abs.rem(224);
         padding-block: abs.rem(18);
-        margin-inline: auto;
         border-radius: abs.rem(30);
         background-color: inherit;
         box-shadow: #{abs.get(abs.$shadows, explore)};
@@ -197,7 +212,7 @@
         text-align: center;
 
         @include abs.tablet-screen {
-            margin-top: abs.rem(32);
+            margin-top: abs.rem(45);
         }
 
         @include abs.desktop-screen {
@@ -221,6 +236,7 @@
         margin-top: abs.rem(32);
         border-radius: abs.rem(40);
         margin-bottom: abs.rem(64);
+        width: 100%;
 
         @include abs.tablet-screen {
             display: flex;
@@ -305,7 +321,6 @@
             max-width: abs.rem(630);
             margin-inline: auto;
             font-size: abs.rem(56);
-            margin-top: abs.rem(45);
         }
 
         @include abs.desktop-screen {
@@ -383,9 +398,11 @@
     }
 
     @include abs.desktop-screen {
-        @include abs.flex-mixin(space-between, $direction: row-reverse);
+        @include abs.flex-mixin($direction: row-reverse);
         gap: abs.rem(0);
         margin-top: abs.rem(60);
         margin-bottom: abs.rem(60);
+        max-width: abs.rem(1440);
+        margin-inline: auto;
     }
 }

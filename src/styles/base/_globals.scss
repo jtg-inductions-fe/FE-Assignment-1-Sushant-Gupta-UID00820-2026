@@ -13,7 +13,7 @@ body {
     overflow-x: clip;
 }
 
-body.no-scroll {
+body:has(.nav__links--open, .special--open) {
     overflow: hidden;
     height: 100vh;
 }
