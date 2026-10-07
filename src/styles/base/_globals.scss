@@ -6,15 +6,6 @@ body {
     font-family: abs.get(abs.$font, default);
     color: theme.$text-primary-color;
     background-color: theme.$body-background-color;
-    padding-top: abs.rem(35);
-
-    @include abs.tablet-screen {
-        padding-top: 0;
-    }
-
-    @include abs.desktop-screen {
-        padding-top: abs.rem(34);
-    }
 }
 
 html,
@@ -22,7 +13,7 @@ body {
     overflow-x: clip;
 }
 
-body.no-scroll {
+body:has(.nav__links--open, .special--open) {
     overflow: hidden;
     height: 100vh;
 }

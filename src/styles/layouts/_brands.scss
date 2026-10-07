@@ -2,33 +2,38 @@
 @use '../themes' as theme;
 
 .brands {
-    height: abs.rem(72);
     position: relative;
 
     &__imgs {
         height: 100%;
         @include abs.flex-mixin;
         flex-wrap: wrap;
-        gap: abs.rem(27);
+        gap: abs.rem(32) abs.rem(27);
 
         @include abs.tablet-screen {
-            height: abs.rem(96);
+            height: auto;
             flex-basis: abs.rem(570);
         }
 
         @include abs.desktop-screen {
             flex-basis: auto;
-            height: abs.rem(32);
             gap: abs.rem(100);
-            margin-top: 0;
         }
     }
 
     &__img {
         height: abs.rem(20);
 
+        &:nth-child(1) {
+            margin-left: abs.rem(-22);
+        }
+
         @include abs.tablet-screen {
             height: abs.rem(32);
+
+            &:nth-child(1) {
+                margin-left: 0;
+            }
         }
     }
 
@@ -53,12 +58,11 @@
     }
 
     @include abs.tablet-screen {
-        height: abs.rem(224);
-        margin-top: 0;
+        padding-block: abs.rem(64);
         @include abs.flex-mixin;
     }
 
     @include abs.desktop-screen {
-        height: abs.rem(158.38);
+        padding-block: abs.rem(63.79);
     }
 }

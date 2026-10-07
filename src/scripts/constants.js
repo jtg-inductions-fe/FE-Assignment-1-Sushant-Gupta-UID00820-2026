@@ -27,3 +27,8 @@ export const ICON_SRC = {
     COPY_DISABLE: '/assets/svgs/copy-disable.svg',
     CHECK: '/assets/svgs/check.svg',
 };
+
+export const KEYDOWN_KEYS = {
+    ESC: 'Escape',
+    TAB: 'Tab',
+};

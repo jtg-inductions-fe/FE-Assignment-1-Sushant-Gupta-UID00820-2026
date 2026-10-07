@@ -68,6 +68,10 @@ async function showRating() {
     }
 
     splide.mount();
+
+    document
+        .querySelector('.splide__pagination__page.dots.is-active')
+        .setAttribute('tabindex', '-1');
 }
 
 showRating();

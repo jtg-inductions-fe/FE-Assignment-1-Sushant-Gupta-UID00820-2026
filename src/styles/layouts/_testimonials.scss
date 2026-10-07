@@ -3,10 +3,9 @@
 
 .testimonial {
     position: relative;
-    height: abs.rem(735);
+    padding-bottom: abs.rem(94.74);
     padding-top: 0;
-    @include abs.flex-mixin;
-    align-items: start;
+    @include abs.flex-mixin($align: start);
 
     &::after {
         content: '';
@@ -26,7 +25,7 @@
         @include abs.desktop-screen {
             background: url('/assets/images/testimonial-bg-2.webp') no-repeat
                 center / cover;
-            background-position: 0 32.5%;
+            background-position: 0 33.5%;
             opacity: 1;
         }
     }
@@ -54,18 +53,35 @@
     }
 
     &__header {
-        @include abs.flex-mixin;
-        flex-direction: column;
-        gap: abs.rem(16);
+        @include abs.flex-mixin($direction: column);
+        gap: abs.rem(17);
     }
 
     &__heading {
         color: theme.$text-secondary-color;
         letter-spacing: abs.rem(3.2);
         padding-left: abs.rem(3);
+        @include abs.text-ellipsis(abs.rem(162));
 
         @include abs.tablet-screen {
             letter-spacing: abs.rem(4.5);
+            max-width: abs.rem(230);
+        }
+    }
+
+    &__author {
+        @include abs.text-ellipsis(abs.rem(380));
+    }
+
+    &__subheading {
+        @include abs.text-ellipsis(abs.rem(245));
+
+        @include abs.tablet-screen {
+            max-width: abs.rem(300);
+        }
+
+        @include abs.desktop-screen {
+            max-width: abs.rem(330);
         }
     }
 
@@ -75,20 +91,18 @@
 
         &::before {
             content: '/';
-            margin: abs.rem(3);
             margin-right: abs.rem(5);
         }
     }
 
     &__content {
         padding-top: abs.rem(62);
-        @include abs.flex-mixin;
-        flex-direction: column;
-        gap: abs.rem(64);
+        @include abs.flex-mixin($direction: column);
+        gap: abs.rem(66);
 
         @include abs.tablet-screen {
             padding-top: abs.rem(52);
-            gap: abs.rem(60);
+            gap: abs.rem(58);
         }
     }
 
@@ -101,7 +115,7 @@
 
         @include abs.tablet-screen {
             max-width: abs.rem(576);
-            padding-top: abs.rem(30);
+            padding-top: abs.rem(26);
         }
 
         @include abs.desktop-screen {
@@ -110,8 +124,7 @@
     }
 
     &__footer {
-        @include abs.flex-mixin;
-        flex-direction: column;
+        @include abs.flex-mixin($direction: column);
         gap: abs.rem(32);
 
         @include abs.tablet-screen {
@@ -132,11 +145,12 @@
     &__rating {
         width: abs.rem(224);
         @include abs.flex-mixin;
-        gap: abs.rem(16);
+        gap: abs.rem(15);
     }
 
     @include abs.tablet-screen {
         margin-top: abs.rem(-36);
+        padding-bottom: abs.rem(54.74);
 
         &::after {
             display: block;
@@ -144,8 +158,9 @@
     }
 
     @include abs.desktop-screen {
-        padding-top: abs.rem(50);
-        margin-top: abs.rem(16);
+        padding-top: abs.rem(55);
+        margin-top: abs.rem(0);
+        transform: translate(abs.rem(-3), abs.rem(-3));
 
         &::after {
             height: calc(100% - abs.rem(50));

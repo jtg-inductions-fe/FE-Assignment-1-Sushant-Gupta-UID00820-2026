@@ -2,13 +2,19 @@
 @use '../themes' as theme;
 
 .about {
-    width: 100%;
-    margin-top: abs.rem(64);
-    padding-block: abs.rem(64);
+    padding-block: abs.rem(128) abs.rem(64);
 
     &__img {
+        margin-left: abs.rem(-16.86);
+        width: 100vw;
+
+        @include abs.tablet-screen {
+            margin-left: abs.rem(-64);
+        }
+
         @include abs.desktop-screen {
-            max-width: abs.rem(900);
+            width: auto;
+            margin-left: abs.rem(-130);
             height: abs.rem(766);
             padding-block: abs.rem(8) abs.rem(64);
         }
@@ -19,7 +25,6 @@
         width: 100%;
         object-fit: contain;
         @include abs.desktop-screen {
-            margin-top: abs.rem(3);
             scale: 1.005;
         }
     }
@@ -32,14 +37,14 @@
             position: absolute;
             width: abs.rem(256);
             height: abs.rem(349);
-            right: 0;
-            top: 43.7%;
+            right: abs.rem(-118.44);
+            top: abs.rem(-63.45);
         }
     }
 
     &__texts {
         text-align: center;
-        margin-top: abs.rem(32);
+        margin-top: abs.rem(30);
 
         @include abs.tablet-screen {
             margin-top: abs.rem(64);
@@ -53,10 +58,10 @@
     }
 
     &__cards {
-        @include abs.flex-mixin;
+        @include abs.flex-mixin($direction: column);
         gap: abs.rem(16);
-        flex-direction: column;
         margin-top: abs.rem(32);
+        position: relative;
 
         @include abs.tablet-screen {
             flex-direction: row;
@@ -72,24 +77,26 @@
 
     &__info {
         @include abs.tablet-screen {
-            padding-inline: abs.rem(65);
+            // padding-inline: abs.rem(65);
         }
 
         @include abs.desktop-screen {
             max-width: abs.rem(455.58);
             padding-inline: 0;
-            min-height: abs.rem(667);
-            margin: auto 0 abs.rem(64) abs.rem(-20);
+            margin: abs.rem(10) 0 abs.rem(64) abs.rem(-20);
         }
     }
 
     &__subheading {
         color: theme.$text-secondary-color;
         letter-spacing: 20%;
-        text-align: center;
+        padding-left: abs.rem(6);
+        margin-inline: auto;
+        @include abs.text-ellipsis(abs.rem(160));
 
         @include abs.tablet-screen {
             @include abs.flex-mixin;
+            max-width: abs.rem(230);
             padding: abs.rem(2) 0 0 abs.rem(4);
         }
 
@@ -97,17 +104,14 @@
             text-align: left;
             justify-content: flex-start;
             align-items: flex-start;
-            transform: translate(abs.rem(0), abs.rem(0));
+            padding: 0;
+            margin-inline: 0;
         }
     }
 
     &__heading {
-        margin-top: abs.rem(16);
+        margin-top: abs.rem(18);
         text-align: center;
-
-        @include abs.tablet-screen {
-            margin-top: abs.rem(18);
-        }
 
         @include abs.desktop-screen {
             text-align: left;
@@ -116,30 +120,28 @@
 
     &__description {
         color: theme.$text-about-description;
-        margin-top: abs.rem(32);
-        padding-inline: abs.rem(40);
+        margin-top: abs.rem(30);
         text-align: center;
 
         @include abs.tablet-screen {
-            padding-inline: 0;
-            margin-top: abs.rem(30);
+            padding-inline: abs.rem(10);
         }
 
         @include abs.desktop-screen {
             text-align: left;
+            padding-inline: 0;
         }
     }
 
     @include abs.tablet-screen {
-        margin-top: 0;
+        padding-top: abs.rem(64);
     }
 
     @include abs.desktop-screen {
         margin-inline: 0;
         display: flex;
-        height: abs.rem(816.64);
         padding-bottom: 0;
-        position: relative;
         gap: abs.rem(18);
+        @include abs.flex-mixin;
     }
 }

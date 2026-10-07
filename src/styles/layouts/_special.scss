@@ -74,6 +74,8 @@
         letter-spacing: 10%;
         text-transform: uppercase;
         font-weight: abs.get(abs.$font-weight, bold);
+
+        @include abs.text-ellipsis(abs.rem(130));
     }
 
     &__title {
@@ -81,6 +83,8 @@
         line-height: 1;
         font-weight: abs.get(abs.$font-weight, bold);
         color: theme.$text-primary-color;
+
+        @include abs.text-ellipsis(abs.rem(160));
     }
 
     &__description {
@@ -88,6 +92,8 @@
         line-height: 1;
         font-weight: abs.get(abs.$font-weight, regular);
         color: theme.$special-para-color;
+
+        @include abs.text-ellipsis(abs.rem(200));
     }
 
     &__game {
@@ -203,6 +209,10 @@
     &__unlocked-btn {
         padding: abs.rem(14.6) abs.rem(61.32);
         max-width: abs.rem(312);
+    }
+
+    &__unlocked-btn-text {
+        @include abs.text-ellipsis(abs.rem(160));
     }
 
     &__unlocked-count {
